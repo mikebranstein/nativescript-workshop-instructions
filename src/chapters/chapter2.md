@@ -1,4 +1,26 @@
-## Your First App
+## Your first app
+
+In this exercise, you're going to create your first app. Before we get there, I'm going to introduce you to the NativeScript CLI (command line interface).
+
+### NativeScript CLI
+
+The NativeScript CLI is a set of command line tools that make your job as a mobile developer easy. The CLI provides tools for creating and scaffolding the files needed to develop an app, add in platform-specific files (for Android and iOS), building the app into the platform-specific mobile app containers, running your app in an emulator (Android) and simulator (iOS), and deploying your app to a physical device for testing. 
+
+The first thing we'll do is verify the CLI installation and verison of NativeScript installed.
+
+#### Verifying your CLI installation
+
+Open a Node.js Command Prompt in Windows by clicking your Start Menu, typing 'node', and launching the "Node.js command prompt" desktop app from the Start Menu.
+
+![image](images/chapter2/node-js-command-prompt.PNG)
+
+Open a command prompt and run the `tns --version` command:
+
+```console
+C:\Users\dev>tns --version
+
+```
+
 
 Borem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis imperdiet metus eget suscipit. Aliquam vel consequat tortor. Donec elementum tempor sollicitudin. Vivamus eget consectetur risus. In bibendum magna in consequat scelerisque. Suspendisse varius sollicitudin est a ultricies. Donec eleifend nisi eget malesuada luctus. Etiam at velit gravida, condimentum urna a, iaculis lorem. In hac habitasse platea dictumst. Curabitur porttitor luctus orci, in convallis lectus lobortis porttitor. Quisque condimentum vitae nisl vitae iaculis. Nulla facilisi. Donec iaculis lacinia ipsum in viverra.
 

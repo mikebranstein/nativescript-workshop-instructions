@@ -716,3 +716,7 @@ pre {
     padding-right: 1em; }
   h1 {
     font-size: 1.5em; } }
+
+img[alt=image] {
+  width: 50%;
+  height: 50%; }
