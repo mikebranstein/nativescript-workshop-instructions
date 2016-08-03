@@ -6,6 +6,12 @@ Sweet!
 
 There's nothing else you need to do, (except power on your laptop). Turn it on and let's get to it! 
 
+### Laptop login 
+
+If you're using a laptop I've provided to you, you can login with these credentials:
+* Username: `dev`
+* Password: `p@ssw0rd`
+
 ### Configuring your own environment
 
 If you're doing the lab on your own, you'll need to set everything up by yourself. Check out the NativeScript [website](http://docs.nativescript.org/angular/start/quick-setup) on how to get started by installing and configuring NativeScript.
