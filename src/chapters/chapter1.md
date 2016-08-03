@@ -1,6 +1,10 @@
 ## Getting up and Running
 
-If you're attending a live workshop with one of the [Brosteins](https://brosteins.com) ([Mike Branstein](https://twitter.com/mikebranstein) or [Nick Branstein](https://twitter.com/nickbranstein)), we've likely provided you with a pre-configured laptop! Sweet!
+If you're attending a live workshop with one of the [Brosteins](https://brosteins.com) ([Mike Branstein](https://twitter.com/mikebranstein) or [Nick Branstein](https://twitter.com/nickbranstein)), we've likely provided you with a pre-configured laptop! 
+
+Sweet!
+
+There's nothing else you need to do, (except power on your laptop). Turn it on and let's get to it! 
 
 ### Configuring your own environment
 
