@@ -1,11 +1,62 @@
-## Your First App
+## Introduction
 
-Borem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis imperdiet metus eget suscipit. Aliquam vel consequat tortor. Donec elementum tempor sollicitudin. Vivamus eget consectetur risus. In bibendum magna in consequat scelerisque. Suspendisse varius sollicitudin est a ultricies. Donec eleifend nisi eget malesuada luctus. Etiam at velit gravida, condimentum urna a, iaculis lorem. In hac habitasse platea dictumst. Curabitur porttitor luctus orci, in convallis lectus lobortis porttitor. Quisque condimentum vitae nisl vitae iaculis. Nulla facilisi. Donec iaculis lacinia ipsum in viverra.
+Welcome to the NativeScript Workshop! 
 
-### Creating an app
+To get started you'll need the followin pre-requisites:
+* Windows, Mac, or Linux computer
+* [Genymotion emulator](https://www.genymotion.com/)
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) open-source full-hardware virtualizer
+* Visual Studio Code (or other text editor or IDE)
+* [NativeScript](http://docs.nativescript.org/angular/start/quick-setup) v2.1 installed and configured
 
-Curabitur sit amet sodales sapien, fermentum laoreet sem. Sed maximus nulla a nibh egestas consequat. Praesent in mauris imperdiet, elementum mi sit amet, consectetur sem. Donec sodales erat sed nisl eleifend, nec consequat libero tincidunt. Pellentesque ultricies nisi diam, eu dignissim ante ullamcorper nec. Fusce a sagittis elit. Ut iaculis mattis nulla eget lobortis. Quisque vestibulum vehicula ipsum sit amet facilisis. Morbi aliquet vitae diam ac ullamcorper. Vestibulum pulvinar arcu libero, non volutpat risus consectetur eu. Nunc faucibus tellus nec nisi vestibulum auctor. Donec et nibh non eros vehicula molestie varius non sapien. Morbi egestas vestibulum condimentum. Pellentesque lobortis imperdiet faucibus. Nunc nec tortor elementum, imperdiet arcu non, porta quam.
+### About NativeScript
 
-### Running your app
+[NativeScript](https://nativescript.org) is a framework for building native iOS and Android apps using JavaScript and CSS. NativeScript renders UIs with the native platform’s rendering engine, no WebViews, resulting in native-like performance and UX.
 
-Donec dapibus, ex faucibus faucibus pharetra, ipsum quam laoreet mauris, sed feugiat lorem turpis quis massa. Praesent accumsan, nulla eget facilisis egestas, neque ligula ultrices risus, eget ullamcorper tortor odio in purus. Quisque interdum sagittis sem a rhoncus. Etiam at lectus commodo, fermentum mauris ut, bibendum lectus. Nam fermentum sed ex eu pharetra. Donec tincidunt mi massa, quis tempus ante viverra eget. Etiam non tempus orci. Nunc rhoncus enim tortor, a rutrum diam feugiat laoreet. Cras ornare velit felis, ac viverra ante feugiat eget. Vestibulum ultrices, ante id laoreet vestibulum, velit tellus cursus quam, eget ullamcorper eros risus at nunc. Nam vel porta libero. Cras eu nisi commodo, rhoncus orci ac, dignissim odio. Quisque non nibh quis lorem tincidunt sagittis. Nam non diam blandit, feugiat erat nec, pretium erat.
+NativeScript provides a best-of-both-worlds development experience. Our cross-platform JavaScript modules give you the convenience of writing iOS and Android apps from a single JavaScript codebase, while our runtimes give you the power of accessing native APIs, SDKs, and frameworks when you need them—all without needing to open Xcode or Android Studio. NativeScript was created and is supported by Telerik.
+
+### What you're building
+
+In this workshop you'll learn how to build iOS and Android mobile apps using NativeScript. Throughout the workshop, you'll be building 2 apps: the mobile app version of an online vintage video game reseller (Tekmo) and a text-to-speech soundboard app. 
+
+Key concepts and take aways:
+* NativeScript app architecture
+* using the NativeScript CLI (command line interface) tools
+  * creating and scaffolding apps
+  * building apps
+  * running apps in an emulator
+* pages
+* navigation
+* basic UI elements (labels, buttons, textboxes, etc.)
+* organizing your UI with layouts
+* styling your app with CSS
+* data binding
+* using plugins
+
+### Materials
+
+You can find additional lab materials and presentation content at the locations below:
+
+* Source code for all apps: 
+* Presentation:
+* Source code for this app:
+
+### Where to learn more
+
+The first place you can go to learn more about NativeScript is by reading my book, [NativeScript in Action](http://bit.ly/nsinaction), from Manning Press. 
+
+There is also a huge community around NativeScript, I've compiled a brief list of additoinal resources below. 
+
+* Official NativeScript website: [https://nativescript.org](https://nativescript.org)
+* Official Resources List: [https://www.nativescript.org/resources](https://www.nativescript.org/resources)
+* Ideas: [https://nativescript.ideas.aha.io/](https://nativescript.ideas.aha.io/)
+* Slack Channel: [http://developer.telerik.com/wp-login.php?action=slack-invitation](http://developer.telerik.com/wp-login.php?action=slack-invitation)
+* GitHub Repository: [https://github.com/NativeScript/NativeScript](https://github.com/NativeScript/NativeScript)
+* Stack Overflow: [http://stackoverflow.com/questions/tagged/nativescript](http://stackoverflow.com/questions/tagged/nativescript)
+* Upcoming Events: [https://www.nativescript.org/events](https://www.nativescript.org/events)
+* Newsletter: [https://www.nativescript.org/nativescript-newsletter](https://www.nativescript.org/nativescript-newsletter)
+* For Your CTO: [https://www.nativescript.org/ctos-guide](https://www.nativescript.org/ctos-guide)
+
+### Inspirations
+
+A portion of this workshop was inspired by a [fun weekend project](https://brosteins.com/2016/03/26/nativescript-mobile-app-kids/) my son and I built. We're really into building robots right now, so we built a carboard robot with his tablet as the head. I ended up writing a quick NativeScript soundboard app so the robot coudl talk back to him.
