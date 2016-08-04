@@ -1,10 +1,20 @@
 ## Labels
 
-Donec nisi magna, vehicula et purus eget, blandit suscipit tellus. Quisque lobortis augue at fringilla ullamcorper. Integer mattis diam eget augue suscipit, a malesuada mauris bibendum. Phasellus venenatis elit in semper hendrerit. Nunc tincidunt lectus in mauris facilisis, et laoreet metus aliquet. Mauris at hendrerit turpis, at semper mi. Suspendisse vel arcu nulla. Nullam scelerisque consequat molestie. Curabitur sit amet porta odio. Morbi lacinia vel tortor eu fringilla.
+In this section, you'll be learning aobut some of the basic UI elements that go into NativeScript apps. 
 
-### Another section
+### What you're building
 
-Mauris tempor facilisis accumsan. Mauris vitae iaculis risus. Mauris volutpat suscipit neque non bibendum. Phasellus non fringilla enim. Aliquam tempor quam vel ligula porta convallis. In blandit dictum tempus. Nunc at pulvinar justo. Aliquam eu mi eros. Nunc sit amet tellus non lorem malesuada tempus. Vestibulum nunc magna, varius ut aliquam non, fermentum sodales metus. Aliquam sit amet pulvinar lacus. Sed fringilla placerat tempor. Pellentesque id elementum nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec laoreet, ex eget vulputate tincidunt, enim nisi ullamcorper urna, at scelerisque tellus mi sit amet nisi. Duis ac risus ac odio efficitur dignissim vitae dapibus purus.
+Over the course of the next several sections, you'll be building a mobile app for Tekmo, an imaginary company that sells retro video games and video game accessories. The app will have 4 pages:
+1. Home
+2. About 
+3. Contact Us
+4. Product Listing
+
+### Creating the Tekmo app
+
+Let's get started with the Tekmo app by scaffolding out a new app using the CLI.
+
+
 
 ### Yet another section
 
