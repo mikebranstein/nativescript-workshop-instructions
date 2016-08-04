@@ -86,7 +86,7 @@
 			</div>
 			<hr>
 			<div class="chapter">
-				<h2 id="getting-up-and-running">Getting up and Running</h2>
+				<h2 id="getting-up-and-running">Getting up and running</h2>
 <p>If you&#39;re attending a live workshop with one of the <a href="https://brosteins.com">Brosteins</a> (<a href="https://twitter.com/mikebranstein">Mike Branstein</a> or <a href="https://twitter.com/nickbranstein">Nick Branstein</a>), we&#39;ve likely provided you with a pre-configured laptop! </p>
 <p>Sweet!</p>
 <p>There&#39;s nothing else you need to do, (except power on your laptop). Turn it on and let&#39;s get to it! </p>
@@ -295,7 +295,7 @@ application.start({ moduleName: &quot;main-page&quot; });
 			</div>
 			<hr>
 			<div class="chapter">
-				<h2 id="labels">Labels</h2>
+				<h2 id="basic-ui-elements">Basic UI elements</h2>
 <p>In this section, you&#39;ll be learning aobut some of the basic UI elements that go into NativeScript apps. </p>
 <h3 id="what-you-re-building">What you&#39;re building</h3>
 <p>Over the course of the next several sections, you&#39;ll be building a mobile app for Tekmo, an imaginary company that sells retro video games and video game accessories. The app will have 4 pages:</p>
@@ -307,8 +307,66 @@ application.start({ moduleName: &quot;main-page&quot; });
 </ol>
 <h3 id="creating-the-tekmo-app">Creating the Tekmo app</h3>
 <p>Let&#39;s get started with the Tekmo app by scaffolding out a new app using the CLI.</p>
-<h3 id="yet-another-section">Yet another section</h3>
-<p>Cras massa nulla, feugiat eu pretium in, tempor nec nulla. Nullam vel lobortis felis. Cras varius iaculis ornare. Ut at nisl sit amet leo pulvinar iaculis non ut purus. Morbi luctus magna sed condimentum cursus. Ut accumsan enim ligula, vitae dapibus odio blandit quis. Sed auctor ex non scelerisque vulputate. Nunc feugiat lobortis nisl consequat consectetur. Vivamus consequat sem id consectetur varius. Nam nec erat id est interdum venenatis eu eu felis. Suspendisse potenti. Donec non sapien in est maximus cursus eget eget nunc. Maecenas congue sapien ut tempor facilisis.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Creating the Tekmo app
+</h4>
+
+<blockquote>
+<p>In this exercise, you&#39;ll be creating a new app named &quot;tekmo&quot; and checking to ensure the app works by running it in the GenyMotion emulator. I&#39;ll let you try it by yourself. If you need help, you can follow the directions below.</p>
+</blockquote>
+<p>Change directories back to your Documents folder before creating the Tekmo app.</p>
+<pre><code>  cd C:\Users\dev\Documents
+</code></pre><p>Create the app using <code>tns create tekmo</code> CLI command.</p>
+<pre><code>  tns create tekmo
+</code></pre><p>Change directories into the Tekmo app&#39;s root directory.</p>
+<pre><code>  cd tekmo
+</code></pre><p>Add the Android platform to the app using the <code>tns platform add android</code> command.</p>
+<pre><code>  tns platform add android
+</code></pre><p>Run the app in the GenyMotion emulator.</p>
+<pre><code>  tns run android --emulator
+</code></pre><p>You should see the Tekmo app running in GenyMotion.</p>
+<p><img src="images/chapter3/tekmo-app.PNG" alt="image"></p>
+<div class="exercise-end"></div>
+
+<h3 id="cleaning-up-the-template">Cleaning up the template</h3>
+<p>As you&#39;ve seen, the <code>tns create</code> command scaffolds a nifty &quot;hello world&quot; app. But, we don&#39;t really need all of that code. Let&#39;s clean up the app by removing several things.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Clean up and create a blank start page
+</h4>
+
+<blockquote>
+<p>In this exercise, you&#39;ll be deleting the current start page, creating a new start page, and changing the <code>app.js</code> start page to point to your new home page. We haven&#39;t learned about all of these items yet. Get as far as you can before looking ahead. If you need help, you can follow the steps below.</p>
+</blockquote>
+<p>Using VS Code, open the tekmo app by using the <code>Open Folder...</code> command. You shoudl see the following in VS Code:</p>
+<p><img src="images/chapter3/code-tekmo-1.PNG" alt="image"></p>
+<p>Expand the app folder and delete the existing <code>main-page</code> files (<code>main-page.xml</code> and <code>main-page.js</code>). You should also delete the <code>main-view-model.js</code> file: you won&#39;t need it.</p>
+<p><img src="images/chapter3/code-tekmo-2.PNG" alt="image"></p>
+<p>Create a new page named <code>home-page.xml</code>, placing it in the <code>app</code> directory.</p>
+<p><img src="images/chapter3/code-tekmo-3.PNG" alt="image"></p>
+<p>Inside of the <code>home-page.xml</code> file, add the following XML:</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+
+&lt;/Page&gt;
+</code></pre>
+<p>Modify the <code>app.js</code> file to point to the new home page by chaning the starting page from <code>main-page</code> to <code>home-page</code>:</p>
+<pre><code class="lang-javascript">var application = require(&quot;application&quot;);
+application.start({ moduleName: &quot;home-page&quot; });
+</code></pre>
+<p>Re-run the app in your emulator using the <code>tns run</code> CLI command.</p>
+<pre><code>  tns run android --emulator
+</code></pre><p>When the app runs, it should have a blank page:</p>
+<p><img src="images/chapter3/code-tekmo-4.PNG" alt="image"></p>
+<div class="exercise-end"></div>
+
+<p>Great work! You&#39;ve replaced the default template pages wiht your own home page. Now, let&#39;s learn a little bit more about pages and UI elements.</p>
+<h3 id="pages">Pages</h3>
+<p>You&#39;ve already learned that pages are a collection of similarly-named .xml, .css., and .js files. We&#39;ll dig into the .css and .js pages soon enough. Let&#39;s focus on the .xml file first.</p>
+<p>Pages always begin with a .xml file. In this file, you define the UI by adding adding various XML elements. In many ways, you can think of this file like an HTML file. It has structure, driven by the elements added to it, and then is augmented by external CSS and JavaScript files. </p>
+<p>The first element within a Page is always a <code>&lt;Page&gt; ... &lt;/Page&gt;</code> element. </p>
+<h3 id="labels">Labels</h3>
+<p>Let&#39;s learn about another </p>
+<h3 id="livesync-makes-changes-easy">LiveSync makes changes easy</h3>
+<p>### </p>
 
 			</div>
 			<hr>
