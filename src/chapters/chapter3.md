@@ -117,8 +117,178 @@ The first element within a Page is always a `<Page> ... </Page>` element.
 
 ### Labels
 
-Let's learn about another 
+Let's learn about another UI element, the Label. Labels are used to place text on your screen. 
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Adding text to the home page
+</h4>
+
+Start by adding a Label to the `home-page.xml` file in the `<Page> ... </Page>` element.
+
+```xml
+  <Label text="Welcome to Tekmo!" />
+```
+
+To see the changes in your app, go back to the command line, press `Ctrl-C` to and then `Y` to stop your app running. 
+
+```
+  <press Ctrl-C>
+  ^CTerminate batch job (Y/N)? Y
+
+  C:\Users\dev\tekmo>
+``` 
+
+Then, run the `tns run` command again to build and run your app within GenyMotion.
+
+```
+  tns run android --emulator
+```
+
+Your app will reload and show you the home page with the updated text.
+
+![image](images/chapter3/code-tekmo-5.PNG)
+
+<div class="exercise-end"></div>
+
+As you just learned above, you can add text by using the `<Label text="..." />` element. 
+
+Now, let's go ahead an create the About, Contact Us, and Products pages. But before we do that, let's talk about your development process and workflow (which ends up being fairly important). Just like developing HTML applications, NativeScript apps follow a similar development process:
+1. You made code changes in an editor or IDE (i.e., VS Code)
+2. You compile/build the changes (using `tns run android --emulator`)
+3. You review the changes in your app using your emulator (i.e., GenyMotion)
+
+> Hold on...this take a long time. Ideally I'd like to make changes, then quickly look at them in GenyMotion (without manually running `tns run...` every single time.)
+
+Luckily, there is a better way. Let me introduce you to LiveSync.
 
 ### LiveSync makes changes easy
 
-### 
+Yes it's true. LiveSync will make your life easier. LiveSync is a component of the NativeScript CLI that listens for changes in your app, then automatically syncs them to a running emulator. Let's try it out.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Using LiveSync
+</h4>
+
+Head back to your command prompt and terminate the `tns run...` command that is running again by pressing `Ctrl-C` to and then `Y`. 
+
+```
+  <press Ctrl-C>
+  ^CTerminate batch job (Y/N)? Y
+
+  C:\Users\dev\tekmo>
+``` 
+
+Now, use the `tns livesync android` command to tell the NativeScript CLI to `--watch` your `app` folder for changes and sync them to your running `--emulator`:
+
+```
+  tns livesync android --emulator --watch
+```
+
+The output from LiveSync is similar to that of the `tns run...` command, and it will yield the same results: run your app. 
+
+Let's see what happens when you make a change. Head back to VS Code and change the text of the Label in the `home-page.xml` file. 
+
+```xml
+  <Label text="Welcome to the Tekmo app!" />
+```
+
+As soon as you save the `home-page.xml` file, flip back to GenyMotion to see the changes happen. It may take 2-3 seconds, so be patient. 
+
+![image](images/chapter3/tekmo-livesync.gif)
+
+<div class="exercise-end"></div>
+
+As you can see LiveSync is a powerufl CLI tool that can dramatically reduce your dev-build-test workflow.
+
+>From this point forward, use `tns livesync`, as it will same you some time.
+
+### Adding more pages
+
+Let's continue adding the remainder of our app pages: About, Contact Us, and Products. For now, each page should have a label on it with the page's name. I'll let you try it on your own, but if you get stuck or can't remember the exact syn tax, you can follow along below.
+
+We haven't learned how to navigate between pages yet, so to test each page, replace the startup page in the `app.js` file. 
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Adding the About page
+</h4>
+
+Create an XML file named `about-page.xml` in the root of the `app` folder.
+
+![image](images/chapter3/code-tekmo-6.PNG)
+
+Add the `Page` and `Label` elements to the `about-page.xml` file.
+
+```xml
+<Page>
+  <Label text="About" />
+</Page>
+```
+
+To test your page, change the `app.js` file to load the `about-page` page first.
+
+```javascript
+var application = require("application");
+application.start({ moduleName: "about-page" });
+```
+
+Wait for LiveSync to load your changes in GenyMotion.
+
+<div class="exercise-end"></div>
+
+Next, let's add the Contact Us page.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Adding the Contact Us page
+</h4>
+
+Create an XML file named `contact-us-page.xml` in the root of the `app` folder.
+
+![image](images/chapter3/code-tekmo-7.PNG)
+
+Add the `Page` and `Label` elements to the `contact-us-page.xml` file.
+
+```xml
+<Page>
+  <Label text="Contact Us" />
+</Page>
+```
+
+To test your page, change the `app.js` file to load the `contact-us-page` page first.
+
+```javascript
+var application = require("application");
+application.start({ moduleName: "contact-us-page" });
+```
+
+Wait for LiveSync to load your changes in GenyMotion.
+
+<div class="exercise-end"></div>
+
+Lastly, add the Products page.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Adding the Products page
+</h4>
+
+Create an XML file named `products-page.xml` in the root of the `app` folder.
+
+![image](images/chapter3/code-tekmo-8.PNG)
+
+Add the `Page` and `Label` elements to the `products-page.xml` file.
+
+```xml
+<Page>
+  <Label text="Products" />
+</Page>
+```
+
+To test your page, change the `app.js` file to load the `products-page` page first.
+
+```javascript
+var application = require("application");
+application.start({ moduleName: "products-page" });
+```
+
+Wait for LiveSync to load your changes in GenyMotion.
+
+<div class="exercise-end"></div>
