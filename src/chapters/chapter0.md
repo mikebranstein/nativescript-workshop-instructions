@@ -21,17 +21,17 @@ In this workshop you'll learn how to build iOS and Android mobile apps using Nat
 
 Key concepts and take aways:
 * NativeScript app architecture
-* using the NativeScript CLI (command line interface) tools
-  * creating and scaffolding apps
-  * building apps
-  * running apps in an emulator
-* pages
-* navigation
-* basic UI elements (labels, buttons, textboxes, etc.)
-* organizing your UI with layouts
-* styling your app with CSS
-* data binding
-* using plugins
+* Using the NativeScript CLI (command line interface) tools
+  * Creating and scaffolding apps
+  * Building apps
+  * Running apps in an emulator
+* Pages
+* Navigation
+* Basic UI elements (labels, buttons, textboxes, etc.)
+* Organizing your UI with layouts
+* Styling your app with CSS
+* Data binding
+* Using plugins
 
 ### Materials
 
@@ -59,4 +59,4 @@ There is also a huge community around NativeScript, I've compiled a brief list o
 
 ### Inspirations
 
-A portion of this workshop was inspired by a [fun weekend project](https://brosteins.com/2016/03/26/nativescript-mobile-app-kids/) my son and I built. We're really into building robots right now, so we built a carboard robot with his tablet as the head. I ended up writing a quick NativeScript soundboard app so the robot coudl talk back to him.
+A portion of this workshop was inspired by a [fun weekend project](https://brosteins.com/2016/03/26/nativescript-mobile-app-kids/) my son and I built. We're really into building robots right now, so we built a carboard robot with his tablet as the head. I ended up writing a quick NativeScript soundboard app so the robot could talk back to him.

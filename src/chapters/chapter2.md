@@ -128,7 +128,7 @@ Once the emulator has fully loaded, you shoudl see an Android device running on 
 
 ### Running your app
 
-Congrats! You've now running an Android emulator and are ready to get your NativeScript app running on the emulator. Let's come back to our app. 
+Congrats! You're now running an Android emulator and are ready to get your NativeScript app running on the emulator. Let's come back to our app. 
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Adding the Android platform
@@ -172,7 +172,7 @@ Now, change to the `platforms` directory and look at the files within it:
   dir
 ```
 
-You'll see a folder named `android`. This folder contains the necessary files to run your app on an Android device. We're not going to dig into the contents of this folder,but if you're curious, take a look.
+You'll see a folder named `android`. This folder contains the necessary files to run your app on an Android device. We're not going to dig into the contents of this folder, but if you're curious, take a look.
 
 ```
  Directory of C:\Users\mikeb\Documents\my-first-app\platforms
@@ -185,7 +185,7 @@ You'll see a folder named `android`. This folder contains the necessary files to
 ```
 <div class="exercise-end"></div>
 
-Now that you've adding the Android platform, let's *finally* run your app!
+Now that you've added the Android platform, let's *finally* run your app!
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Running your app
@@ -271,7 +271,7 @@ You can see this same structure mirrored in your app within VS Code:
 
 ![image](images/chapter2/code-app-layout.PNG)
 
-The `app` directory is the development space for your application. This is where you will write and modify code that will run when your app is run on a device (or in an emulator/simulator). 
+The `app` directory is the development space for your app. This is where you will write and modify code that will run when your app is run on a device (or in an emulator/simulator). 
 
 > RULE: You can edit any file in (or under) `app` directory; however, never modify files outside of this directory. Files outside of the `app` directory are managed by NativeScript: so, hands off!
 
@@ -292,7 +292,7 @@ application.start({ moduleName: "main-page" });
 
 This code tells NativeScript to load the `application` module (more on these later), then it directs the app to `start` by giving it the name of the first (or home) page of your app. In this case, the first page is named `main-page`, so when you app runs, it will automatically start by displaying `main-page`.
 
-> NOTE: Just like HTML applcations, you can think of NativeScript apps as a collection of pages. You move between page by navigating, and you can also pass data (or app state) between pages during navigation. 
+> NOTE: Just like HTML applications, you can think of NativeScript apps as a collection of pages. You move between page by navigating, and you can also pass data (or app state) between pages during navigation. 
 
 > DEFINITION: A page is a collection of similarly-named files (.xml, .css, and .js). The .xml file contains your UI code, the .css file styles your UI, and the .js file contains yoru business logic code. NativeScript uses conventions to tell which files constitute a page, so all you need to do is name your .xml, .css, and .js files with the same prefix. 
 

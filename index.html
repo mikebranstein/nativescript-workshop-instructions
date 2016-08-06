@@ -45,19 +45,19 @@
 <p>Key concepts and take aways:</p>
 <ul>
 <li>NativeScript app architecture</li>
-<li>using the NativeScript CLI (command line interface) tools<ul>
-<li>creating and scaffolding apps</li>
-<li>building apps</li>
-<li>running apps in an emulator</li>
+<li>Using the NativeScript CLI (command line interface) tools<ul>
+<li>Creating and scaffolding apps</li>
+<li>Building apps</li>
+<li>Running apps in an emulator</li>
 </ul>
 </li>
-<li>pages</li>
-<li>navigation</li>
-<li>basic UI elements (labels, buttons, textboxes, etc.)</li>
-<li>organizing your UI with layouts</li>
-<li>styling your app with CSS</li>
-<li>data binding</li>
-<li>using plugins</li>
+<li>Pages</li>
+<li>Navigation</li>
+<li>Basic UI elements (labels, buttons, textboxes, etc.)</li>
+<li>Organizing your UI with layouts</li>
+<li>Styling your app with CSS</li>
+<li>Data binding</li>
+<li>Using plugins</li>
 </ul>
 <h3 id="materials">Materials</h3>
 <p>You can find additional lab materials and presentation content at the locations below:</p>
@@ -81,7 +81,7 @@
 <li>For Your CTO: <a href="https://www.nativescript.org/ctos-guide">https://www.nativescript.org/ctos-guide</a></li>
 </ul>
 <h3 id="inspirations">Inspirations</h3>
-<p>A portion of this workshop was inspired by a <a href="https://brosteins.com/2016/03/26/nativescript-mobile-app-kids/">fun weekend project</a> my son and I built. We&#39;re really into building robots right now, so we built a carboard robot with his tablet as the head. I ended up writing a quick NativeScript soundboard app so the robot coudl talk back to him.</p>
+<p>A portion of this workshop was inspired by a <a href="https://brosteins.com/2016/03/26/nativescript-mobile-app-kids/">fun weekend project</a> my son and I built. We&#39;re really into building robots right now, so we built a carboard robot with his tablet as the head. I ended up writing a quick NativeScript soundboard app so the robot could talk back to him.</p>
 
 			</div>
 			<hr>
@@ -173,7 +173,7 @@
 <div class="exercise-end"></div>
 
 <h3 id="running-your-app">Running your app</h3>
-<p>Congrats! You&#39;ve now running an Android emulator and are ready to get your NativeScript app running on the emulator. Let&#39;s come back to our app. </p>
+<p>Congrats! You&#39;re now running an Android emulator and are ready to get your NativeScript app running on the emulator. Let&#39;s come back to our app. </p>
 <h4 class="exercise-start">
     <b>Exercise</b>: Adding the Android platform
 </h4>
@@ -198,7 +198,7 @@
 </code></pre><p>Now, change to the <code>platforms</code> directory and look at the files within it:</p>
 <pre><code>  cd platforms
   dir
-</code></pre><p>You&#39;ll see a folder named <code>android</code>. This folder contains the necessary files to run your app on an Android device. We&#39;re not going to dig into the contents of this folder,but if you&#39;re curious, take a look.</p>
+</code></pre><p>You&#39;ll see a folder named <code>android</code>. This folder contains the necessary files to run your app on an Android device. We&#39;re not going to dig into the contents of this folder, but if you&#39;re curious, take a look.</p>
 <pre><code> Directory of C:\Users\mikeb\Documents\my-first-app\platforms
 
 08/03/2016  10:25 PM    &lt;DIR&gt;          .
@@ -208,7 +208,7 @@
                3 Dir(s)  53,639,196,672 bytes free
 </code></pre><div class="exercise-end"></div>
 
-<p>Now that you&#39;ve adding the Android platform, let&#39;s <em>finally</em> run your app!</p>
+<p>Now that you&#39;ve added the Android platform, let&#39;s <em>finally</em> run your app!</p>
 <h4 class="exercise-start">
     <b>Exercise</b>: Running your app
 </h4>
@@ -265,7 +265,7 @@
 └── package.json
 </code></pre><p>You can see this same structure mirrored in your app within VS Code:</p>
 <p><img src="images/chapter2/code-app-layout.PNG" alt="image"></p>
-<p>The <code>app</code> directory is the development space for your application. This is where you will write and modify code that will run when your app is run on a device (or in an emulator/simulator). </p>
+<p>The <code>app</code> directory is the development space for your app. This is where you will write and modify code that will run when your app is run on a device (or in an emulator/simulator). </p>
 <blockquote>
 <p>RULE: You can edit any file in (or under) <code>app</code> directory; however, never modify files outside of this directory. Files outside of the <code>app</code> directory are managed by NativeScript: so, hands off!</p>
 </blockquote>
@@ -281,7 +281,7 @@ application.start({ moduleName: &quot;main-page&quot; });
 </code></pre>
 <p>This code tells NativeScript to load the <code>application</code> module (more on these later), then it directs the app to <code>start</code> by giving it the name of the first (or home) page of your app. In this case, the first page is named <code>main-page</code>, so when you app runs, it will automatically start by displaying <code>main-page</code>.</p>
 <blockquote>
-<p>NOTE: Just like HTML applcations, you can think of NativeScript apps as a collection of pages. You move between page by navigating, and you can also pass data (or app state) between pages during navigation. </p>
+<p>NOTE: Just like HTML applications, you can think of NativeScript apps as a collection of pages. You move between page by navigating, and you can also pass data (or app state) between pages during navigation. </p>
 <p>DEFINITION: A page is a collection of similarly-named files (.xml, .css, and .js). The .xml file contains your UI code, the .css file styles your UI, and the .js file contains yoru business logic code. NativeScript uses conventions to tell which files constitute a page, so all you need to do is name your .xml, .css, and .js files with the same prefix. </p>
 </blockquote>
 <p>So, back to pages. Now that we know about the NativeScript page-naming convention, you understand what the <code>main-page</code> page is: it&#39;s a collection of 3 files: <code>main-page.xml</code> (the UI), <code>main-page.css</code> (styling for the UI), and <code>main-page.js</code> (any business logic code that interacts with the UI).</p>
