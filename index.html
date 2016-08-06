@@ -482,12 +482,134 @@ application.start({ moduleName: &quot;products-page&quot; });
 			<div class="chapter">
 				<h2 id="navigation">Navigation</h2>
 <p>You&#39;ve learned how to create pages and add text to pages with the <code>&lt;Label text=&quot;...&quot; /&gt;</code> element. But, switching the default start page for the application just to test each page is a little cumbersome. </p>
-<p>Let&#39;s learn how to navigate between pages. </p>
-<h3 id="buttons">Buttons</h3>
-<h3 id="another-section">Another section</h3>
-<p>Mauris tempor facilisis accumsan. Mauris vitae iaculis risus. Mauris volutpat suscipit neque non bibendum. Phasellus non fringilla enim. Aliquam tempor quam vel ligula porta convallis. In blandit dictum tempus. Nunc at pulvinar justo. Aliquam eu mi eros. Nunc sit amet tellus non lorem malesuada tempus. Vestibulum nunc magna, varius ut aliquam non, fermentum sodales metus. Aliquam sit amet pulvinar lacus. Sed fringilla placerat tempor. Pellentesque id elementum nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec laoreet, ex eget vulputate tincidunt, enim nisi ullamcorper urna, at scelerisque tellus mi sit amet nisi. Duis ac risus ac odio efficitur dignissim vitae dapibus purus.</p>
-<h3 id="yet-another-section">Yet another section</h3>
-<p>Cras massa nulla, feugiat eu pretium in, tempor nec nulla. Nullam vel lobortis felis. Cras varius iaculis ornare. Ut at nisl sit amet leo pulvinar iaculis non ut purus. Morbi luctus magna sed condimentum cursus. Ut accumsan enim ligula, vitae dapibus odio blandit quis. Sed auctor ex non scelerisque vulputate. Nunc feugiat lobortis nisl consequat consectetur. Vivamus consequat sem id consectetur varius. Nam nec erat id est interdum venenatis eu eu felis. Suspendisse potenti. Donec non sapien in est maximus cursus eget eget nunc. Maecenas congue sapien ut tempor facilisis.</p>
+<p>Just like HTML applications, NativeScript apps are a collection of pages. Similarly, moving between pages is called navigating.</p>
+<p>In this section, you&#39;ll be learning how to navigate between pages by placing a Button on a page, attaching a <code>tap</code> event to the button, and responding to the <code>tap</code> event by writing some JavaScript code. </p>
+<h3 id="adding-multiple-ui-elements-to-a-page">Adding multiple UI elements to a page</h3>
+<p>Before we go too much further, I need to introduce you to something called a layout. Layouts are UI elements (similar to the <code>&lt;Label /&gt;</code> element) that allow you to organize the UI of each page. </p>
+<p>Up until now, we&#39;ve been putting <code>&lt;Label /&gt;</code> elements directly underneath the <code>&lt;Page&gt;</code> element of each page. What is not completely obvious is that most UI elements (like <code>&lt;Page&gt;</code>) can only have a single child element. You can technically add multiple elements within a <code>&lt;Page&gt;</code>element; but they won&#39;t display in your app.</p>
+<blockquote>
+<p>To display multiple elements on a page, you need to use a layout.</p>
+</blockquote>
+<p>Let&#39;s learn about the simplest (and most common) first layout.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Using the StackLayout to organize UI elements in a &quot;stack&quot;
+</h4>
+
+<p>Go to the <code>home-page</code>, and add a <code>&lt;StackLayout&gt; element to the page, directly within the</code><Page><code>element. Move the exisitng</code><Label /><code>element inside of the</code><StackLayout>`.</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+    &lt;StackLayout&gt;
+        &lt;Label text=&quot;Welcome to the Tekmo app!&quot; /&gt;
+    &lt;/StackLayout&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>Change the app&#39;s default starting page back to the <code>home-page</code> page.</p>
+<pre><code class="lang-javascript">var application = require(&quot;application&quot;);
+application.start({ moduleName: &quot;home-page&quot; });
+</code></pre>
+<p>As you can see, the home page doesn&#39;t look very different. </p>
+<p><img src="images/chapter4/tekmo-1.PNG" alt="image"></p>
+<p>Add another <code>&lt;Label /&gt;</code> element and observer the changes.</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+    &lt;StackLayout&gt;
+        &lt;Label text=&quot;Welcome to the Tekmo app!&quot; /&gt;
+        &lt;Label text=&quot;To navigate to another page of the Tekmo app, use the buttons below.&quot; /&gt;
+    &lt;/StackLayout&gt;
+&lt;/Page&gt;
+</code></pre>
+<p><img src="images/chapter4/tekmo-2.PNG" alt="image"></p>
+<div class="exercise-end"></div>
+
+<p>As you can see, the <code>&lt;StackLayout&gt;</code> stacks UI elements on top of each other on a page. </p>
+<p><img src="images/chapter4/tekmo-2.PNG" alt="image"></p>
+<h3 id="wrapping-text">Wrapping text</h3>
+<p>But wait! Do you see the text you just added. It&#39;s running off the side of the page. </p>
+<blockquote>
+<p>NOTE: By default, text within a <code>&lt;Label /&gt;</code> element does not wrap to new lines.</p>
+</blockquote>
+<p>Let&#39;s learn how to fix that.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Wrapping text
+</h4>
+
+<p>Add the <code>textWrap=&quot;true&quot;</code> attribute to the <code>&lt;Label /&gt;</code> element to wrap the text to multiple lines.</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+    &lt;StackLayout&gt;
+        &lt;Label text=&quot;Welcome to the Tekmo app!&quot; /&gt;
+        &lt;Label textWrap=&quot;true&quot; text=&quot;To navigate to another page of the Tekmo app, use the buttons below.&quot; /&gt;
+    &lt;/StackLayout&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>Now, your text will wrap to multiple lines!</p>
+<p><img src="images/chapter4/tekmo-3.PNG" alt="image"></p>
+<div class="exercise-end"></div>
+
+<h3 id="navigating-with-buttons">Navigating with Buttons</h3>
+<p>We&#39;ve finally made it to navigation. If you recall, I said we&#39;d be doing 3 things to navigate from one page to another:</p>
+<ol>
+<li>Add a <code>&lt;Button /&gt;</code> element to the page</li>
+<li>Add the <code>tap</code> event to the button</li>
+<li>Write JavaScript code to respond to the <code>tap</code> event and navigate to a new page</li>
+</ol>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Add a button to a page
+</h4>
+
+<p>Add a <code>&lt;Button /&gt;</code> element to the page, after the last <code>&lt;Label /&gt;</code>. Buttons have a similar property named <code>text</code> that allows you to change the text of the button. </p>
+<pre><code class="lang-xml">&lt;Button text=&quot;About&quot; /&gt;
+</code></pre>
+<p>Next, add a <code>tap</code> event atribute to the <code>&lt;Button /&gt;</code> element. Most UI elements have a variety of <em>events</em> that can execute JavaScript code when triggered. When an event it triggered, it will automatically run the funciton name specified in the event attribute. </p>
+<pre><code class="lang-xml">&lt;Button text=&quot;About&quot; tap=&quot;onTap&quot; /&gt;
+</code></pre>
+<p>The complete code listing for the <code>home-page</code> page is below.</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+    &lt;StackLayout&gt;
+        &lt;Label text=&quot;Welcome to the Tekmo app!&quot; /&gt;
+        &lt;Label textWrap=&quot;true&quot; text=&quot;To navigate to another page of the Tekmo app, use the buttons below.&quot; /&gt;
+        &lt;Button text=&quot;About&quot; tap=&quot;onTap&quot; /&gt;
+    &lt;/StackLayout&gt;
+&lt;/Page&gt;
+</code></pre>
+<p><img src="images/chapter4/tekmo-4.PNG" alt="image"></p>
+<div class="exercise-end"></div>
+
+<p>In the above code, when the button&#39;s <code>tap</code> event is triggered (i.e., when the button is tapped), the JavaScript function named <code>onTap</code> will be called. But, where does the <code>onTap</code> function reside?</p>
+<p>If you recall from an earlier section, you learned that NativeScript pages are a colleciton of XML, CSS, and JavaScript files, linked together by their naming convention. </p>
+<p>With this in mind, to associate JavaScript code with the <code>home-page</code> page, create a file named <code>home-page.js</code>. </p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Link the button&#39;s onTap event with the onTap() JavaScript function
+</h4>
+
+<p>Create a file named <code>home-page.js</code> in the <code>app</code> folder of your app.</p>
+<p><img src="images/chapter4/code-tekmo.PNG" alt="image"></p>
+<p>Open the file in VS Code and add a function named <code>onTap</code>. Be sure to export the function, so the page can access it.</p>
+<pre><code class="lang-javascript">function onTap() 
+{
+    // do something
+}
+exports.onTap = onTap;
+</code></pre>
+<p>Head back to GenyMotion, wait for your app to reload, and click the <code>About</code> button. Pressing the button doesn&#39;t do much right now. In fact, nothing happens because the <code>onTap</code> function is empty.</p>
+<div class="exercise-end"></div>
+
+<h3 id="learning-to-use-console-log">Learning to use console.log</h3>
+<p>One of the easiest ways to tell what&#39;s happening in your NativeScript code is by using the <code>console.log()</code> function. <code>console.log()</code> outputs text to the command line. Let&#39;s add it to the <code>About</code> button&#39;s <code>onTap</code> event.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Logging messages to the command line
+</h4>
+
+<p>Add a call to <code>console.log()</code> to the <code>onTap()</code> function.</p>
+<pre><code class="lang-javascript">function onTap() 
+{
+    console.log(&#39;onTap called...&#39;);
+}
+exports.onTap = onTap;
+</code></pre>
+<p>Wait for your app to relead in GenyMotion, then click the <code>About</code> button. You should see the text <em>onTap called...</em> output to your command line.</p>
+<p><img src="images/chapter4/tekmo-on-tap.gif" alt="image"></p>
+<div class="exercise-end"></div>
+
+<h3 id="navigating-to-another-page">Navigating to another page</h3>
+<p>TODO NEXT</p>
 
 			</div>
 			<hr>
