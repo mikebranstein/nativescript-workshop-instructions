@@ -207,7 +207,7 @@ Before we do this, we'll first need to add an `id` property to the text field an
 ```xml
 <TexField id="subject" hint="Enter a subject..." />
 
-<TextView i="message" hint="Enter a message..." />
+<TextView id="message" hint="Enter a message..." />
 ```
 
 Now, get a reference to each of the UI elements by using the `getViewById()` function of the page. Place this code right under the `// step 1:` comment of the `onTap()` function.
