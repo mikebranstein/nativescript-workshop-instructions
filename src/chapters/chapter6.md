@@ -337,10 +337,127 @@ Nice work!
 
 You've done great sending and receiving data from Tekmo's REST API service, but something doesn't feel right. Mobile apps are about having a good user experience, and last time I checked, making a user read console or command line output to let them know their message was successfully submitted to Tekmo is not in the dictionary under "good user experience".
 
-Let's change that by providing the user with a visual indicator their message was successfulyl sent in our final exercise of this chapter.
+Let's change that by providing the user with a visual indicator their message was successfully sent in our final exercises of this chapter.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Using the dialog module to provide visual feedback
 </h4>
+
+The dialog module provides you with a variety of "pop-up" windows (or dialog windows) for providing feedback to users. Because it is also part of the NativeScript core modules, there's nothing special you need to do to start using it aside from importing the moduel into your JavaScript code.
+
+Start by importing the dialog module using the `require()` syntax at2 the very top of the `contact-us-page.js` file.
+
+```javascript
+var dialogModule = require("ui/dialogs");
+```
+
+NativeScript has 5 different types of dialogs:
+* alert
+* confirmation
+* prompt
+* login
+* action
+
+The [dialog documentation](https://docs.nativescript.org/ui/ui-dialogs) has examples of each dialog type, so I'm not going to give you examples of each. I encourage you to review the various types, because they save you time (i.e., the login dialog provides a great cross-platform way of authenticating users with a few lines of code instead of writing dozens). 
+
+You'll be using the alert dialog. The alert dialog displays a small dialog window, with a custom message, and a single button. 
+
+Add a dialog alert below the `console.log()` calls with the `httpModule.request()` success and error code.
+
+```javascript
+...
+.then(function(response) {
+        // success
+        console.log(response.statusCode);
+        dialogModule.alert("Your message has been sent.");
+    }, function(e) {
+        // error
+        console.log("Error occurred: " + e);
+        dialogModule.alert("We couldn't send your message right now. Try again later.");
+    })
+```
+
+Run the updated app to see how dialogs work.
+
+![image](images/chapter6/contact-us-4.PNG)
+
+<div class="exercise-end"></div>
+
+The dialog module's default alert window is OK, but what if you want something a little more customized? That's actually pretty easy. 
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Customizing the alert dialog
+</h4>
+
+By default, the dialog module's `alert()` function takes a string, and it displays the contents of that string in the dialog alert window that appears. The `alert()` function also takes an *options* object that allows you to customize the alert title, the message, and the button text. Take a look at the official documentation to learn more about the [options object](https://docs.nativescript.org/ui/ui-dialogs).
+
+Customize the success alert window by replacing the the successful alert in the `contact-us-page.js` file with one using the options object.  
+
+```javascript
+dialogModule.alert({
+    title: "Thank you!",
+    message: "We have received your message.",
+    okButtonText: "Close"
+});
+```
+
+Check back in your emulator to see the change take effect.
+
+![image](images/chapter6/contact-us-5.PNG)
+
+For reference, here is the complete JavaScript code for this chapter.
+
+```javascript
+var httpModule = require("http");
+var dialogModule = require("ui/dialogModule");
+var page;
+
+function onLoaded(args) {
+    page = args.object;
+}
+exports.onLoaded = onLoaded;
+
+function onTap() {
+    console.log("Submitting message...");
+
+    // todo: add code to get data out of text field and view, then submit to Tekmo
+    // step 1: get data out of text field and text view
+    var subjectElement = page.getViewById("subject");
+    var messageElement = page.getViewById("message");
+
+    var subject = subjectElement.text;
+    var message = messageElement.text;
+
+    console.log(subject);
+    console.log(message);
+
+    // step 2: submit data to Tekmo
+    var data = JSON.stringify({
+        "subject": subject,
+        "message": message
+    });
+    
+    httpModule
+        .request({
+            url: "https://nstweet.brosteins.com/api/message",
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            content: data })
+        .then(function(response) {
+            // success
+            console.log(response.statusCode);
+            dialogModule.alert({
+                title: "Thank you!",
+                message: "We have received your message.",
+                okButtonText: "Close"
+            });
+        }, function(e) {
+            // error
+            console.log("Error occurred: " + e);
+            dialogModule.alert("We couldn't send your message right now. Try again later.");
+        });
+}
+exports.onTap = onTap;
+```
 
 <div class="exercise-end"></div>

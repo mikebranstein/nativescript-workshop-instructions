@@ -1012,13 +1012,109 @@ exports.onTap = onTap;
 
 <h3 id="providing-better-feedback">Providing better feedback</h3>
 <p>You&#39;ve done great sending and receiving data from Tekmo&#39;s REST API service, but something doesn&#39;t feel right. Mobile apps are about having a good user experience, and last time I checked, making a user read console or command line output to let them know their message was successfully submitted to Tekmo is not in the dictionary under &quot;good user experience&quot;.</p>
-<p>Let&#39;s change that by providing the user with a visual indicator their message was successfulyl sent in our final exercise of this chapter.</p>
+<p>Let&#39;s change that by providing the user with a visual indicator their message was successfully sent in our final exercises of this chapter.</p>
 <h4 class="exercise-start">
     <b>Exercise</b>: Using the dialog module to provide visual feedback
 </h4>
 
+<p>The dialog module provides you with a variety of &quot;pop-up&quot; windows (or dialog windows) for providing feedback to users. Because it is also part of the NativeScript core modules, there&#39;s nothing special you need to do to start using it aside from importing the moduel into your JavaScript code.</p>
+<p>Start by importing the dialog module using the <code>require()</code> syntax at2 the very top of the <code>contact-us-page.js</code> file.</p>
+<pre><code class="lang-javascript">var dialogModule = require(&quot;ui/dialogs&quot;);
+</code></pre>
+<p>NativeScript has 5 different types of dialogs:</p>
+<ul>
+<li>alert</li>
+<li>confirmation</li>
+<li>prompt</li>
+<li>login</li>
+<li>action</li>
+</ul>
+<p>The <a href="https://docs.nativescript.org/ui/ui-dialogs">dialog documentation</a> has examples of each dialog type, so I&#39;m not going to give you examples of each. I encourage you to review the various types, because they save you time (i.e., the login dialog provides a great cross-platform way of authenticating users with a few lines of code instead of writing dozens). </p>
+<p>You&#39;ll be using the alert dialog. The alert dialog displays a small dialog window, with a custom message, and a single button. </p>
+<p>Add a dialog alert below the <code>console.log()</code> calls with the <code>httpModule.request()</code> success and error code.</p>
+<pre><code class="lang-javascript">...
+.then(function(response) {
+        // success
+        console.log(response.statusCode);
+        dialogModule.alert(&quot;Your message has been sent.&quot;);
+    }, function(e) {
+        // error
+        console.log(&quot;Error occurred: &quot; + e);
+        dialogModule.alert(&quot;We couldn&#39;t send your message right now. Try again later.&quot;);
+    })
+</code></pre>
+<p>Run the updated app to see how dialogs work.</p>
+<p><img src="images/chapter6/contact-us-4.PNG" alt="image"></p>
 <div class="exercise-end"></div>
 
+<p>The dialog module&#39;s default alert window is OK, but what if you want something a little more customized? That&#39;s actually pretty easy. </p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Customizing the alert dialog
+</h4>
+
+<p>By default, the dialog module&#39;s <code>alert()</code> function takes a string, and it displays the contents of that string in the dialog alert window that appears. The <code>alert()</code> function also takes an <em>options</em> object that allows you to customize the alert title, the message, and the button text. Take a look at the official documentation to learn more about the <a href="https://docs.nativescript.org/ui/ui-dialogs">options object</a>.</p>
+<p>Customize the success alert window by replacing the the successful alert in the <code>contact-us-page.js</code> file with one using the options object.  </p>
+<pre><code class="lang-javascript">dialogModule.alert({
+    title: &quot;Thank you!&quot;,
+    message: &quot;We have received your message.&quot;,
+    okButtonText: &quot;Close&quot;
+});
+</code></pre>
+<p>Check back in your emulator to see the change take effect.</p>
+<p><img src="images/chapter6/contact-us-5.PNG" alt="image"></p>
+<p>For reference, here is the complete JavaScript code for this chapter.</p>
+<pre><code class="lang-javascript">var httpModule = require(&quot;http&quot;);
+var dialogModule = require(&quot;ui/dialogModule&quot;);
+var page;
+
+function onLoaded(args) {
+    page = args.object;
+}
+exports.onLoaded = onLoaded;
+
+function onTap() {
+    console.log(&quot;Submitting message...&quot;);
+
+    // todo: add code to get data out of text field and view, then submit to Tekmo
+    // step 1: get data out of text field and text view
+    var subjectElement = page.getViewById(&quot;subject&quot;);
+    var messageElement = page.getViewById(&quot;message&quot;);
+
+    var subject = subjectElement.text;
+    var message = messageElement.text;
+
+    console.log(subject);
+    console.log(message);
+
+    // step 2: submit data to Tekmo
+    var data = JSON.stringify({
+        &quot;subject&quot;: subject,
+        &quot;message&quot;: message
+    });
+
+    httpModule
+        .request({
+            url: &quot;https://nstweet.brosteins.com/api/message&quot;,
+            method: &quot;POST&quot;,
+            headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+            content: data })
+        .then(function(response) {
+            // success
+            console.log(response.statusCode);
+            dialogModule.alert({
+                title: &quot;Thank you!&quot;,
+                message: &quot;We have received your message.&quot;,
+                okButtonText: &quot;Close&quot;
+            });
+        }, function(e) {
+            // error
+            console.log(&quot;Error occurred: &quot; + e);
+            dialogModule.alert(&quot;We couldn&#39;t send your message right now. Try again later.&quot;);
+        });
+}
+exports.onTap = onTap;
+</code></pre>
+<div class="exercise-end"></div>
 			</div>
 			<hr>
 			<div class="chapter">
