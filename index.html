@@ -608,14 +608,109 @@ exports.onTap = onTap;
 <p><img src="images/chapter4/tekmo-on-tap.gif" alt="image"></p>
 <div class="exercise-end"></div>
 
+<h3 id="an-introduction-to-modules">An introduction to modules</h3>
+<p>The last thing you need to learn about before navigating between pages is the NativeScript code modules. The core modules are cross-platform abstractions provided by NativeScript that allow you to interact with various aspects of the Android and iOS platforms (i.e., cameras, images, files, and navigation). </p>
+<p>The modules are actually written in TypeScript, transpiled down to JavaScript, and included in every NativeScript project by default. You don&#39;t need to know how the modules work under the scenes, but sometimes it&#39;s neat to see the guts of NativeScript. Let&#39;s take a quick look.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Looking at the core modules
+</h4>
+
+<p>As I&#39;ve said, the core modules are included in every NativeScript project. These are included in the project by using <a href="https://www.npmjs.com/">npm</a>. You don&#39;t need to manually run <code>npm</code> to include the core modules. </p>
+<p>To find the core modules, go back to VS Code. Open the <code>node_modules</code> folder that is in the root of the tekmo app. Note: this is <strong>not</strong> in the <code>app</code> folder, it is outside the folder. </p>
+<p>In the <code>node_modules</code> folder, open the <code>tns-core-modules</code> folder. There&#39;s a lot to see here.</p>
+<p><img src="images/chapter4/core-modules.PNG" alt="image"></p>
+<p>Inside of the <code>tns-core-modules</code> folder is a massive hierarchy of folders and files. These files make up the entirety of the NativeScript framework. You&#39;ll learn how to use these throughout the lab, but I also want to point you to the <a href="https://docs.nativescript.org">official NativeScript documentation</a>, which is a comprehensive listing the core modules and how to use them.</p>
+<p>Inside of the <code>tns-core-modules</code> folder, find the folder <code>ui</code> and then sub-folder <code>frame</code>. Go ahead and open the <code>frame</code> folder.</p>
+<blockquote>
+<p>WARNING: Be careful when you&#39;re looking at modules. Don&#39;t change their code!</p>
+</blockquote>
+<p><img src="images/chapter4/frame-module.PNG" alt="image"></p>
+<p>Inside, you&#39;ll find a variety of files. </p>
+<p>The frame module is used to navigate between pages, so we&#39;ll be using it later. I don&#39;t want to go into the weeds too far here, becuase it&#39;s not really important for you to know how and what the frame module does, but as we beign to use modules, just know that if you&#39;re curious to know how and what module functions do, you can always come and look at their source code directly in the <code>tns-core-modules</code> folder.</p>
+<p>Take a few minutes to explore the module code (if you&#39;d like). Close the modules folders and files if you have them open before you continue. </p>
+<div class="exercise-end"></div>
+
 <h3 id="navigating-to-another-page">Navigating to another page</h3>
-<p>TODO NEXT</p>
+<p>After the brief detour looking at the core modules, let&#39;s get back on track with navigation between pages.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Navigating from the home page to the about page
+</h4>
+
+<p>Return to the <code>home-page.js</code> file, where we added the <code>onTap()</code> function. </p>
+<pre><code class="lang-javascript">function onTap() 
+{
+    console.log(&#39;onTap called...&#39;);
+}
+exports.onTap = onTap;
+</code></pre>
+<p>We&#39;ll be modifying this code to load the frame module and then use the <code>navigate()</code> method of the frame module to navigate to the about page.</p>
+<p>Import the frame module by using the <code>require()</code> function. Place this at the top of the <code>home-page.js</code> file.</p>
+<pre><code class="lang-javascript">var frameModule = require(&#39;ui/frame&#39;);
+</code></pre>
+<blockquote>
+<p>NOTE: You don&#39;t need to give NativeScript the full path to the frame module. This is because NativeScript has special conventions built into the framework that know exactly how to find and load modules by specifying a folder. </p>
+</blockquote>
+<p>To navigate from one page ot another, you use the <code>navigate()</code> function of the <code>topmost()</code> property on the frame module. Add the following code to the <code>onTap()</code> function.</p>
+<pre><code class="lang-javascript">frameModule.topmost().navigate(&quot;about-page&quot;);
+</code></pre>
+<p>So, you may be thinking, &quot;What&#39;s this <code>topmost()</code> thing?&quot; Every page in a NativeScript app has something called the <em>topmost</em> frame. To get the topmost frame, we use the <code>topmost()</code> property of the frame module. Once you have that topmost frame, you can call the <code>navigate()</code> function to navigate to another page. </p>
+<blockquote>
+<p>NOTE: <code>navigate()</code> can take additional arguments to perform different types of animated naivgations, and to pass data between pages when navigation occurs. You&#39;ll learn how to do that later.</p>
+</blockquote>
+<p>Let&#39;s check the results of the navigation in your emulator. Tap the About button and you should navigate to the about page.</p>
+<p><img src="images/chapter4/nav.gif" alt="image"></p>
+<p>If you&#39;re running on Android, you cna hit the back button to return to the Home page. On iOS, you&#39;ll notice a <code>&lt; Back</code> button at the top of the page, automatically added. </p>
+<p>NativeScript keeps track of your navigation history, so this is built into the framework. There are ways to remove the back button and to tell NativeScript to not track your history; however, I&#39;m not going to cover that here. Check out the <a href="http://docs.nativescript.org/core-concepts/navigation#navigate-without-history">docs</a> for details. </p>
+<p>For reference, here&#39;s the complete code for the <code>home-page.js</code> file, including the navigation to the About page.</p>
+<pre><code class="lang-javascript">var frameModule = require(&#39;ui/frame&#39;);
+
+function onTap() 
+{
+    console.log(&#39;onTap called...&#39;);
+    frameModule.topmost().navigate(&quot;about-page&quot;);
+}
+exports.onTap = onTap;
+</code></pre>
+<div class="exercise-end"></div>
+
+<p>Go ahead an add buttons to the home page for navigation to the Contact Us and Products pages, then adding the necesary code to navigate to each page. Try it all by yourself first. If you get stuck, look back through the exercises. The code is also included below for reference.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Navigating to the Contact Us page
+</h4>
+
+<p>Add a button to the <code>home-page.xml</code> file. </p>
+<pre><code class="lang-xml">&lt;Button text=&quot;Contact Us&quot; tap=&quot;onTapContactUs&quot; /&gt;
+</code></pre>
+<p>Add the event handler code in the <code>home-page.js</code> file.</p>
+<pre><code class="lang-javascript">function onTapContactUs() { 
+    frameModule.topmost().navigate(&quot;contact-us-page&quot;);
+}
+exports.onTapContactUs = onTapContactUs;
+</code></pre>
+<div class="exercise-end"></div>
+
+<p>And now the Products page.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Navigating to the Products page
+</h4>
+
+<p>Add a button to the <code>home-page.xml</code> file. </p>
+<pre><code class="lang-xml">&lt;Button text=&quot;Products&quot; tap=&quot;onTapProducts&quot; /&gt;
+</code></pre>
+<p>Add the event handler code in the <code>home-page.js</code> file.</p>
+<pre><code class="lang-javascript">function onTapProducts() { 
+    frameModule.topmost().navigate(&quot;products-page&quot;);
+}
+exports.onTapProducts = onTapProducts;
+</code></pre>
+<div class="exercise-end"></div>
 
 			</div>
 			<hr>
 			<div class="chapter">
 				<h2 id="stack-layout">Stack Layout</h2>
-<p>Donec nisi magna, vehicula et purus eget, blandit suscipit tellus. Quisque lobortis augue at fringilla ullamcorper. Integer mattis diam eget augue suscipit, a malesuada mauris bibendum. Phasellus venenatis elit in semper hendrerit. Nunc tincidunt lectus in mauris facilisis, et laoreet metus aliquet. Mauris at hendrerit turpis, at semper mi. Suspendisse vel arcu nulla. Nullam scelerisque consequat molestie. Curabitur sit amet porta odio. Morbi lacinia vel tortor eu fringilla.</p>
+<p>You&#39;ve already learned about the stack layout in previous exercises. You&#39;ll recall that it allows you to stack UI elements on a page by placing the elements inside of a <code>&lt;StackLayout&gt; ... &lt;/StackLayout&gt;</code> tag. </p>
+<p>That&#39;s the basics of the stack layout, and truthfulyl, there&#39;s not a lot more to tell you. So, let&#39;s move on to the About and Contact Us pages, adding more content, using the stack layout.</p>
 <h3 id="another-section">Another section</h3>
 <p>Mauris tempor facilisis accumsan. Mauris vitae iaculis risus. Mauris volutpat suscipit neque non bibendum. Phasellus non fringilla enim. Aliquam tempor quam vel ligula porta convallis. In blandit dictum tempus. Nunc at pulvinar justo. Aliquam eu mi eros. Nunc sit amet tellus non lorem malesuada tempus. Vestibulum nunc magna, varius ut aliquam non, fermentum sodales metus. Aliquam sit amet pulvinar lacus. Sed fringilla placerat tempor. Pellentesque id elementum nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec laoreet, ex eget vulputate tincidunt, enim nisi ullamcorper urna, at scelerisque tellus mi sit amet nisi. Duis ac risus ac odio efficitur dignissim vitae dapibus purus.</p>
 <h3 id="yet-another-section">Yet another section</h3>

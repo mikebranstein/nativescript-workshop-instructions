@@ -1,6 +1,10 @@
 ## Stack Layout
 
-Donec nisi magna, vehicula et purus eget, blandit suscipit tellus. Quisque lobortis augue at fringilla ullamcorper. Integer mattis diam eget augue suscipit, a malesuada mauris bibendum. Phasellus venenatis elit in semper hendrerit. Nunc tincidunt lectus in mauris facilisis, et laoreet metus aliquet. Mauris at hendrerit turpis, at semper mi. Suspendisse vel arcu nulla. Nullam scelerisque consequat molestie. Curabitur sit amet porta odio. Morbi lacinia vel tortor eu fringilla.
+You've already learned about the stack layout in previous exercises. You'll recall that it allows you to stack UI elements on a page by placing the elements inside of a `<StackLayout> ... </StackLayout>` tag. 
+
+That's the basics of the stack layout, and truthfulyl, there's not a lot more to tell you. So, let's move on to the About and Contact Us pages, adding more content, using the stack layout.
+
+
 
 ### Another section
 
