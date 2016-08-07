@@ -254,6 +254,8 @@ For reference, here's the complete code listing for the Products page.
 
 <div class="exercise-end"></div>
 
+### Refactoring for a special promotion
+
 I could stop here with the grid layout, but that wouldn't be much fun. Let's do one more thing. 
 
 After talking with Tekmo, I've jsut realized that want to highlight Super Marshmallow Man, by placing it front and center on the Products page. Right now it's lost a little bit. Tekmo woudl like a larger tile at the top of the page, highlighting Super Marshmallow Man. The tile should have a brief description of the game while also advertizing a sale price of $14.99: $20 off!
