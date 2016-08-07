@@ -1289,9 +1289,148 @@ exports.onTap = onTap;
 <p>Now, let&#39;s check your emulator. </p>
 <p><img src="images/chapter7/products-4.PNG" alt="image"></p>
 <p>Much better! You can really see the grid now. </p>
+<p>For reference, here&#39;s the complete code listing for the Products page.</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+    &lt;ScrollView&gt;
+        &lt;StackLayout&gt;
+            &lt;Label text=&quot;Our Products&quot; /&gt;
+            &lt;GridLayout rows=&quot;*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;450&quot;&gt;
+                &lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; style=&quot;background-color: #EEEEEE;&quot;&gt;
+                    &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+                    &lt;Label text=&quot;$34.99&quot; /&gt;
+                &lt;/StackLayout&gt;
+                &lt;StackLayout row=&quot;0&quot; col=&quot;1&quot; style=&quot;background-color: #CCCCCC;&quot;&gt;
+                    &lt;Label text=&quot;Couch Commander&quot; textWrap=&quot;true&quot; /&gt; 
+                    &lt;Label text=&quot;$24.99&quot; /&gt;
+                &lt;/StackLayout&gt;
+                &lt;StackLayout row=&quot;1&quot; col=&quot;0&quot; style=&quot;background-color: #CCCCCC;&quot;&gt;
+                    &lt;Label text=&quot;Mummy Madness&quot; textWrap=&quot;true&quot; /&gt; 
+                    &lt;Label text=&quot;$32.99&quot; /&gt;
+                &lt;/StackLayout&gt;
+                &lt;StackLayout row=&quot;1&quot; col=&quot;1&quot; style=&quot;background-color: #EEEEEE;&quot;&gt;
+                    &lt;Label text=&quot;Pyro Robots&quot; textWrap=&quot;true&quot; /&gt; 
+                    &lt;Label text=&quot;$19.99&quot; /&gt;
+                &lt;/StackLayout&gt;
+                &lt;StackLayout row=&quot;2&quot; col=&quot;0&quot; style=&quot;background-color: #EEEEEE;&quot;&gt;
+                    &lt;Label text=&quot;Rescue Pups&quot; textWrap=&quot;true&quot; /&gt; 
+                    &lt;Label text=&quot;$9.99&quot; /&gt;
+                &lt;/StackLayout&gt;
+                &lt;StackLayout row=&quot;2&quot; col=&quot;1&quot; style=&quot;background-color: #CCCCCC;&quot;&gt;
+                    &lt;Label text=&quot;Vampire Valkyrie&quot; textWrap=&quot;true&quot; /&gt; 
+                    &lt;Label text=&quot;$21.99&quot; /&gt;
+                &lt;/StackLayout&gt;
+            &lt;/GridLayout&gt;
+        &lt;/StackLayout&gt;
+    &lt;/ScrollView&gt;
+&lt;/Page&gt;
+</code></pre>
 <div class="exercise-end"></div>
 
-<p>I could stop here, but </p>
+<p>I could stop here with the grid layout, but that wouldn&#39;t be much fun. Let&#39;s do one more thing. </p>
+<p>After talking with Tekmo, I&#39;ve jsut realized that want to highlight Super Marshmallow Man, by placing it front and center on the Products page. Right now it&#39;s lost a little bit. Tekmo woudl like a larger tile at the top of the page, highlighting Super Marshmallow Man. The tile should have a brief description of the game while also advertizing a sale price of $14.99: $20 off!</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Spanning grid cells 
+</h4>
+
+<p>The grid layout is a flexible layout because you can also have UI elements span multiple rows and columns by using the <code>rowSpan</code> and <code>colSpan</code> properties. </p>
+<p>Set the Super Marshmallow Man tile to span two columns by using the <code>colSpan=&quot;2&quot;</code> property.</p>
+<pre><code class="lang-xml">&lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; style=&quot;background-color: #EEEEEE;&quot;&gt;
+    &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+    &lt;Label text=&quot;$34.99&quot; /&gt;
+&lt;/StackLayout&gt;
+</code></pre>
+<p>Because the Super Marshmallow Man tile is now spanning two columns, it will be consuming the second column of the first row. We need to make a number of changes to the rest of the grid to support this:</p>
+<ul>
+<li>add a fourth row to the grid</li>
+<li>increase the height from 450 pixels to 600 pixels to support the 4th row</li>
+<li>shift the remaining stack layouts </li>
+<li>color the Super Marshmallow Man tile slightly differently to make it easier to see</li>
+</ul>
+<p>Add the fourth row by changing the <code>rows</code> attribute of the grid layout to include a 4th row.</p>
+<pre><code class="lang-xml">&lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;450&quot;&gt;
+...
+&lt;/GridLayout&gt;
+</code></pre>
+<p>Increase the height of the grid from 450 pixels to 600 pixels.</p>
+<pre><code class="lang-xml">&lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;600&quot;&gt;
+...
+&lt;/GridLayout&gt;
+</code></pre>
+<p>Shift the remaining stack layouts.</p>
+<pre><code class="lang-xml">&lt;StackLayout row=&quot;1&quot; col=&quot;0&quot; style=&quot;background-color: #CCCCCC;&quot;&gt;
+    &lt;Label text=&quot;Couch Commander&quot; textWrap=&quot;true&quot; /&gt; 
+    &lt;Label text=&quot;$24.99&quot; /&gt;
+&lt;/StackLayout&gt;
+&lt;StackLayout row=&quot;1&quot; col=&quot;1&quot; style=&quot;background-color: #EEEEEE;&quot;&gt;
+    &lt;Label text=&quot;Mummy Madness&quot; textWrap=&quot;true&quot; /&gt; 
+    &lt;Label text=&quot;$32.99&quot; /&gt;
+&lt;/StackLayout&gt;
+&lt;StackLayout row=&quot;2&quot; col=&quot;0&quot; style=&quot;background-color: #EEEEEE;&quot;&gt;
+    &lt;Label text=&quot;Pyro Robots&quot; textWrap=&quot;true&quot; /&gt; 
+    &lt;Label text=&quot;$19.99&quot; /&gt;
+&lt;/StackLayout&gt;
+&lt;StackLayout row=&quot;2&quot; col=&quot;1&quot; style=&quot;background-color: #CCCCCC;&quot;&gt;
+    &lt;Label text=&quot;Rescue Pups&quot; textWrap=&quot;true&quot; /&gt; 
+    &lt;Label text=&quot;$9.99&quot; /&gt;
+&lt;/StackLayout&gt;
+&lt;StackLayout row=&quot;3&quot; col=&quot;0&quot; style=&quot;background-color: #CCCCCC;&quot;&gt;
+    &lt;Label text=&quot;Vampire Valkyrie&quot; textWrap=&quot;true&quot; /&gt; 
+    &lt;Label text=&quot;$21.99&quot; /&gt;
+&lt;/StackLayout&gt;
+</code></pre>
+<p>Change the color of the Super Marshmallow Man tile.</p>
+<pre><code class="lang-xml">&lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; style=&quot;background-color: #DDDDDD;&quot;&gt;
+    &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+    &lt;Label text=&quot;$34.99&quot; /&gt;
+&lt;/StackLayout&gt;
+</code></pre>
+<p>Finally, let&#39;s add a brief description of the game to the Super Marshmallow Man tile.</p>
+<pre><code class="lang-xml">&lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; style=&quot;background-color: #DDDDDD;&quot;&gt;
+    &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+    &lt;Label textWrap=&quot;true&quot; text=&quot;Escape from certain death int his wild adventure!&quot; /&gt;
+    &lt;Label text=&quot;$34.99&quot; /&gt;
+&lt;/StackLayout&gt;
+</code></pre>
+<p>Let&#39;s check out what this looks like in our emulator.</p>
+<p><img src="images/chapter7/products-5.PNG" alt="image"></p>
+<p>Looks great!</p>
+<p>Here&#39;s the complete code listing for the <code>products-page.xml</code> file as of the end of this chapter.</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+    &lt;ScrollView&gt;
+        &lt;StackLayout&gt;
+            &lt;Label text=&quot;Our Products&quot; /&gt;
+            &lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;600&quot;&gt;
+                &lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; style=&quot;background-color: #DDDDDD;&quot;&gt;
+                    &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+                    &lt;Label textWrap=&quot;true&quot; text=&quot;Escape from certain death int his wild adventure!&quot; /&gt;
+                    &lt;Label text=&quot;$34.99&quot; /&gt;
+                &lt;/StackLayout&gt;
+                &lt;StackLayout row=&quot;1&quot; col=&quot;0&quot; style=&quot;background-color: #CCCCCC;&quot;&gt;
+                    &lt;Label text=&quot;Couch Commander&quot; textWrap=&quot;true&quot; /&gt; 
+                    &lt;Label text=&quot;$24.99&quot; /&gt;
+                &lt;/StackLayout&gt;
+                &lt;StackLayout row=&quot;1&quot; col=&quot;1&quot; style=&quot;background-color: #EEEEEE;&quot;&gt;
+                    &lt;Label text=&quot;Mummy Madness&quot; textWrap=&quot;true&quot; /&gt; 
+                    &lt;Label text=&quot;$32.99&quot; /&gt;
+                &lt;/StackLayout&gt;
+                &lt;StackLayout row=&quot;2&quot; col=&quot;0&quot; style=&quot;background-color: #EEEEEE;&quot;&gt;
+                    &lt;Label text=&quot;Pyro Robots&quot; textWrap=&quot;true&quot; /&gt; 
+                    &lt;Label text=&quot;$19.99&quot; /&gt;
+                &lt;/StackLayout&gt;
+                &lt;StackLayout row=&quot;2&quot; col=&quot;1&quot; style=&quot;background-color: #CCCCCC;&quot;&gt;
+                    &lt;Label text=&quot;Rescue Pups&quot; textWrap=&quot;true&quot; /&gt; 
+                    &lt;Label text=&quot;$9.99&quot; /&gt;
+                &lt;/StackLayout&gt;
+                &lt;StackLayout row=&quot;3&quot; col=&quot;0&quot; style=&quot;background-color: #CCCCCC;&quot;&gt;
+                    &lt;Label text=&quot;Vampire Valkyrie&quot; textWrap=&quot;true&quot; /&gt; 
+                    &lt;Label text=&quot;$21.99&quot; /&gt;
+                &lt;/StackLayout&gt;            
+            &lt;/GridLayout&gt;
+        &lt;/StackLayout&gt;
+    &lt;/ScrollView&gt;
+&lt;/Page&gt;
+</code></pre>
+<div class="exercise-end"></div>
 
 			</div>
 			<hr>

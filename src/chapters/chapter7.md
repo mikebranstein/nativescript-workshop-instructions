@@ -214,7 +214,174 @@ Now, let's check your emulator.
 
 Much better! You can really see the grid now. 
 
+For reference, here's the complete code listing for the Products page.
+
+```xml
+<Page>
+    <ScrollView>
+        <StackLayout>
+            <Label text="Our Products" />
+            <GridLayout rows="*,*,*" columns="*,*" width="300" height="450">
+                <StackLayout row="0" col="0" style="background-color: #EEEEEE;">
+                    <Label text="Super Marshmallow Man" textWrap="true" />
+                    <Label text="$34.99" />
+                </StackLayout>
+                <StackLayout row="0" col="1" style="background-color: #CCCCCC;">
+                    <Label text="Couch Commander" textWrap="true" /> 
+                    <Label text="$24.99" />
+                </StackLayout>
+                <StackLayout row="1" col="0" style="background-color: #CCCCCC;">
+                    <Label text="Mummy Madness" textWrap="true" /> 
+                    <Label text="$32.99" />
+                </StackLayout>
+                <StackLayout row="1" col="1" style="background-color: #EEEEEE;">
+                    <Label text="Pyro Robots" textWrap="true" /> 
+                    <Label text="$19.99" />
+                </StackLayout>
+                <StackLayout row="2" col="0" style="background-color: #EEEEEE;">
+                    <Label text="Rescue Pups" textWrap="true" /> 
+                    <Label text="$9.99" />
+                </StackLayout>
+                <StackLayout row="2" col="1" style="background-color: #CCCCCC;">
+                    <Label text="Vampire Valkyrie" textWrap="true" /> 
+                    <Label text="$21.99" />
+                </StackLayout>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>
+```
+
 <div class="exercise-end"></div>
 
-I could stop here, but 
+I could stop here with the grid layout, but that wouldn't be much fun. Let's do one more thing. 
 
+After talking with Tekmo, I've jsut realized that want to highlight Super Marshmallow Man, by placing it front and center on the Products page. Right now it's lost a little bit. Tekmo woudl like a larger tile at the top of the page, highlighting Super Marshmallow Man. The tile should have a brief description of the game while also advertizing a sale price of $14.99: $20 off!
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Spanning grid cells 
+</h4>
+
+The grid layout is a flexible layout because you can also have UI elements span multiple rows and columns by using the `rowSpan` and `colSpan` properties. 
+
+Set the Super Marshmallow Man tile to span two columns by using the `colSpan="2"` property.
+
+```xml
+<StackLayout row="0" col="0" colSpan="2" style="background-color: #EEEEEE;">
+    <Label text="Super Marshmallow Man" textWrap="true" />
+    <Label text="$34.99" />
+</StackLayout>
+```
+
+Because the Super Marshmallow Man tile is now spanning two columns, it will be consuming the second column of the first row. We need to make a number of changes to the rest of the grid to support this:
+* add a fourth row to the grid
+* increase the height from 450 pixels to 600 pixels to support the 4th row
+* shift the remaining stack layouts 
+* color the Super Marshmallow Man tile slightly differently to make it easier to see
+
+Add the fourth row by changing the `rows` attribute of the grid layout to include a 4th row.
+
+```xml
+<GridLayout rows="*,*,*,*" columns="*,*" width="300" height="450">
+...
+</GridLayout>
+```
+
+Increase the height of the grid from 450 pixels to 600 pixels.
+
+```xml
+<GridLayout rows="*,*,*,*" columns="*,*" width="300" height="600">
+...
+</GridLayout>
+```
+
+Shift the remaining stack layouts.
+
+```xml
+<StackLayout row="1" col="0" style="background-color: #CCCCCC;">
+    <Label text="Couch Commander" textWrap="true" /> 
+    <Label text="$24.99" />
+</StackLayout>
+<StackLayout row="1" col="1" style="background-color: #EEEEEE;">
+    <Label text="Mummy Madness" textWrap="true" /> 
+    <Label text="$32.99" />
+</StackLayout>
+<StackLayout row="2" col="0" style="background-color: #EEEEEE;">
+    <Label text="Pyro Robots" textWrap="true" /> 
+    <Label text="$19.99" />
+</StackLayout>
+<StackLayout row="2" col="1" style="background-color: #CCCCCC;">
+    <Label text="Rescue Pups" textWrap="true" /> 
+    <Label text="$9.99" />
+</StackLayout>
+<StackLayout row="3" col="0" style="background-color: #CCCCCC;">
+    <Label text="Vampire Valkyrie" textWrap="true" /> 
+    <Label text="$21.99" />
+</StackLayout>
+```
+
+Change the color of the Super Marshmallow Man tile.
+
+```xml
+<StackLayout row="0" col="0" colSpan="2" style="background-color: #DDDDDD;">
+    <Label text="Super Marshmallow Man" textWrap="true" />
+    <Label text="$34.99" />
+</StackLayout>
+```
+
+Finally, let's add a brief description of the game to the Super Marshmallow Man tile.
+
+```xml
+<StackLayout row="0" col="0" colSpan="2" style="background-color: #DDDDDD;">
+    <Label text="Super Marshmallow Man" textWrap="true" />
+    <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
+    <Label text="$34.99" />
+</StackLayout>
+```
+
+Let's check out what this looks like in our emulator.
+
+![image](images/chapter7/products-5.PNG)
+
+Looks great!
+
+Here's the complete code listing for the `products-page.xml` file as of the end of this chapter.
+
+```xml
+<Page>
+    <ScrollView>
+        <StackLayout>
+            <Label text="Our Products" />
+            <GridLayout rows="*,*,*,*" columns="*,*" width="300" height="600">
+                <StackLayout row="0" col="0" colSpan="2" style="background-color: #DDDDDD;">
+                    <Label text="Super Marshmallow Man" textWrap="true" />
+                    <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
+                    <Label text="$34.99" />
+                </StackLayout>
+                <StackLayout row="1" col="0" style="background-color: #CCCCCC;">
+                    <Label text="Couch Commander" textWrap="true" /> 
+                    <Label text="$24.99" />
+                </StackLayout>
+                <StackLayout row="1" col="1" style="background-color: #EEEEEE;">
+                    <Label text="Mummy Madness" textWrap="true" /> 
+                    <Label text="$32.99" />
+                </StackLayout>
+                <StackLayout row="2" col="0" style="background-color: #EEEEEE;">
+                    <Label text="Pyro Robots" textWrap="true" /> 
+                    <Label text="$19.99" />
+                </StackLayout>
+                <StackLayout row="2" col="1" style="background-color: #CCCCCC;">
+                    <Label text="Rescue Pups" textWrap="true" /> 
+                    <Label text="$9.99" />
+                </StackLayout>
+                <StackLayout row="3" col="0" style="background-color: #CCCCCC;">
+                    <Label text="Vampire Valkyrie" textWrap="true" /> 
+                    <Label text="$21.99" />
+                </StackLayout>            
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>
+```
+
+<div class="exercise-end"></div>
