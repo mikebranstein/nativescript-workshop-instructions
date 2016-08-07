@@ -773,12 +773,232 @@ exports.onTapProducts = onTapProducts;
 			</div>
 			<hr>
 			<div class="chapter">
-				<h2 id="grid-layout">Grid Layout</h2>
-<p>Donec nisi magna, vehicula et purus eget, blandit suscipit tellus. Quisque lobortis augue at fringilla ullamcorper. Integer mattis diam eget augue suscipit, a malesuada mauris bibendum. Phasellus venenatis elit in semper hendrerit. Nunc tincidunt lectus in mauris facilisis, et laoreet metus aliquet. Mauris at hendrerit turpis, at semper mi. Suspendisse vel arcu nulla. Nullam scelerisque consequat molestie. Curabitur sit amet porta odio. Morbi lacinia vel tortor eu fringilla.</p>
-<h3 id="another-section">Another section</h3>
-<p>Mauris tempor facilisis accumsan. Mauris vitae iaculis risus. Mauris volutpat suscipit neque non bibendum. Phasellus non fringilla enim. Aliquam tempor quam vel ligula porta convallis. In blandit dictum tempus. Nunc at pulvinar justo. Aliquam eu mi eros. Nunc sit amet tellus non lorem malesuada tempus. Vestibulum nunc magna, varius ut aliquam non, fermentum sodales metus. Aliquam sit amet pulvinar lacus. Sed fringilla placerat tempor. Pellentesque id elementum nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec laoreet, ex eget vulputate tincidunt, enim nisi ullamcorper urna, at scelerisque tellus mi sit amet nisi. Duis ac risus ac odio efficitur dignissim vitae dapibus purus.</p>
-<h3 id="yet-another-section">Yet another section</h3>
-<p>Cras massa nulla, feugiat eu pretium in, tempor nec nulla. Nullam vel lobortis felis. Cras varius iaculis ornare. Ut at nisl sit amet leo pulvinar iaculis non ut purus. Morbi luctus magna sed condimentum cursus. Ut accumsan enim ligula, vitae dapibus odio blandit quis. Sed auctor ex non scelerisque vulputate. Nunc feugiat lobortis nisl consequat consectetur. Vivamus consequat sem id consectetur varius. Nam nec erat id est interdum venenatis eu eu felis. Suspendisse potenti. Donec non sapien in est maximus cursus eget eget nunc. Maecenas congue sapien ut tempor facilisis.</p>
+				<h2 id="collecting-data-from-users">Collecting Data from Users</h2>
+<p>Up until now, we&#39;ve been focused on displaying data to your app users, but most mobile apps aren&#39;t just sources of information, they also count on your interacting with them by collecting and submitting data.</p>
+<p>In this section section, you&#39;ll be building out the Contact Us page. As with most Contact Us pages within HTML applications, ours will allow the mobile app user to submit a question to Tekmo through a form. </p>
+<p>But, that&#39;s where the similarities stop. Althought users will be submitting data through a <em>form-like</em> UI, they won&#39;t actually be interacting with an HTML form. </p>
+<p>NativeScript apps are native mobile apps. That means they&#39;re stateful and don&#39;t need to mess with HTML forms: thank goodness! </p>
+<blockquote>
+<p>NOTE: Throughout these exercises, you&#39;ll be structuring your code very similar to the previous chapter where we added UI elements, added events to the UI elements to detect user interaction points, attached event handlers, and wrote business logic inside the event handlers. This is a common NativeScript development workflow that you will repeat throughout the lifecycle of your app&#39;s developement. I like to point this out, because it&#39;s relatively straight-forward and helps you to understand what to expect when developing apps with NativeScript.</p>
+</blockquote>
+<h3 id="building-a-data-collection-ui">Building a data collection UI</h3>
+<p>Before we jump straight into code, let&#39;s talk about what we&#39;re building. We want the Contact Us page to allow app users to submit a question or feedback message. In the spirit of keeping it simple, our message will have a subject and body, with a button allowing us to submit the message. </p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Making page content scrollable
+</h4>
+
+<p>Start by replacing the elements in the <code>contact-us-page.xml</code> page with the <code>&lt;Page&gt;</code>, <code>&lt;ScrollView&gt;</code>, and <code>&lt;StackLayout&gt;</code> elements.</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+    &lt;ScrollView&gt;
+        &lt;StackLayout&gt;
+
+        &lt;/StackLayout&gt;
+    &lt;/ScrollView&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>Add a <code>&lt;Label /&gt;</code> element to the page to describe how a user can contact Tekmo. Place the label in the stack layout.</p>
+<pre><code class="lang-xml">&lt;Label textWrap=&quot;true&quot; text=&quot;Contact us by submitting a message below.&quot; /&gt;
+</code></pre>
+<p>Add a <code>&lt;TextField /&gt;</code> element underneath the label. This element will be used to accept the message subject. To let the users know the intent of the text field, let&#39;s also add an additional label right above the text field. </p>
+<pre><code class="lang-xml">&lt;Label text=&quot;Subject:&quot; /&gt;
+&lt;TextField /&gt;
+</code></pre>
+<p>Add a <code>&lt;TextView /&gt;</code> element and another label beneath the pair of subject elements. </p>
+<pre><code class="lang-xml">&lt;Label text=&quot;Body:&quot; /&gt;
+&lt;TextView /&gt;
+</code></pre>
+<p>Finally, add a button to submit the message to Tekmo. Be sure to add the <code>tap</code> attribute so we can respond to the tap event later.</p>
+<pre><code class="lang-xml">&lt;Button text=&quot;Submit&quot; tap=&quot;onTap&quot; /&gt;
+</code></pre>
+<p> The complete code should look like this:</p>
+<pre><code class="lang-xml"> &lt;Page&gt;
+    &lt;ScrollView&gt;
+        &lt;StackLayout&gt;
+            &lt;Label textWrap=&quot;true&quot; text=&quot;Contact us by submitting a message below.&quot; /&gt;
+            &lt;Label text=&quot;Subject:&quot; /&gt;
+            &lt;TextField /&gt;
+            &lt;Label text=&quot;Body:&quot; /&gt;
+            &lt;TextView /&gt;
+            &lt;Button text=&quot;Submit&quot; tap=&quot;onTap&quot; /&gt; 
+        &lt;/StackLayout&gt;
+    &lt;/ScrollView&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>You should see the following on the Contact Us page within your emulator.</p>
+<p><img src="images/chapter6/contact-us-1.png" alt="image"></p>
+<div class="exercise-end"></div>
+
+<p>I just introduced you to two new UI elements: the <code>&lt;TextField&gt;</code> and <code>&lt;TextView&gt;</code> elements. They&#39;re both used for collecting user input, with the only significant difference being that the text view allows you to collect multiple lines of text from a user. </p>
+<h3 id="refactoring-to-clean-up-the-ui">Refactoring to clean up the UI</h3>
+<p>After looking at the Contact Us page, it seems a bit cumbersome to create both a label and a text field/view for each data entry field. The labels feel somewhat mandatory, because without them, the user wouldn&#39;t know the purpose of these two data fields. Even worse, if you&#39;re used iOS, you won&#39;t even know the data fields exist, because iOS doesn&#39;t wrap any visual cues around UI elements. So, these text field/views appear are blank spaces on the screen. </p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Refactoring the text field and view
+</h4>
+
+<p>Text fields and text views have an attributed named <code>hint</code> that places temporary text in the text box. When a user types into the text field or view, this temporary text disappears and is replaced with whatever they type. </p>
+<p>Add the the <code>hint</code> attribute to the text field and view. </p>
+<pre><code class="lang-xml">&lt;TextField hint=&quot;Enter the subject...&quot; /&gt;
+
+&lt;TextView hint=&quot;Enter the message...&quot; /&gt;
+</code></pre>
+<p>Look at your emulator and see the results. Play with it, by clicking in each of the fields and entering text. Note that as you type, the temporary text you specified in the hint attribute disappears. Also note that when you delete any text you entered, the hint attribute text comes back. Pretty cool!</p>
+<p><img src="images/chapter6/text-hint.gif" alt="image"></p>
+<p>But wait, there&#39;s more! By adding the hint attribute, we&#39;ve elminated the need for the descriptive labels.</p>
+<p>Remove the labels from the page. The entire page should look like the code and screenshow below.</p>
+<pre><code class="lang-xml"> &lt;Page&gt;
+    &lt;ScrollView&gt;
+        &lt;StackLayout&gt;
+            &lt;Label textWrap=&quot;true&quot; text=&quot;Contact us by submitting a message below.&quot; /&gt;
+            &lt;TextField hint=&quot;Enter a subject...&quot; /&gt;
+            &lt;TextView hint=&quot;Enter a message...&quot; /&gt;
+            &lt;Button text=&quot;Submit&quot; tap=&quot;onTap&quot; /&gt; 
+        &lt;/StackLayout&gt;
+    &lt;/ScrollView&gt;
+&lt;/Page&gt;
+</code></pre>
+<p><img src="images/chapter6/contact-us-2.png" alt="image"></p>
+<div class="exercise-end"></div>
+
+<h3 id="responding-to-the-button-tap">Responding to the button tap</h3>
+<p>I almost forgot: we haven&#39;t finished the page. Try this on your own. </p>
+<p>Go ahead and add the tap event handler for the submit button. For now, you can log a message to the console to let you know the handler actually works. If you get stuck, look back at a previous exercise, or follow along with the code below.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Add tap event handler for the submit button
+</h4>
+
+<p>Create a file in the <code>app</code> directory named <code>contact-us-page.js</code>.</p>
+<p><img src="images/chapter6/contact-us-3.png" alt="image"></p>
+<p>Add the <code>onTap()</code> event handler to the <code>contact-us-page.js</code> file, making sure to export it so the page can find the function.</p>
+<pre><code class="lang-javascript">function onTap() {
+    console.log(&quot;Submitting message...&quot;);
+
+    // todo: add code to get data out of text field and view, then submit to Tekmo
+    // step 1: get data out of text field and text view 
+    // step 2: submit data to Tekmo
+}
+exports.onTap = onTap;
+</code></pre>
+<p>Test out your changes, and check the command line for the console output when you click the submit button.</p>
+<div class="exercise-end"></div>
+
+<p>In the next two exercises, we&#39;ll be adding code to get the data out of the text field and text view, then submit the data to Tekmo. </p>
+<p>Let&#39;s start by adding some code to grab the data out of the text field and text view on the Contact Us page.</p>
+<blockquote>
+<p>NOTE: There are several ways of getting data in and out of UI elements. You&#39;ll be learning several of them throughout this workshop. To start, you&#39;ll be learning a very manual way, then I&#39;ll introduce you to an easier way in a future exercise.</p>
+</blockquote>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Get data out of a text field and text view
+</h4>
+
+<p>To get data out of a text field or text view, we&#39;ll need access to the currently running NativeScritp page. The easiest way yot get access to the page is to save a reference to it when the page first loads. </p>
+<p>Create a variable to save the reference to the current page at the top of your <code>contact-us-page.js</code> file.</p>
+<pre><code class="lang-javascript">var page;
+</code></pre>
+<p>Get a reference to the page when the page first loads by handling the <code>loaded</code> event of the NativeScript page. </p>
+<p>Add a <code>loaded=&quot;onLoaded&quot;</code> attribute to the <code>contact-us-page.xml</code> file&#39;s <code>&lt;Page&gt;</code> element.</p>
+<pre><code class="lang-xml">&lt;Page loaded=&quot;onLoaded&quot;&gt;
+</code></pre>
+<p>Add the corresponding handler function to the <code>contact-us-page.js</code> file.</p>
+<pre><code class="lang-javascript">function onLoaded(args) {
+    // todo: save page reference
+}
+</code></pre>
+<p>You&#39;ll notice the <code>onLoaded()</code> handler function has an <code>args</code> argument variable. Every event handler has an argument; however, up until now, we have ignore this optional parameter.  This argument contains useful information about the event that has just happened, and often contains a reference to the object (or element) that the event is attached to. In our case the element belonging to the <code>onLoaded()</code> event is the <code>&lt;Page&gt;</code> element, so let&#39;s use the argument to grab a reference to the page.</p>
+<p>Change the <code>onLoaded()</code> function definition to save the page reference.</p>
+<pre><code class="lang-javascript">function onLoaded(args) {
+    // saves a reference to the Contact Us page
+    page = args.object;
+}
+</code></pre>
+<p>Now that we have a reference to our page, we&#39;ll be using the <code>getViewById()</code> function of the page to get a reference to the text field and text view. </p>
+<p>Before we do this, we&#39;ll first need to add an <code>id</code> property to the text field and text view.</p>
+<pre><code class="lang-xml">&lt;TexField id=&quot;subject&quot; hint=&quot;Enter a subject...&quot; /&gt;
+
+&lt;TextView i=&quot;message&quot; hint=&quot;Enter a message...&quot; /&gt;
+</code></pre>
+<p>Now, get a reference to each of the UI elements by using the <code>getViewById()</code> function of the page. Place this code right under the <code>// step 1:</code> comment of the <code>onTap()</code> function.</p>
+<pre><code class="lang-javascript">var subjectElement = page.getViewById(&quot;subject&quot;);
+var messageElement = page.getViewById(&quot;message&quot;);
+</code></pre>
+<p>Get the entered text from each element by using the <code>text</code> property.</p>
+<pre><code class="lang-javascript">var subject = subjectElement.text;
+var message = messageElement.text;
+</code></pre>
+<p>To double-check your work so far, add in a few <code>console.log()</code> commands to output the captured subject and message values. Test it out!</p>
+<p><img src="images/chapter6/text-console-output.gif" alt="image"></p>
+<p>For reference, here is the complete code listing for the Contact Us page.</p>
+<p>For <code>contact-us-page.xml</code>:</p>
+<pre><code class="lang-xml"> &lt;Page loaded=&quot;onLoaded&quot;&gt;
+    &lt;ScrollView&gt;
+        &lt;StackLayout&gt;
+            &lt;Label textWrap=&quot;true&quot; text=&quot;Contact us by submitting a message below.&quot; /&gt;
+            &lt;TextField id=&quot;subject&quot; hint=&quot;Enter a subject...&quot; /&gt;
+            &lt;TextView id=&quot;message&quot; hint=&quot;Enter a message...&quot; /&gt;
+            &lt;Button text=&quot;Submit&quot; tap=&quot;onTap&quot; /&gt; 
+        &lt;/StackLayout&gt;
+    &lt;/ScrollView&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>For <code>contact-us-page.js</code>:</p>
+<pre><code class="lang-javascript">var page;
+
+function onLoaded(args) {
+    page = args.object;
+}
+exports.onLoaded = onLoaded;
+
+function onTap() {
+    console.log(&quot;Submitting message...&quot;);
+
+    // todo: add code to get data out of text field and view, then submit to Tekmo
+    // step 1: get data out of text field and text view
+    var subjectElement = page.getViewById(&quot;subject&quot;);
+    var messageElement = page.getViewById(&quot;message&quot;);
+
+    var subject = subjectElement.text;
+    var message = messageElement.text;
+
+    console.log(subject);
+    console.log(message);
+
+    // step 2: submit data to Tekmo
+}
+exports.onTap = onTap;
+</code></pre>
+<div class="exercise-end"></div>
+
+<p>Now that you&#39;ve gotten the data out of the text field and view, it&#39;s time to send the data over to Tekmo. In this next exercise, we&#39;ll be encoding our message in JSON and sending data to Tekmo via REST API endpoint. </p>
+<p>This is more of an advanced topic for discussion, and isn&#39;t necessarily NativeScript-specific; however, almsot every mobile app you create <em>will</em> interact with some remote web service or REST API, so I feel it&#39;s important to highlight and show you how this is done in a NativeScript app.</p>
+<blockquote>
+<p>NOTE: I just dropped a lot of new terms on your plate that you might not be familiar with, like JSON and REST API. Don&#39;t worry if you don&#39;t understand everything. You can just copy and paste the code in the next section, or skip it all together. This is the last part of this section, so just ahead to the next chapter if you don&#39;t want to follow along.</p>
+</blockquote>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Sending our message to Tekmo as JSON via their REST API
+</h4>
+
+<p>Start off by building a stringified JSON object containing the subject and message. This (and all subsequent code) should go directly beneath the <code>// step 2</code> commend of the <code>onTap()</code> function.</p>
+<pre><code class="lang-javascript">var data = JSON.stringify({
+  &quot;subject&quot;: subject,
+  &quot;message&quot;: message
+});
+</code></pre>
+<p>Create an XMLHttpRequest.</p>
+<pre><code class="lang-javascript">var xhr = new XMLHttpRequest();
+</code></pre>
+<p>Tell the request to log request&#39;s response to the console once it&#39;s been received. </p>
+<pre><code class="lang-javascript">xhr.addEventListener(&quot;readystatechange&quot;, function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+</code></pre>
+<p>Send an HTTP POST request to Tekmo&#39;s REST API endpoint. Note this is an endpoint I setup for the lab. It may not be very long-lived, so, if you&#39;re receiving 404 NOT FOUND messages, I would assume it&#39;s no longer available.</p>
+<pre><code class="lang-javascript">xhr.open(&quot;POST&quot;, &quot;https://nstweet.brosteins.com/api/message&quot;);
+xhr.setRequestHeader(&quot;content-type&quot;, &quot;application/json&quot;);
+xhr.send(data);
+</code></pre>
+<p>Now, let&#39;s try it out, and you should see that when a user clicks the submit button, the message is sent to Tekmo and the response from Tekmo&#39;s REST API service has responded back with 200 OK.</p>
+<div class="exercise-end"></div>
 
 			</div>
 			<hr>
