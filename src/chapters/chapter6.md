@@ -75,7 +75,7 @@ Finally, add a button to submit the message to Tekmo. Be sure to add the `tap` a
 
 You should see the following on the Contact Us page within your emulator.
 
-![image](images/chapter6/contact-us-1.png)
+![image](images/chapter6/contact-us-1.PNG)
 
 <div class="exercise-end"></div>
 
@@ -120,7 +120,7 @@ Remove the labels from the page. The entire page should look like the code and s
 </Page>
 ```
 
-![image](images/chapter6/contact-us-2.png)
+![image](images/chapter6/contact-us-2.PNG)
 
 <div class="exercise-end"></div>
 

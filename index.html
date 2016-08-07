@@ -825,7 +825,7 @@ exports.onTapProducts = onTapProducts;
 &lt;/Page&gt;
 </code></pre>
 <p>You should see the following on the Contact Us page within your emulator.</p>
-<p><img src="images/chapter6/contact-us-1.png" alt="image"></p>
+<p><img src="images/chapter6/contact-us-1.PNG" alt="image"></p>
 <div class="exercise-end"></div>
 
 <p>I just introduced you to two new UI elements: the <code>&lt;TextField&gt;</code> and <code>&lt;TextView&gt;</code> elements. They&#39;re both used for collecting user input, with the only significant difference being that the text view allows you to collect multiple lines of text from a user. </p>
@@ -856,7 +856,7 @@ exports.onTapProducts = onTapProducts;
     &lt;/ScrollView&gt;
 &lt;/Page&gt;
 </code></pre>
-<p><img src="images/chapter6/contact-us-2.png" alt="image"></p>
+<p><img src="images/chapter6/contact-us-2.PNG" alt="image"></p>
 <div class="exercise-end"></div>
 
 <h3 id="responding-to-the-button-tap">Responding to the button tap</h3>
@@ -914,7 +914,7 @@ exports.onTap = onTap;
 <p>Before we do this, we&#39;ll first need to add an <code>id</code> property to the text field and text view.</p>
 <pre><code class="lang-xml">&lt;TexField id=&quot;subject&quot; hint=&quot;Enter a subject...&quot; /&gt;
 
-&lt;TextView i=&quot;message&quot; hint=&quot;Enter a message...&quot; /&gt;
+&lt;TextView id=&quot;message&quot; hint=&quot;Enter a message...&quot; /&gt;
 </code></pre>
 <p>Now, get a reference to each of the UI elements by using the <code>getViewById()</code> function of the page. Place this code right under the <code>// step 1:</code> comment of the <code>onTap()</code> function.</p>
 <pre><code class="lang-javascript">var subjectElement = page.getViewById(&quot;subject&quot;);
