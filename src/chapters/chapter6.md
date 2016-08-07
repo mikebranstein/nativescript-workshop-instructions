@@ -136,7 +136,7 @@ Go ahead and add the tap event handler for the submit button. For now, you can l
 
 Create a file in the `app` directory named `contact-us-page.js`.
 
-![image](images/chapter6/contact-us-3.png)
+![image](images/chapter6/contact-us-3.PNG)
 
 Add the `onTap()` event handler to the `contact-us-page.js` file, making sure to export it so the page can find the function.
 
