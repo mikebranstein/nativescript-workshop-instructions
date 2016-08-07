@@ -286,7 +286,15 @@ This is more of an advanced topic for discussion, and isn't necessarily NativeSc
     <b>Exercise</b>: Sending our message to Tekmo as JSON via their REST API
 </h4>
 
-Start off by building a stringified JSON object containing the subject and message. This (and all subsequent code) should go directly beneath the `// step 2` commend of the `onTap()` function.
+Start by adding a reference to the *http module* at the top of the `contact-us-page.js` file. The http mobile allows you to send HTTP requests to an endpoint, which is exactly what we want to do. The module is part of the core modules, which means the framework is doign all the heavy lifting for you (i.e., working with the Android and iOS speicfic funciton calls to make HTTP calls simple).
+
+Read the NativeScript documentation on the [http module](https://docs.nativescript.org/cookbook/http) for more information.
+
+```javascript
+var httpModule = require("http");
+```
+
+Building a stringified JSON object containing the subject and message. This (and all subsequent code) should go directly beneath the `// step 2` commend of the `onTap()` function.
 
 ```javascript
 var data = JSON.stringify({
@@ -295,31 +303,44 @@ var data = JSON.stringify({
 });
 ```
 
-Create an XMLHttpRequest.
+Finally, make the request, passing in the URL (https://nstweet.brosteins.com/api/message), the HTTP method (POST), the HTTP header telling the REST API the data is being sent over in JSON format, and the stringified JSON data.
+
+> The function call to `request()` returns a [promise](http://www.html5rocks.com/en/tutorials/es6/promises/), which may not be something you're familiar with. That's ok. Check out the linki provided, and you should be able to decipher what's happening below (which is essentially, making an HTTP request, and the `.then()` call holds the success and failure code paths of that original request).
+
+Note this is an endpoint I setup for the lab. It may not be very long-lived, so, if you're receiving 404 NOT FOUND messages, I would assume it's no longer available.
 
 ```javascript
-var xhr = new XMLHttpRequest();
+httpModule
+    .request({
+        url: "https://nstweet.brosteins.com/api/message",
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        content: data })
+    .then(function(response) {
+        // success
+        console.log(response.statusCode);
+    }, function(e) {
+        // error
+        console.log("Error occurred: " + e);
+    });
 ```
 
-Tell the request to log request's response to the console once it's been received. 
+Now, let's try it out, and you should see that when a user clicks the submit button, the message is sent to Tekmo and the response from Tekmo's REST API service has responded back with *200* in the command prompt.
 
-```javascript
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-```
+![image](images/chapter6/http-ok.gif)
 
-Send an HTTP POST request to Tekmo's REST API endpoint. Note this is an endpoint I setup for the lab. It may not be very long-lived, so, if you're receiving 404 NOT FOUND messages, I would assume it's no longer available.
+Nice work!
 
-```javascript
-xhr.open("POST", "https://nstweet.brosteins.com/api/message");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.send(data);
-```
+<div class="exercise-end"></div>
 
-Now, let's try it out, and you should see that when a user clicks the submit button, the message is sent to Tekmo and the response from Tekmo's REST API service has responded back with 200 OK.
+### Providing better feedback 
 
+You've done great sending and receiving data from Tekmo's REST API service, but something doesn't feel right. Mobile apps are about having a good user experience, and last time I checked, making a user read console or command line output to let them know their message was successfully submitted to Tekmo is not in the dictionary under "good user experience".
+
+Let's change that by providing the user with a visual indicator their message was successfulyl sent in our final exercise of this chapter.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Using the dialog module to provide visual feedback
+</h4>
 
 <div class="exercise-end"></div>

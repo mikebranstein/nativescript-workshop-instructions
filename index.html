@@ -976,28 +976,47 @@ exports.onTap = onTap;
     <b>Exercise</b>: Sending our message to Tekmo as JSON via their REST API
 </h4>
 
-<p>Start off by building a stringified JSON object containing the subject and message. This (and all subsequent code) should go directly beneath the <code>// step 2</code> commend of the <code>onTap()</code> function.</p>
+<p>Start by adding a reference to the <em>http module</em> at the top of the <code>contact-us-page.js</code> file. The http mobile allows you to send HTTP requests to an endpoint, which is exactly what we want to do. The module is part of the core modules, which means the framework is doign all the heavy lifting for you (i.e., working with the Android and iOS speicfic funciton calls to make HTTP calls simple).</p>
+<p>Read the NativeScript documentation on the <a href="https://docs.nativescript.org/cookbook/http">http module</a> for more information.</p>
+<pre><code class="lang-javascript">var httpModule = require(&quot;http&quot;);
+</code></pre>
+<p>Building a stringified JSON object containing the subject and message. This (and all subsequent code) should go directly beneath the <code>// step 2</code> commend of the <code>onTap()</code> function.</p>
 <pre><code class="lang-javascript">var data = JSON.stringify({
   &quot;subject&quot;: subject,
   &quot;message&quot;: message
 });
 </code></pre>
-<p>Create an XMLHttpRequest.</p>
-<pre><code class="lang-javascript">var xhr = new XMLHttpRequest();
+<p>Finally, make the request, passing in the URL (<a href="https://nstweet.brosteins.com/api/message">https://nstweet.brosteins.com/api/message</a>), the HTTP method (POST), the HTTP header telling the REST API the data is being sent over in JSON format, and the stringified JSON data.</p>
+<blockquote>
+<p>The function call to <code>request()</code> returns a <a href="http://www.html5rocks.com/en/tutorials/es6/promises/">promise</a>, which may not be something you&#39;re familiar with. That&#39;s ok. Check out the linki provided, and you should be able to decipher what&#39;s happening below (which is essentially, making an HTTP request, and the <code>.then()</code> call holds the success and failure code paths of that original request).</p>
+</blockquote>
+<p>Note this is an endpoint I setup for the lab. It may not be very long-lived, so, if you&#39;re receiving 404 NOT FOUND messages, I would assume it&#39;s no longer available.</p>
+<pre><code class="lang-javascript">httpModule
+    .request({
+        url: &quot;https://nstweet.brosteins.com/api/message&quot;,
+        method: &quot;POST&quot;,
+        headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+        content: data })
+    .then(function(response) {
+        // success
+        console.log(response.statusCode);
+    }, function(e) {
+        // error
+        console.log(&quot;Error occurred: &quot; + e);
+    });
 </code></pre>
-<p>Tell the request to log request&#39;s response to the console once it&#39;s been received. </p>
-<pre><code class="lang-javascript">xhr.addEventListener(&quot;readystatechange&quot;, function () {
-  if (this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-</code></pre>
-<p>Send an HTTP POST request to Tekmo&#39;s REST API endpoint. Note this is an endpoint I setup for the lab. It may not be very long-lived, so, if you&#39;re receiving 404 NOT FOUND messages, I would assume it&#39;s no longer available.</p>
-<pre><code class="lang-javascript">xhr.open(&quot;POST&quot;, &quot;https://nstweet.brosteins.com/api/message&quot;);
-xhr.setRequestHeader(&quot;content-type&quot;, &quot;application/json&quot;);
-xhr.send(data);
-</code></pre>
-<p>Now, let&#39;s try it out, and you should see that when a user clicks the submit button, the message is sent to Tekmo and the response from Tekmo&#39;s REST API service has responded back with 200 OK.</p>
+<p>Now, let&#39;s try it out, and you should see that when a user clicks the submit button, the message is sent to Tekmo and the response from Tekmo&#39;s REST API service has responded back with <em>200</em> in the command prompt.</p>
+<p><img src="images/chapter6/http-ok.gif" alt="image"></p>
+<p>Nice work!</p>
+<div class="exercise-end"></div>
+
+<h3 id="providing-better-feedback">Providing better feedback</h3>
+<p>You&#39;ve done great sending and receiving data from Tekmo&#39;s REST API service, but something doesn&#39;t feel right. Mobile apps are about having a good user experience, and last time I checked, making a user read console or command line output to let them know their message was successfully submitted to Tekmo is not in the dictionary under &quot;good user experience&quot;.</p>
+<p>Let&#39;s change that by providing the user with a visual indicator their message was successfulyl sent in our final exercise of this chapter.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Using the dialog module to provide visual feedback
+</h4>
+
 <div class="exercise-end"></div>
 
 			</div>
