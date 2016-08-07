@@ -1,4 +1,4 @@
-## Collecting Data from Users
+## Collecting data from users
 
 Up until now, we've been focused on displaying data to your app users, but most mobile apps aren't just sources of information, they also count on your interacting with them by collecting and submitting data.
 

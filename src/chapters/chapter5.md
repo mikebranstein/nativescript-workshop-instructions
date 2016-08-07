@@ -1,4 +1,4 @@
-## Stack Layout
+## Working with more text
 
 You've already learned about the stack layout in previous exercises. You'll recall that it allows you to stack UI elements on a page by placing the elements inside of a `<StackLayout> ... </StackLayout>` tag. 
 
