@@ -146,3 +146,87 @@ It looks a little better now.
 ![image](images/chapter8/nav-2.gif)
 
 <div class="exercise-end"></div>
+
+### Styling a grid layout
+
+Next, let's turn our attention to the Products page. It looks pretty bad right now. 
+
+![image](images/chapter8/styling-2.PNG)
+
+As you'll recall the Products page is organized using a grid layout. Styling grid layouts isn't much different than styling other UI elements, so let's dive in.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Styling a grid layout
+</h4>
+
+I'd like to do a few things to clean up the 
+
+<div class="exercise-end"></div>
+
+
+Outline:
+* give the page some background colors
+* remove the tile colors
+* put some space in between items
+* style the heading of super marshmallow man - maybe text, different font, line, etc.
+* align the price and give it a colors
+
+### Adding images
+
+In the final part of this chapter, you'll learn how to include images in your NativeScript app. Images and graphics can help turn a "blah" UI into something beautiful. Again, I don't have the talent to do "beautiful", but I'll teach you the basic tools of including images in your app. From there, you can run wild.
+
+#### Challenges in displaying images on mobile devices
+
+Before we start, I want to share some of the challenges ther are with displaying images on mobile devices. First, consider the job of a cross-platform mobile framework (like NativeScript). 
+
+> WARNING: This section may scare you initially, and that's because cross-platform device DPIs are confusing. But don't worry: NativeScript does a good job of abstracting away the complexities of cross-platform images. Stick with me!
+
+There are hundreds of various devices, and each device has a different screen resolution and DPI. Let's take iOS devices as an example. Apple's devices (iPhone, iPad, etc.) are considered to be a highly-controlled hardware ecosystem, resulting in fewer variances across the models of their devices; however, consider just the iPhone line of hardware. iPhone 3, 3G, 4, 4s, 5, 5s, 5c, 6, 6s, 6 plus, etc. Some of these devies share common characteristics (like screen size), but it seems with every new year, the screens change in size, or in DPI. Between all of these devices, there are 3-4 differetn screen sizes, and 2-3 different screen DPIs to consider. 
+
+That's only iOS, the most "controlled" device ecosystem. Android has similar differences, but it's across a much larger variable hardware space. 
+
+I don't want to paint a doom-and-gloom picture for you. There are very well-defined guidelines for displaying images on both iOS and Android platforms, but the true chalenge is that the platforms are different. 
+
+So, what does this mean for you? Unfortunately, a lot. As a cross-platform mobile developer, you should become familiar with the differences in screen DPI and how to create images for the various screen. I'm not going into those differences here, but you can find out more in these places:
+* Android screen resolution documentation
+* iOS screen resolution documentation
+* NativeScript image documentation
+* [my website](https://nsimage.brosteins.com) for building NativeScript images 
+
+#### Displaying images in a NativeScript app
+
+There are several ways to display images in a NativeScript app:
+* from a url
+* from the device's file system
+* embdedded in the app as a resource
+
+In this workshop, you'll be learning how to display images embedded in the app as a resource. The other methods are similar, so I'll let you explore them on your own by reading the NativeScript docs.
+
+#### Why NativeScript makes images easy
+
+Just in case you haven't had a chance to read the Android and iOS image/screen DPI docs above, I'll briefly summarize for you. 
+
+Imagine you have a static in-app image named `picture.png` that you'd like to display on devices (Android and iOS). For Android, you'd need to provide 6 different image resolutions, nick-named:
+* **ldpi** (0.75x original resolution)
+* **mdpi** (1.0x)
+* **hdpi** (1.5x) 
+* **xhdpi** (2.0x)
+* **xxhdpi** (3.0x)
+* **xxxhdpi** (4.0x)
+
+On iOS, you'd need to provide 3 image sizes: 
+* **@1x** (1.0x original resolution, iPad 2 and iPad mini)
+* **@2x** (2.0x, iPhone 4s, iPhone 5, iPhone 6, iPad [retina])
+* **@3x** (3.0x, iPhone 6 Plus)
+
+So, you need 9 total images to cover all the bases...ugh! You can't get away from creating all the various image sizes, but there is a declarative way to load the image once, and have NativeScript automatically display the correct image based upon your device and platform.  
+
+Enough explaination, let's start adding some images to the app. 
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Styling titles and text
+</h4>
+
+TODO: add content
+
+<div class="exercise-end"></div>
