@@ -159,17 +159,250 @@ As you'll recall the Products page is organized using a grid layout. Styling gri
     <b>Exercise</b>: Styling a grid layout
 </h4>
 
-I'd like to do a few things to clean up the 
+I'd like to do a few things to clean up the Products page and the rest of the app:
+* give all app pages a default background color instead of white 
+* remove the alternating tile colors
+* color the tiles white and put some space between them, so we can visually tell where one tile ends and another begins
+* put a band of color across the top of each tile for the title 
+* style the tile titles to stand out against the solid tile background
+* right-align the price and give it color to stand out
+* style the highlighted product a little different from the other tiles to make it stand out
 
+That's a lot of changes. Feel free to try the changes on your own, or follow along with me. If your end product doesn't look exactly liek mine, that's OK.
+
+Let's start by giving all app pages a default background color instead of white. Add a `background-color` property to the `app.css` file.
+
+```
+Page {
+    background-color: EFEFEF;
+}
+```  
+
+Remove the alternating tile backgrounds from the Products page by deleting the inline style attributes from each stack layout in the grid layout. The grid layout should look like this:
+
+```xml
+<GridLayout rows="*,*,*,*" columns="*,*" width="300" height="600">
+    <StackLayout row="0" col="0" colSpan="2">
+        <Label text="Super Marshmallow Man" textWrap="true" />
+        <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
+        <Label text="$34.99" />
+    </StackLayout>
+    <StackLayout row="1" col="0">
+        <Label text="Couch Commander" textWrap="true" /> 
+        <Label text="$24.99" />
+    </StackLayout>
+    <StackLayout row="1" col="1">
+        <Label text="Mummy Madness" textWrap="true" /> 
+        <Label text="$32.99" />
+    </StackLayout>
+    <StackLayout row="2" col="0">
+        <Label text="Pyro Robots" textWrap="true" /> 
+        <Label text="$19.99" />
+    </StackLayout>
+    <StackLayout row="2" col="1">
+        <Label text="Rescue Pups" textWrap="true" /> 
+        <Label text="$9.99" />
+    </StackLayout>
+    <StackLayout row="3" col="0">
+        <Label text="Vampire Valkyrie" textWrap="true" /> 
+        <Label text="$21.99" />
+    </StackLayout>            
+</GridLayout>
+```
+
+The Products page should look pretty plain now:
+
+![image](images/chapter8/styling-3.PNG)
+
+Set the background color of the tiles to white and put some space in between the tiles so we can tell where one tile ends and another begins. I chose to set this in a page-specific CSS file because the tiles are specific to the Products page. Create a file named `products-page.css` file first, then add the `tile` class selector properties.
+
+```
+.tile {
+    background-color: #FFFFFF;
+    margin: 5;
+}
+```
+
+Apply the `tile` class to each of the stack layouts.  
+
+```xml
+<GridLayout rows="*,*,*,*" columns="*,*" width="300" height="600">
+    <StackLayout row="0" col="0" colSpan="2" class="tile">
+        <Label text="Super Marshmallow Man" textWrap="true" />
+        <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
+        <Label text="$34.99" />
+    </StackLayout>
+    <StackLayout row="1" col="0" class="tile">
+        <Label text="Couch Commander" textWrap="true" /> 
+        <Label text="$24.99" />
+    </StackLayout>
+    <StackLayout row="1" col="1" class="tile">
+        <Label text="Mummy Madness" textWrap="true" /> 
+        <Label text="$32.99" />
+    </StackLayout>
+    <StackLayout row="2" col="0" class="tile">
+        <Label text="Pyro Robots" textWrap="true" /> 
+        <Label text="$19.99" />
+    </StackLayout>
+    <StackLayout row="2" col="1" class="tile">
+        <Label text="Rescue Pups" textWrap="true" /> 
+        <Label text="$9.99" />
+    </StackLayout>
+    <StackLayout row="3" col="0" class="tile">
+        <Label text="Vampire Valkyrie" textWrap="true" /> 
+        <Label text="$21.99" />
+    </StackLayout>            
+</GridLayout>
+```
+
+![image](images/chapter8/styling-4.PNG)
+
+Add a band of color across the top of each tile, and place the tile title inside of the band. To do this, I wrapped the title with anoter stack layout, added the `title` class to the stack layout, and set the background color of the stack layout.
+
+```xml
+<GridLayout rows="*,*,*,*" columns="*,*" width="300" height="600">
+    <StackLayout row="0" col="0" colSpan="2" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Super Marshmallow Man" textWrap="true" />
+        </StackLayout>
+        <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
+        <Label text="$34.99" />
+    </StackLayout>
+    <StackLayout row="1" col="0" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Couch Commander" textWrap="true" /> 
+        </StackLayout>
+        <Label text="$24.99" />
+    </StackLayout>
+    <StackLayout row="1" col="1" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Mummy Madness" textWrap="true" /> 
+        </StackLayout>
+        <Label text="$32.99" />
+    </StackLayout>
+    <StackLayout row="2" col="0" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Pyro Robots" textWrap="true" /> 
+        </StackLayout>
+        <Label text="$19.99" />
+    </StackLayout>
+    <StackLayout row="2" col="1" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Rescue Pups" textWrap="true" /> 
+        </StackLayout>
+        <Label text="$9.99" />
+    </StackLayout>
+    <StackLayout row="3" col="0" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Vampire Valkyrie" textWrap="true" /> 
+        </StackLayout>
+        <Label text="$21.99" />
+    </StackLayout>            
+</GridLayout>
+```
+
+Add the style to the page-specific CSS file:
+
+```
+.tile-title {
+    background-color: #99ccff;
+}
+```
+
+> NOTE: There are likely other ways of adding a band of color around a label, but this was a quick way to get what I wanted accomplished.
+
+![image](images/chapter8/styling-5.PNG)
+
+Change the tile titles a little to increase the font size, set the color to black, and increase top margin by a few pixels. This shoudl also be added to the `products-page.css` file.
+
+```
+.tile-title Label {
+    font-size: 14;
+    color: black;
+    margin-top: 5;
+}
+```
+
+![image](images/chapter8/styling-6.PNG) 
+
+Make the price stand out a bit more by changing the color and right-aligning it within the stack layout. This CSS addition can also go in the `products-page.css` file. 
+
+```
+.price {
+    color: #009933;
+    text-align: right;
+}
+```
+
+Target the prices by adding a `price` class to each pricing label on the Products page.
+
+```xml
+<GridLayout rows="*,*,*,*" columns="*,*" width="300" height="600">
+    <StackLayout row="0" col="0" colSpan="2" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Super Marshmallow Man" textWrap="true" />
+        </StackLayout>
+        <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
+        <Label text="$34.99" class="price" />
+    </StackLayout>
+    <StackLayout row="1" col="0" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Couch Commander" textWrap="true" /> 
+        </StackLayout>
+        <Label text="$24.99" class="price" />
+    </StackLayout>
+    <StackLayout row="1" col="1" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Mummy Madness" textWrap="true" /> 
+        </StackLayout>
+        <Label text="$32.99" class="price" />
+    </StackLayout>
+    <StackLayout row="2" col="0" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Pyro Robots" textWrap="true" /> 
+        </StackLayout>
+        <Label text="$19.99" class="price" />
+    </StackLayout>
+    <StackLayout row="2" col="1" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Rescue Pups" textWrap="true" /> 
+        </StackLayout>
+        <Label text="$9.99" class="price" />
+    </StackLayout>
+    <StackLayout row="3" col="0" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Vampire Valkyrie" textWrap="true" /> 
+        </StackLayout>
+        <Label text="$21.99" class="price" />
+    </StackLayout>            
+</GridLayout>
+```
+
+![image](images/chapter8/styling-7.PNG) 
+
+Lastly, let's slightly change the hightlighted tile a bit to make it stand apart from the other tiles. Add the following CSS selectors to the `product-page.css` file.
+
+```
+.highlight .tile-title {
+    font-weight: bold;
+    background-color: #6699ff;
+}
+
+.highlight .tile-title Label {
+    font-size: 18;
+}
+
+.hightlight .price {
+    font-weight: bold;
+    color: red;
+}
+```
+
+![image](images/chapter8/styling-8.PNG) 
+ 
 <div class="exercise-end"></div>
 
-
-Outline:
-* give the page some background colors
-* remove the tile colors
-* put some space in between items
-* style the heading of super marshmallow man - maybe text, different font, line, etc.
-* align the price and give it a colors
+That's a pretty radical change, and it wasn't too hard to do. Again, you're likely more creative than I am, so go forth and be artistic. 
 
 ### Adding images
 

@@ -1553,18 +1553,208 @@ exports.onTap = onTap;
     <b>Exercise</b>: Styling a grid layout
 </h4>
 
-<p>I&#39;d like to do a few things to clean up the </p>
+<p>I&#39;d like to do a few things to clean up the Products page and the rest of the app:</p>
+<ul>
+<li>give all app pages a default background color instead of white </li>
+<li>remove the alternating tile colors</li>
+<li>color the tiles white and put some space between them, so we can visually tell where one tile ends and another begins</li>
+<li>put a band of color across the top of each tile for the title </li>
+<li>style the tile titles to stand out against the solid tile background</li>
+<li>right-align the price and give it color to stand out</li>
+<li>style the highlighted product a little different from the other tiles to make it stand out</li>
+</ul>
+<p>That&#39;s a lot of changes. Feel free to try the changes on your own, or follow along with me. If your end product doesn&#39;t look exactly liek mine, that&#39;s OK.</p>
+<p>Let&#39;s start by giving all app pages a default background color instead of white. Add a <code>background-color</code> property to the <code>app.css</code> file.</p>
+<pre><code>Page {
+    background-color: EFEFEF;
+}
+</code></pre><p>Remove the alternating tile backgrounds from the Products page by deleting the inline style attributes from each stack layout in the grid layout. The grid layout should look like this:</p>
+<pre><code class="lang-xml">&lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;600&quot;&gt;
+    &lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot;&gt;
+        &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+        &lt;Label textWrap=&quot;true&quot; text=&quot;Escape from certain death int his wild adventure!&quot; /&gt;
+        &lt;Label text=&quot;$34.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;1&quot; col=&quot;0&quot;&gt;
+        &lt;Label text=&quot;Couch Commander&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;Label text=&quot;$24.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;1&quot; col=&quot;1&quot;&gt;
+        &lt;Label text=&quot;Mummy Madness&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;Label text=&quot;$32.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;2&quot; col=&quot;0&quot;&gt;
+        &lt;Label text=&quot;Pyro Robots&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;Label text=&quot;$19.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;2&quot; col=&quot;1&quot;&gt;
+        &lt;Label text=&quot;Rescue Pups&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;Label text=&quot;$9.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;3&quot; col=&quot;0&quot;&gt;
+        &lt;Label text=&quot;Vampire Valkyrie&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;Label text=&quot;$21.99&quot; /&gt;
+    &lt;/StackLayout&gt;            
+&lt;/GridLayout&gt;
+</code></pre>
+<p>The Products page should look pretty plain now:</p>
+<p><img src="images/chapter8/styling-3.PNG" alt="image"></p>
+<p>Set the background color of the tiles to white and put some space in between the tiles so we can tell where one tile ends and another begins. I chose to set this in a page-specific CSS file because the tiles are specific to the Products page. Create a file named <code>products-page.css</code> file first, then add the <code>tile</code> class selector properties.</p>
+<pre><code>.tile {
+    background-color: #FFFFFF;
+    margin: 5;
+}
+</code></pre><p>Apply the <code>tile</code> class to each of the stack layouts.  </p>
+<pre><code class="lang-xml">&lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;600&quot;&gt;
+    &lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; class=&quot;tile&quot;&gt;
+        &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+        &lt;Label textWrap=&quot;true&quot; text=&quot;Escape from certain death int his wild adventure!&quot; /&gt;
+        &lt;Label text=&quot;$34.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;1&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+        &lt;Label text=&quot;Couch Commander&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;Label text=&quot;$24.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;1&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+        &lt;Label text=&quot;Mummy Madness&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;Label text=&quot;$32.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;2&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+        &lt;Label text=&quot;Pyro Robots&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;Label text=&quot;$19.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;2&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+        &lt;Label text=&quot;Rescue Pups&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;Label text=&quot;$9.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;3&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+        &lt;Label text=&quot;Vampire Valkyrie&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;Label text=&quot;$21.99&quot; /&gt;
+    &lt;/StackLayout&gt;            
+&lt;/GridLayout&gt;
+</code></pre>
+<p><img src="images/chapter8/styling-4.PNG" alt="image"></p>
+<p>Add a band of color across the top of each tile, and place the tile title inside of the band. To do this, I wrapped the title with anoter stack layout, added the <code>title</code> class to the stack layout, and set the background color of the stack layout.</p>
+<pre><code class="lang-xml">&lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;600&quot;&gt;
+    &lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+        &lt;/StackLayout&gt;
+        &lt;Label textWrap=&quot;true&quot; text=&quot;Escape from certain death int his wild adventure!&quot; /&gt;
+        &lt;Label text=&quot;$34.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;1&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Couch Commander&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Label text=&quot;$24.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;1&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Mummy Madness&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Label text=&quot;$32.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;2&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Pyro Robots&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Label text=&quot;$19.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;2&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Rescue Pups&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Label text=&quot;$9.99&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;3&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Vampire Valkyrie&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Label text=&quot;$21.99&quot; /&gt;
+    &lt;/StackLayout&gt;            
+&lt;/GridLayout&gt;
+</code></pre>
+<p>Add the style to the page-specific CSS file:</p>
+<pre><code>.tile-title {
+    background-color: #99ccff;
+}
+</code></pre><blockquote>
+<p>NOTE: There are likely other ways of adding a band of color around a label, but this was a quick way to get what I wanted accomplished.</p>
+</blockquote>
+<p><img src="images/chapter8/styling-5.PNG" alt="image"></p>
+<p>Change the tile titles a little to increase the font size, set the color to black, and increase top margin by a few pixels. This shoudl also be added to the <code>products-page.css</code> file.</p>
+<pre><code>.tile-title Label {
+    font-size: 14;
+    color: black;
+    margin-top: 5;
+}
+</code></pre><p><img src="images/chapter8/styling-6.PNG" alt="image"> </p>
+<p>Make the price stand out a bit more by changing the color and right-aligning it within the stack layout. This CSS addition can also go in the <code>products-page.css</code> file. </p>
+<pre><code>.price {
+    color: #009933;
+    text-align: right;
+}
+</code></pre><p>Target the prices by adding a <code>price</code> class to each pricing label on the Products page.</p>
+<pre><code class="lang-xml">&lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;600&quot;&gt;
+    &lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+        &lt;/StackLayout&gt;
+        &lt;Label textWrap=&quot;true&quot; text=&quot;Escape from certain death int his wild adventure!&quot; /&gt;
+        &lt;Label text=&quot;$34.99&quot; class=&quot;price&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;1&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Couch Commander&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Label text=&quot;$24.99&quot; class=&quot;price&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;1&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Mummy Madness&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Label text=&quot;$32.99&quot; class=&quot;price&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;2&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Pyro Robots&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Label text=&quot;$19.99&quot; class=&quot;price&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;2&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Rescue Pups&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Label text=&quot;$9.99&quot; class=&quot;price&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;3&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Vampire Valkyrie&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Label text=&quot;$21.99&quot; class=&quot;price&quot; /&gt;
+    &lt;/StackLayout&gt;            
+&lt;/GridLayout&gt;
+</code></pre>
+<p><img src="images/chapter8/styling-7.PNG" alt="image"> </p>
+<p>Lastly, let&#39;s slightly change the hightlighted tile a bit to make it stand apart from the other tiles. Add the following CSS selectors to the <code>product-page.css</code> file.</p>
+<pre><code>.highlight .tile-title {
+    font-weight: bold;
+    background-color: #6699ff;
+}
+
+.highlight .tile-title Label {
+    font-size: 18;
+}
+
+.hightlight .price {
+    font-weight: bold;
+    color: red;
+}
+</code></pre><p><img src="images/chapter8/styling-8.PNG" alt="image"> </p>
 <div class="exercise-end"></div>
 
-
-<p>Outline:</p>
-<ul>
-<li>give the page some background colors</li>
-<li>remove the tile colors</li>
-<li>put some space in between items</li>
-<li>style the heading of super marshmallow man - maybe text, different font, line, etc.</li>
-<li>align the price and give it a colors</li>
-</ul>
+<p>That&#39;s a pretty radical change, and it wasn&#39;t too hard to do. Again, you&#39;re likely more creative than I am, so go forth and be artistic. </p>
 <h3 id="adding-images">Adding images</h3>
 <p>In the final part of this chapter, you&#39;ll learn how to include images in your NativeScript app. Images and graphics can help turn a &quot;blah&quot; UI into something beautiful. Again, I don&#39;t have the talent to do &quot;beautiful&quot;, but I&#39;ll teach you the basic tools of including images in your app. From there, you can run wild.</p>
 <h4 id="challenges-in-displaying-images-on-mobile-devices">Challenges in displaying images on mobile devices</h4>
