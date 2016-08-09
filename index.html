@@ -1767,10 +1767,10 @@ exports.onTap = onTap;
 <p>I don&#39;t want to paint a doom-and-gloom picture for you. There are very well-defined guidelines for displaying images on both iOS and Android platforms, but the true chalenge is that the platforms are different. </p>
 <p>So, what does this mean for you? Unfortunately, a lot. As a cross-platform mobile developer, you should become familiar with the differences in screen DPI and how to create images for the various screen. I&#39;m not going into those differences here, but you can find out more in these places:</p>
 <ul>
-<li>Android screen resolution documentation</li>
-<li>iOS screen resolution documentation</li>
-<li>NativeScript image documentation</li>
-<li><a href="https://nsimage.brosteins.com">my website</a> for building NativeScript images </li>
+<li>Android screen resolution <a href="http://developer.android.com/guide/practices/screens_support.html#DesigningResources">documentation</a></li>
+<li>iOS screen resolution <a href="https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon/#//apple_ref/doc/uid/TP40006556-CH27-SW1">documentation</a></li>
+<li>NativeScript image <a href="https://docs.nativescript.org/ui/ui-images">documentation</a></li>
+<li><a href="http://nsimage.brosteins.com">my website</a> for building NativeScript images </li>
 </ul>
 <h4 id="displaying-images-in-a-nativescript-app">Displaying images in a NativeScript app</h4>
 <p>There are several ways to display images in a NativeScript app:</p>
@@ -1797,14 +1797,100 @@ exports.onTap = onTap;
 <li><strong>@2x</strong> (2.0x, iPhone 4s, iPhone 5, iPhone 6, iPad [retina])</li>
 <li><strong>@3x</strong> (3.0x, iPhone 6 Plus)</li>
 </ul>
-<p>So, you need 9 total images to cover all the bases...ugh! You can&#39;t get away from creating all the various image sizes, but there is a declarative way to load the image once, and have NativeScript automatically display the correct image based upon your device and platform.  </p>
+<p>So, you need 9 total images to cover all the bases...ugh! But, I&#39;ve already solved that problem for you with my website, <a href="http://nsimage.brosteins.com">NativeScript Image Builder</a>. If you have a high-resolution image for your app, upload it to my site and I&#39;ll do all of the image building magic for you and ship the images back to you in a .ZIP file. </p>
+<p>You can&#39;t get away from creating all the various image sizes, but there is a declarative way to load the image once, and have NativeScript automatically display the correct image based upon your device and platform.  </p>
 <p>Enough explaination, let&#39;s start adding some images to the app. </p>
 <h4 class="exercise-start">
-    <b>Exercise</b>: Styling titles and text
+    <b>Exercise</b>: Adding images to the products page
 </h4>
 
-<p>TODO: add content</p>
+<p>The first thing we need is images for each game. My friend <a href="https://twitter.com/outerfield">David Bjarnson</a>, was kind enough to draw up some quick images for each game. </p>
+<p><a href="images/chapter8/tekmo-images.zip">Download</a> the app images and unzip the contents. Inside, you&#39;ll find 2 folders: Android and iOS. Copy the contents of these folders into the <code>app/Resoures/Android</code> and <code>app/Resources/iOS</code> folder of the Tekmo mobile app. </p>
+<p>You can checkout each of the images by clicking on them in VS Code:</p>
+<p><img src="images/chapter8/smm.png" alt="">
+<img src="images/chapter8/cc.png" alt="">
+<img src="images/chapter8/mm.png" alt="">
+<img src="images/chapter8/pr.png" alt="">
+<img src="images/chapter8/rp.png" alt=""></p>
+<p>Add them to the products page by using the <code>&lt;Image /&gt;</code> element. </p>
+<pre><code class="lang-xml">&lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;600&quot;&gt;
+    &lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+        &lt;/StackLayout&gt;
+        &lt;Image src=&quot;res://smm&quot; /&gt;
+        &lt;Label textWrap=&quot;true&quot; text=&quot;Escape from certain death int his wild adventure!&quot; /&gt;
+        &lt;Label text=&quot;$34.99&quot; class=&quot;price&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;1&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Couch Commander&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Image src=&quot;res://cc&quot; /&gt;
+        &lt;Label text=&quot;$24.99&quot; class=&quot;price&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;1&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Mummy Madness&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Image src=&quot;res://mm&quot; /&gt;
+        &lt;Label text=&quot;$32.99&quot; class=&quot;price&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;2&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Pyro Robots&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Image src=&quot;res://pr&quot; /&gt;
+        &lt;Label text=&quot;$19.99&quot; class=&quot;price&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;2&quot; col=&quot;1&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Rescue Pups&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Image src=&quot;res://rp&quot; /&gt;
+        &lt;Label text=&quot;$9.99&quot; class=&quot;price&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout row=&quot;3&quot; col=&quot;0&quot; class=&quot;tile&quot;&gt;
+        &lt;StackLayout class=&quot;tile-title&quot;&gt;
+            &lt;Label text=&quot;Vampire Valkyrie&quot; textWrap=&quot;true&quot; /&gt; 
+        &lt;/StackLayout&gt;
+        &lt;Label text=&quot;$21.99&quot; class=&quot;price&quot; /&gt;
+    &lt;/StackLayout&gt;            
+&lt;/GridLayout&gt;
+</code></pre>
+<p>Also adjust the image width and height to a reasonable size on the emulator scereen.</p>
+<pre><code>Image {
+    width: 80;
+    height: 80;
+}
+</code></pre><p><img src="images/chapter8/styling-9.PNG" alt="image"> </p>
+<p>This looks OK, but now the Super Marshmallow Man text and price has fallen out of the tile. Ideally, I&#39;d like the image to be left-aligned, then the description and price right-aligned. </p>
+<p>There are a variety of ways to do this. Two ways at the top of my head are to add another grid layout for this tile, or use a series of nested stack layouts. Let&#39;s use the stack layout method because it will introduce you to another property of the stack layout: orientation. The orientation property of the stak layout tells NativeScript whether to render the layout&#39;s contents vertically or horizontally. By default it is rendered veritcally. Change the Super Marshmallow Man tile&#39;s code to add a series of nested stck layouts.</p>
+<pre><code class="lang-xml">&lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; class=&quot;tile&quot;&gt;
+    &lt;StackLayout class=&quot;tile-title&quot;&gt;
+        &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout orientation=&quot;horizontal&quot;&gt;
+        &lt;Image src=&quot;res://smm&quot; /&gt;
+        &lt;StackLayout&gt;
+            &lt;Label textWrap=&quot;true&quot; text=&quot;Escape from certain death int his wild adventure!&quot; /&gt;
+            &lt;Label text=&quot;$34.99&quot; class=&quot;price&quot; /&gt;
+        &lt;/StackLayout&gt;
+    &lt;/StackLayout&gt;
+&lt;/StackLayout&gt;
+</code></pre>
+<p>Also increase the size of the highlight image.</p>
+<pre><code>.highlight Image {
+    width: 100;
+    height 100;
+}
+</code></pre><p>Looks good.</p>
+<p><img src="images/chapter8/styling-10.PNG" alt="image"></p>
+<p>That&#39;s all I&#39;m going to tweak for now, but you can continue on your own if you&#39;d like. </p>
 <div class="exercise-end"></div>
+
+<p>This concludes our work on the Tekmo mobile app. It&#39;s basic, but thinking back, you&#39;ve learned a lot with this simple little app.</p>
+
 			</div>
 			<hr>
 			<div class="chapter">

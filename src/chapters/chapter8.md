@@ -421,10 +421,10 @@ That's only iOS, the most "controlled" device ecosystem. Android has similar dif
 I don't want to paint a doom-and-gloom picture for you. There are very well-defined guidelines for displaying images on both iOS and Android platforms, but the true chalenge is that the platforms are different. 
 
 So, what does this mean for you? Unfortunately, a lot. As a cross-platform mobile developer, you should become familiar with the differences in screen DPI and how to create images for the various screen. I'm not going into those differences here, but you can find out more in these places:
-* Android screen resolution documentation
-* iOS screen resolution documentation
-* NativeScript image documentation
-* [my website](https://nsimage.brosteins.com) for building NativeScript images 
+* Android screen resolution [documentation](http://developer.android.com/guide/practices/screens_support.html#DesigningResources)
+* iOS screen resolution [documentation](https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon/#//apple_ref/doc/uid/TP40006556-CH27-SW1)
+* NativeScript image [documentation](https://docs.nativescript.org/ui/ui-images)
+* [my website](http://nsimage.brosteins.com) for building NativeScript images 
 
 #### Displaying images in a NativeScript app
 
@@ -452,14 +452,122 @@ On iOS, you'd need to provide 3 image sizes:
 * **@2x** (2.0x, iPhone 4s, iPhone 5, iPhone 6, iPad [retina])
 * **@3x** (3.0x, iPhone 6 Plus)
 
-So, you need 9 total images to cover all the bases...ugh! You can't get away from creating all the various image sizes, but there is a declarative way to load the image once, and have NativeScript automatically display the correct image based upon your device and platform.  
+So, you need 9 total images to cover all the bases...ugh! But, I've already solved that problem for you with my website, [NativeScript Image Builder](http://nsimage.brosteins.com). If you have a high-resolution image for your app, upload it to my site and I'll do all of the image building magic for you and ship the images back to you in a .ZIP file. 
+
+You can't get away from creating all the various image sizes, but there is a declarative way to load the image once, and have NativeScript automatically display the correct image based upon your device and platform.  
 
 Enough explaination, let's start adding some images to the app. 
 
 <h4 class="exercise-start">
-    <b>Exercise</b>: Styling titles and text
+    <b>Exercise</b>: Adding images to the products page
 </h4>
 
-TODO: add content
+The first thing we need is images for each game. My friend [David Bjarnson](https://twitter.com/outerfield), was kind enough to draw up some quick images for each game. 
+
+[Download](images/chapter8/tekmo-images.zip) the app images and unzip the contents. Inside, you'll find 2 folders: Android and iOS. Copy the contents of these folders into the `app/Resoures/Android` and `app/Resources/iOS` folder of the Tekmo mobile app. 
+
+You can checkout each of the images by clicking on them in VS Code:
+
+![](images/chapter8/smm.png)
+![](images/chapter8/cc.png)
+![](images/chapter8/mm.png)
+![](images/chapter8/pr.png)
+![](images/chapter8/rp.png)
+
+Add them to the products page by using the `<Image />` element. 
+
+```xml
+<GridLayout rows="*,*,*,*" columns="*,*" width="300" height="600">
+    <StackLayout row="0" col="0" colSpan="2" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Super Marshmallow Man" textWrap="true" />
+        </StackLayout>
+        <Image src="res://smm" />
+        <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
+        <Label text="$34.99" class="price" />
+    </StackLayout>
+    <StackLayout row="1" col="0" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Couch Commander" textWrap="true" /> 
+        </StackLayout>
+        <Image src="res://cc" />
+        <Label text="$24.99" class="price" />
+    </StackLayout>
+    <StackLayout row="1" col="1" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Mummy Madness" textWrap="true" /> 
+        </StackLayout>
+        <Image src="res://mm" />
+        <Label text="$32.99" class="price" />
+    </StackLayout>
+    <StackLayout row="2" col="0" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Pyro Robots" textWrap="true" /> 
+        </StackLayout>
+        <Image src="res://pr" />
+        <Label text="$19.99" class="price" />
+    </StackLayout>
+    <StackLayout row="2" col="1" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Rescue Pups" textWrap="true" /> 
+        </StackLayout>
+        <Image src="res://rp" />
+        <Label text="$9.99" class="price" />
+    </StackLayout>
+    <StackLayout row="3" col="0" class="tile">
+        <StackLayout class="tile-title">
+            <Label text="Vampire Valkyrie" textWrap="true" /> 
+        </StackLayout>
+        <Label text="$21.99" class="price" />
+    </StackLayout>            
+</GridLayout>
+```
+
+Also adjust the image width and height to a reasonable size on the emulator scereen.
+
+```
+Image {
+    width: 80;
+    height: 80;
+}
+```
+
+![image](images/chapter8/styling-9.PNG) 
+
+This looks OK, but now the Super Marshmallow Man text and price has fallen out of the tile. Ideally, I'd like the image to be left-aligned, then the description and price right-aligned. 
+
+There are a variety of ways to do this. Two ways at the top of my head are to add another grid layout for this tile, or use a series of nested stack layouts. Let's use the stack layout method because it will introduce you to another property of the stack layout: orientation. The orientation property of the stak layout tells NativeScript whether to render the layout's contents vertically or horizontally. By default it is rendered veritcally. Change the Super Marshmallow Man tile's code to add a series of nested stck layouts.
+
+```xml
+<StackLayout row="0" col="0" colSpan="2" class="tile">
+    <StackLayout class="tile-title">
+        <Label text="Super Marshmallow Man" textWrap="true" />
+    </StackLayout>
+    <StackLayout orientation="horizontal">
+        <Image src="res://smm" />
+        <StackLayout>
+            <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
+            <Label text="$34.99" class="price" />
+        </StackLayout>
+    </StackLayout>
+</StackLayout>
+```
+
+Also increase the size of the highlight image.
+
+```
+.highlight Image {
+    width: 100;
+    height 100;
+}
+```
+
+Looks good.
+
+![image](images/chapter8/styling-10.PNG)
+
+That's all I'm going to tweak for now, but you can continue on your own if you'd like. 
 
 <div class="exercise-end"></div>
+
+This concludes our work on the Tekmo mobile app. It's basic, but thinking back, you've learned a lot with this simple little app.
