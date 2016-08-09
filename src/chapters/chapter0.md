@@ -39,7 +39,7 @@ You can find additional lab materials and presentation content at the locations 
 
 * Source code for all apps: 
 * Presentation:
-* Source code for this app:
+* Source code for this app: [https://github.com/mikebranstein/nativescript-workshop-instructions](https://github.com/mikebranstein/nativescript-workshop-instructions)
 
 ### Where to learn more
 
