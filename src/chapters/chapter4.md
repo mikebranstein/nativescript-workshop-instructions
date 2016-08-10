@@ -20,7 +20,7 @@ Let's learn about the simplest (and most common) first layout.
     <b>Exercise</b>: Using the StackLayout to organize UI elements in a "stack"
 </h4>
 
-Go to the `home-page`, and add a `<StackLayout> element to the page, directly within the `<Page>` element. Move the exisitng `<Label />` element inside of the `<StackLayout>`.
+Go to the `home-page`, and add a `<StackLayout>` element to the page, directly within the `<Page>` element. Move the exisitng `<Label />` element inside of the `<StackLayout>`.
 
 ```xml
 <Page>
