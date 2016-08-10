@@ -41,7 +41,7 @@ As you can see, the home page doesn't look very different.
 
 ![image](images/chapter4/tekmo-1.PNG)
 
-Add another `<Label />` element and observer the changes.
+Add another `<Label />` element and observe the changes.
 
 ```xml
 <Page>
