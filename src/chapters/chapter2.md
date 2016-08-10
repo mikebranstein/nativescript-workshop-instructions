@@ -120,7 +120,7 @@ The GenyMotion app lists the available Android emulators in it's main window. Wi
 
 Time to be patient. Depending on how fast your machine is, GenyMotion may take several minutes to start the emulator. If you're using a laptop from me, I didn't spring for the best hardware, so it's slow and will take a couple of minutes.
 
-Once the emulator has fully loaded, you shoudl see an Android device running on your screen!
+Once the emulator has fully loaded, you should see an Android device running on your screen!
 
 ![image](images/chapter2/geny-emulator.PNG)
 
