@@ -306,4 +306,4 @@ Hmmm, `main-page.css` is missing. That's strange...but it's OK. It turns out pag
 
 <div class="exercise-end"></div>
 
-We've spent a lot of time on the introductory pieces of NativeScript, but we haven't gotten to really dive in an create our own app, so it's time to pick up the page. I'll be going a little faster from here on, so when you have questions or need clarifications, stop me and we'll talk about it.
+We've spent a lot of time on the introductory pieces of NativeScript, but we haven't gotten to really dive in an create our own app, so it's time to pick up the pace. I'll be going a little faster from here on, so when you have questions or need clarifications, stop me and we'll talk about it.
