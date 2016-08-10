@@ -62,7 +62,7 @@ As you can see, the `<StackLayout>` stacks UI elements on top of each other on a
 
 ### Wrapping text
 
-But wait! Do you see the text you just added. It's running off the side of the page. 
+But wait! Do you see the text you just added? It's running off the side of the page. 
 
 > NOTE: By default, text within a `<Label />` element does not wrap to new lines.
 
