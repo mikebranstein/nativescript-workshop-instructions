@@ -275,7 +275,7 @@
 <p>RULE: Don&#39;t modify files in the <code>platforms</code> folder! </p>
 </blockquote>
 <p>I&#39;m not going to go in-depth into the <code>node_modules</code> folder or the two <code>package.json</code> files. If you&#39;re curious, I cover the details of these files and folders in <a href="http://bit.ly/nsinaction">NativeScript in Action</a>.</p>
-<p>Finally, we&#39;re getting to the real meaty stuff: <em>app.</em> files and <em>main-page.</em> files. When your app runs, the first piece of app code that runs is the app.js file. In a sense, you can think of the app.js file as a bootstrapper for your application. Let&#39;s open it up an see what&#39;s inside:</p>
+<p>Finally, we&#39;re getting to the real meaty stuff: <em>app.</em> files and <em>main-page.</em> files. When your app runs, the first piece of app code that runs is the app.js file. In a sense, you can think of the app.js file as a bootstrapper for your application. Let&#39;s open it up and see what&#39;s inside:</p>
 <pre><code class="lang-javascript">var application = require(&quot;application&quot;);
 application.start({ moduleName: &quot;main-page&quot; });
 </code></pre>
