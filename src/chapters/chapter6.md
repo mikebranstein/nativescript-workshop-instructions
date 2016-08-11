@@ -294,7 +294,7 @@ Read the NativeScript documentation on the [http module](https://docs.nativescri
 var httpModule = require("http");
 ```
 
-Building a stringified JSON object containing the subject and message. This (and all subsequent code) should go directly beneath the `// step 2` commend of the `onTap()` function.
+Build a stringified JSON object containing the subject and message. This (and all subsequent code) should go directly beneath the `// step 2` commend of the `onTap()` function.
 
 ```javascript
 var data = JSON.stringify({
