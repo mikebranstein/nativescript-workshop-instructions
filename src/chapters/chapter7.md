@@ -175,7 +175,7 @@ Let's check if that fixed the issue in our emulator.
 
 Yep, it did. But it's really hard to tell where each grid cell begins and ends. I can *kind of* tell that it's in a grid, but it's not really clear. 
 
-Let's fix that by cheating a little bit. You won't learn aobut this for a few more chapters, but it's worth doing now to make it easier to see.
+Let's fix that by cheating a little bit. You won't learn about this for a few more chapters, but it's worth doing now to make it easier to see.
 
 Add an alternating CSS style to each stack layout, so we can see the grid cells better. 
 
