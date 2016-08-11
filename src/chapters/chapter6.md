@@ -205,7 +205,7 @@ Now that we have a reference to our page, we'll be using the `getViewById()` fun
 Before we do this, we'll first need to add an `id` property to the text field and text view.
 
 ```xml
-<TexField id="subject" hint="Enter a subject..." />
+<TextField id="subject" hint="Enter a subject..." />
 
 <TextView id="message" hint="Enter a message..." />
 ```
