@@ -18,7 +18,7 @@ Let's get started with some styling basics. Because we're using the Android plat
     <b>Exercise</b>: Removing the Android action bar
 </h4>
 
-To remove the action bar, add the `actionBarHidden="true"` attribute of the `<Page>` element. Add thsi to each page declaration in your XML files. 
+To remove the action bar, add the `actionBarHidden="true"` attribute of the `<Page>` element. Add this to each page declaration in your XML files. 
 
 Starting with `home-page.xml`, add the attribute to the `<Page>` element.
 
