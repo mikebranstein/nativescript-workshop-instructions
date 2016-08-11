@@ -133,7 +133,7 @@ Add the `.sub-title` class name to the sub titles on the About page.
 <Label text="History" class="sub-title" />
 ```
 
-Change the `button` selector definition in the global `app.css` file to make the buttons appear more reasonably-sized.mI couldn't decide what the *right* font size for buttons was, so I just removed the button `font-size` property.
+Change the `button` selector definition in the global `app.css` file to make the buttons appear more reasonably-sized. I couldn't decide what the *right* font size for buttons was, so I just removed the button `font-size` property.
 
 ```css
 button {
