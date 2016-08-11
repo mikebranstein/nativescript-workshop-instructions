@@ -278,7 +278,7 @@ exports.onTap = onTap;
 
 Now that you've gotten the data out of the text field and view, it's time to send the data over to Tekmo. In this next exercise, we'll be encoding our message in JSON and sending data to Tekmo via REST API endpoint. 
 
-This is more of an advanced topic for discussion, and isn't necessarily NativeScript-specific; however, almsot every mobile app you create *will* interact with some remote web service or REST API, so I feel it's important to highlight and show you how this is done in a NativeScript app.
+This is more of an advanced topic for discussion, and isn't necessarily NativeScript-specific; however, almost every mobile app you create *will* interact with some remote web service or REST API, so I feel it's important to highlight and show you how this is done in a NativeScript app.
 
 > NOTE: I just dropped a lot of new terms on your plate that you might not be familiar with, like JSON and REST API. Don't worry if you don't understand everything. You can just copy and paste the code in the next section, or skip it all together. This is the last part of this section, so just ahead to the next chapter if you don't want to follow along.
 
