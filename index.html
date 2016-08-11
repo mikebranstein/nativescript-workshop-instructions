@@ -1865,7 +1865,7 @@ exports.onTap = onTap;
 }
 </code></pre><p><img src="images/chapter8/styling-9.PNG" alt="image"> </p>
 <p>This looks OK, but now the Super Marshmallow Man text and price has fallen out of the tile. Ideally, I&#39;d like the image to be left-aligned, then the description and price right-aligned. </p>
-<p>There are a variety of ways to do this. Two ways at the top of my head are to add another grid layout for this tile, or use a series of nested stack layouts. Let&#39;s use the stack layout method because it will introduce you to another property of the stack layout: orientation. The orientation property of the stak layout tells NativeScript whether to render the layout&#39;s contents vertically or horizontally. By default it is rendered veritcally. Change the Super Marshmallow Man tile&#39;s code to add a series of nested stck layouts.</p>
+<p>There are a variety of ways to do this. Two ways at the top of my head are to add another grid layout for this tile, or use a series of nested stack layouts. Let&#39;s use the stack layout method because it will introduce you to another property of the stack layout: orientation. The orientation property of the stack layout tells NativeScript whether to render the layout&#39;s contents vertically or horizontally. By default it is rendered veritcally. Change the Super Marshmallow Man tile&#39;s code to add a series of nested stck layouts.</p>
 <pre><code class="lang-xml">&lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; class=&quot;tile&quot;&gt;
     &lt;StackLayout class=&quot;tile-title&quot;&gt;
         &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;

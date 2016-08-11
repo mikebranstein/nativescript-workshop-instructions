@@ -536,7 +536,7 @@ Image {
 
 This looks OK, but now the Super Marshmallow Man text and price has fallen out of the tile. Ideally, I'd like the image to be left-aligned, then the description and price right-aligned. 
 
-There are a variety of ways to do this. Two ways at the top of my head are to add another grid layout for this tile, or use a series of nested stack layouts. Let's use the stack layout method because it will introduce you to another property of the stack layout: orientation. The orientation property of the stak layout tells NativeScript whether to render the layout's contents vertically or horizontally. By default it is rendered veritcally. Change the Super Marshmallow Man tile's code to add a series of nested stck layouts.
+There are a variety of ways to do this. Two ways at the top of my head are to add another grid layout for this tile, or use a series of nested stack layouts. Let's use the stack layout method because it will introduce you to another property of the stack layout: orientation. The orientation property of the stack layout tells NativeScript whether to render the layout's contents vertically or horizontally. By default it is rendered veritcally. Change the Super Marshmallow Man tile's code to add a series of nested stck layouts.
 
 ```xml
 <StackLayout row="0" col="0" colSpan="2" class="tile">
