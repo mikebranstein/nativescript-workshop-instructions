@@ -34,7 +34,7 @@ As you can see, the action bar has been removed from the top of the app.
 
 Do the same thing for the remainder of the pages within the Tekmo app:
 * About
-* Contact use
+* Contact us
 * Products
 
 <div class="exercise-end"></div>
