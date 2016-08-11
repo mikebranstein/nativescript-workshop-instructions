@@ -275,7 +275,7 @@ exports.onTap = onTap;
 
 <div class="exercise-end"></div>
 
-Go ahead an add buttons to the home page for navigation to the Contact Us and Products pages, then adding the necesary code to navigate to each page. Try it all by yourself first. If you get stuck, look back through the exercises. The code is also included below for reference.
+Go ahead and add buttons to the home page for navigation to the Contact Us and Products pages, then adding the necesary code to navigate to each page. Try it all by yourself first. If you get stuck, look back through the exercises. The code is also included below for reference.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Navigating to the Contact Us page
