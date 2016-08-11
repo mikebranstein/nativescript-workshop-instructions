@@ -336,7 +336,7 @@ Finally, let's add a brief description of the game to the Super Marshmallow Man 
 ```xml
 <StackLayout row="0" col="0" colSpan="2" style="background-color: #DDDDDD;">
     <Label text="Super Marshmallow Man" textWrap="true" />
-    <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
+    <Label textWrap="true" text="Escape from certain death in this wild adventure!" />
     <Label text="$34.99" />
 </StackLayout>
 ```
