@@ -71,7 +71,7 @@ With this basic knowledge, let's get started styling our app with CSS.
 
 Another piece of low-hanging fruit is styling the titles on pages and the general purpose text we have on each page. Let's start with the titles.
 
-I'd like to make the page titles larger and centerd on pages, when they're present. Because titles appear on multiple pages, it makes sense to place a single CSS style rule in the `app.css` file for titles. 
+I'd like to make the page titles larger and centered on pages, when they're present. Because titles appear on multiple pages, it makes sense to place a single CSS style rule in the `app.css` file for titles. 
 
 Let's look in the `app.css` file to get started. You'll notice that the default app template for NativeScript apps already includes some CSS for elements with the *title* class. 
 
