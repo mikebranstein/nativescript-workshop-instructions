@@ -24,7 +24,7 @@ The About page should look like this:
 </Page>
 ```
 
-Now, add several labels describing Tekmo. You may want to use the *Copy* feature ot the right for this one, it's a lot of text to type in manually.
+Now, add several labels describing Tekmo. You may want to use the *Copy* feature to the right for this one, it's a lot of text to type in manually.
 
 ```xml
 <Label text="About Tekmo" />
