@@ -28,7 +28,7 @@ Add the `<Page>`, `<ScrollView>`, `<StackLayout>`, and `<Label>` elements to the
 </Page>
 ```
 
-Almost automatically, I start most of my NativeScript pages with a scroll view and stack layout. it's always a good starting point, because I'm likely to have scrolling content and the need to stack UI elements on top of each other.
+Almost automatically, I start most of my NativeScript pages with a scroll view and stack layout. It's always a good starting point, because I'm likely to have scrolling content and the need to stack UI elements on top of each other.
 
 After adding these elements, your page should like like so:
 
