@@ -106,7 +106,7 @@ Add a `<Button />` element to the page, after the last `<Label />`. Buttons have
 <Button text="About" />
 ```
 
-Next, add a `tap` event atribute to the `<Button />` element. Most UI elements have a variety of *events* that can execute JavaScript code when triggered. When an event it triggered, it will automatically run the funciton name specified in the event attribute. 
+Next, add a `tap` event atribute to the `<Button />` element. Most UI elements have a variety of *events* that can execute JavaScript code when triggered. When an event is triggered, it will automatically run the funciton name specified in the event attribute. 
 
 ```xml
 <Button text="About" tap="onTap" />
