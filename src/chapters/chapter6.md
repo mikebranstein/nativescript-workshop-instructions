@@ -286,7 +286,7 @@ This is more of an advanced topic for discussion, and isn't necessarily NativeSc
     <b>Exercise</b>: Sending our message to Tekmo as JSON via their REST API
 </h4>
 
-Start by adding a reference to the *http module* at the top of the `contact-us-page.js` file. The http mobile allows you to send HTTP requests to an endpoint, which is exactly what we want to do. The module is part of the core modules, which means the framework is doign all the heavy lifting for you (i.e., working with the Android and iOS speicfic funciton calls to make HTTP calls simple).
+Start by adding a reference to the *http module* at the top of the `contact-us-page.js` file. The http module allows you to send HTTP requests to an endpoint, which is exactly what we want to do. The module is part of the core modules, which means the framework is doign all the heavy lifting for you (i.e., working with the Android and iOS speicfic funciton calls to make HTTP calls simple).
 
 Read the NativeScript documentation on the [http module](https://docs.nativescript.org/cookbook/http) for more information.
 
