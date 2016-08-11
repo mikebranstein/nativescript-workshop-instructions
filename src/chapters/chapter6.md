@@ -305,7 +305,7 @@ var data = JSON.stringify({
 
 Finally, make the request, passing in the URL (https://nstweet.brosteins.com/api/message), the HTTP method (POST), the HTTP header telling the REST API the data is being sent over in JSON format, and the stringified JSON data.
 
-> The function call to `request()` returns a [promise](http://www.html5rocks.com/en/tutorials/es6/promises/), which may not be something you're familiar with. That's ok. Check out the linki provided, and you should be able to decipher what's happening below (which is essentially, making an HTTP request, and the `.then()` call holds the success and failure code paths of that original request).
+> The function call to `request()` returns a [promise](http://www.html5rocks.com/en/tutorials/es6/promises/), which may not be something you're familiar with. That's ok. Check out the link I provided, and you should be able to decipher what's happening below (which is essentially, making an HTTP request, and the `.then()` call holds the success and failure code paths of that original request).
 
 Note this is an endpoint I setup for the lab. It may not be very long-lived, so, if you're receiving 404 NOT FOUND messages, I would assume it's no longer available.
 

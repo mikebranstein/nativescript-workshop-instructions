@@ -988,7 +988,7 @@ exports.onTap = onTap;
 </code></pre>
 <p>Finally, make the request, passing in the URL (<a href="https://nstweet.brosteins.com/api/message">https://nstweet.brosteins.com/api/message</a>), the HTTP method (POST), the HTTP header telling the REST API the data is being sent over in JSON format, and the stringified JSON data.</p>
 <blockquote>
-<p>The function call to <code>request()</code> returns a <a href="http://www.html5rocks.com/en/tutorials/es6/promises/">promise</a>, which may not be something you&#39;re familiar with. That&#39;s ok. Check out the linki provided, and you should be able to decipher what&#39;s happening below (which is essentially, making an HTTP request, and the <code>.then()</code> call holds the success and failure code paths of that original request).</p>
+<p>The function call to <code>request()</code> returns a <a href="http://www.html5rocks.com/en/tutorials/es6/promises/">promise</a>, which may not be something you&#39;re familiar with. That&#39;s ok. Check out the link I provided, and you should be able to decipher what&#39;s happening below (which is essentially, making an HTTP request, and the <code>.then()</code> call holds the success and failure code paths of that original request).</p>
 </blockquote>
 <p>Note this is an endpoint I setup for the lab. It may not be very long-lived, so, if you&#39;re receiving 404 NOT FOUND messages, I would assume it&#39;s no longer available.</p>
 <pre><code class="lang-javascript">httpModule
