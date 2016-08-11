@@ -4,7 +4,7 @@ Up until now, we've been focused on displaying data to your app users, but most 
 
 In this section, you'll be building out the Contact Us page. As with most Contact Us pages within HTML applications, ours will allow the mobile app user to submit a question to Tekmo through a form. 
 
-But, that's where the similarities stop. Althought users will be submitting data through a *form-like* UI, they won't actually be interacting with an HTML form. 
+But, that's where the similarities stop. Although users will be submitting data through a *form-like* UI, they won't actually be interacting with an HTML form. 
 
 NativeScript apps are native mobile apps. That means they're stateful and don't need to mess with HTML forms: thank goodness! 
 
