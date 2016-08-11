@@ -464,7 +464,7 @@ Enough explaination, let's start adding some images to the app.
 
 The first thing we need is images for each game. My friend [David Bjarnson](https://twitter.com/outerfield), was kind enough to draw up some quick images for each game. 
 
-[Download](images/chapter8/tekmo-images.zip) the app images and unzip the contents. Inside, you'll find 2 folders: Android and iOS. Copy the contents of these folders into the `app/Resoures/Android` and `app/Resources/iOS` folder of the Tekmo mobile app. 
+[Download](images/chapter8/tekmo-images.zip) the app images and unzip the contents. Inside, you'll find 2 folders: Android and iOS. Copy the contents of these folders into the `app/App_Resources/Android` and `app/App_Resources/iOS` folder of the Tekmo mobile app. 
 
 You can checkout each of the images by clicking on them in VS Code:
 
