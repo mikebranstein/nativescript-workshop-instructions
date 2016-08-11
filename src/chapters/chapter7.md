@@ -80,7 +80,7 @@ You won't be able to see this layout until we add content to the grid layout, so
 
 As I said before, I want a game title and price listed for each game. Thinking aloud, this sounds a lot like two separate UI elements, perhaps even two labels for each game. Do you know of any ways to organize multiple UI elements? Oh that's right: a stack layout. 
 
-I'm goign to let you try this next step on your own. Add 6 stack layouts to the grid layout. Each stack layout will have 2 labels inside: a label for the game's name, and a label for the game's price. Here's the game names and prices to use. If you get stuck, follow along below, but try to do this from memory (or look back at a previous exercise).
+I'm going to let you try this next step on your own. Add 6 stack layouts to the grid layout. Each stack layout will have 2 labels inside: a label for the game's name, and a label for the game's price. Here's the game names and prices to use. If you get stuck, follow along below, but try to do this from memory (or look back at a previous exercise).
 
 Tekmo has 6 vintage games that it sells:
 * Super Marshmallow Man, $34.99
