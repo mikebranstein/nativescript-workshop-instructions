@@ -313,7 +313,7 @@ Add the style to the page-specific CSS file:
 
 ![image](images/chapter8/styling-5.PNG)
 
-Change the tile titles a little to increase the font size, set the color to black, and increase top margin by a few pixels. This shoudl also be added to the `products-page.css` file.
+Change the tile titles a little to increase the font size, set the color to black, and increase top margin by a few pixels. This should also be added to the `products-page.css` file.
 
 ```
 .tile-title Label {
