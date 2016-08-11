@@ -345,7 +345,7 @@ Let's change that by providing the user with a visual indicator their message wa
 
 The dialog module provides you with a variety of "pop-up" windows (or dialog windows) for providing feedback to users. Because it is also part of the NativeScript core modules, there's nothing special you need to do to start using it aside from importing the module into your JavaScript code.
 
-Start by importing the dialog module using the `require()` syntax at2 the very top of the `contact-us-page.js` file.
+Start by importing the dialog module using the `require()` syntax at the very top of the `contact-us-page.js` file.
 
 ```javascript
 var dialogModule = require("ui/dialogs");
