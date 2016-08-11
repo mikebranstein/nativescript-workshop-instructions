@@ -242,7 +242,7 @@ var frameModule = require('ui/frame');
 
 > NOTE: You don't need to give NativeScript the full path to the frame module. This is because NativeScript has special conventions built into the framework that know exactly how to find and load modules by specifying a folder. 
 
-To navigate from one page ot another, you use the `navigate()` function of the `topmost()` property on the frame module. Add the following code to the `onTap()` function.
+To navigate from one page to another, you use the `navigate()` function of the `topmost()` property on the frame module. Add the following code to the `onTap()` function.
 
 ```javascript
 frameModule.topmost().navigate("about-page");

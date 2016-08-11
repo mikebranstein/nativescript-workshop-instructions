@@ -650,7 +650,7 @@ exports.onTap = onTap;
 <blockquote>
 <p>NOTE: You don&#39;t need to give NativeScript the full path to the frame module. This is because NativeScript has special conventions built into the framework that know exactly how to find and load modules by specifying a folder. </p>
 </blockquote>
-<p>To navigate from one page ot another, you use the <code>navigate()</code> function of the <code>topmost()</code> property on the frame module. Add the following code to the <code>onTap()</code> function.</p>
+<p>To navigate from one page to another, you use the <code>navigate()</code> function of the <code>topmost()</code> property on the frame module. Add the following code to the <code>onTap()</code> function.</p>
 <pre><code class="lang-javascript">frameModule.topmost().navigate(&quot;about-page&quot;);
 </code></pre>
 <p>So, you may be thinking, &quot;What&#39;s this <code>topmost()</code> thing?&quot; Every page in a NativeScript app has something called the <em>topmost</em> frame. To get the topmost frame, we use the <code>topmost()</code> property of the frame module. Once you have that topmost frame, you can call the <code>navigate()</code> function to navigate to another page. </p>
