@@ -36,7 +36,7 @@ After adding these elements, your page should like like so:
 
 <div class="exercise-end"></div>
 
-Right now, you may be a bit confused and wondering where the grid layout is going to go. We've already added a stack layout, so how can I add a grid layout. Here's the secret (although it's not such a big secret): you can nest layouts. So, we'll be adding the grid layout right below the label. THinking through the page's overall layout, it will begin with UI elemnts being organized in a vertical stack, then after the top label, we'll be organizing elements with a grid.
+Right now, you may be a bit confused and wondering where the grid layout is going to go. We've already added a stack layout, so how can I add a grid layout. Here's the secret (although it's not such a big secret): you can nest layouts. So, we'll be adding the grid layout right below the label. Thinking through the page's overall layout, it will begin with UI elemnts being organized in a vertical stack, then after the top label, we'll be organizing elements with a grid.
 
 It might be hard to visualize right now, but once you get the code in and running in your emulator, it'll be come clearer.
 
