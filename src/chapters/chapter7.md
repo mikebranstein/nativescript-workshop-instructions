@@ -179,7 +179,7 @@ Let's fix that by cheating a little bit. You won't learn about this for a few mo
 
 Add an alternating CSS style to each stack layout, so we can see the grid cells better. 
 
-> WARNING: Yeha, I said add a CSS style. NativeScript isn't HTML, but a subset of CSS can be used to style your apps. You'll learn more later, so just follow along for now.
+> WARNING: Yeah, I said add a CSS style. NativeScript isn't HTML, but a subset of CSS can be used to style your apps. You'll learn more later, so just follow along for now.
 
 ```xml
 <StackLayout row="0" col="0" style="background-color: #EEEEEE;">
