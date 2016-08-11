@@ -256,7 +256,7 @@ Let's check the results of the navigation in your emulator. Tap the About button
 
 ![image](images/chapter4/nav.gif)
 
-If you're running on Android, you cna hit the back button to return to the Home page. On iOS, you'll notice a `< Back` button at the top of the page, automatically added. 
+If you're running on Android, you can hit the back button to return to the Home page. On iOS, you'll notice a `< Back` button at the top of the page, automatically added. 
 
 NativeScript keeps track of your navigation history, so this is built into the framework. There are ways to remove the back button and to tell NativeScript to not track your history; however, I'm not going to cover that here. Check out the [docs](http://docs.nativescript.org/core-concepts/navigation#navigate-without-history) for details. 
 
