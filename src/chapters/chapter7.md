@@ -1,6 +1,6 @@
 ## Building a complex UI
 
-I've been using the stack layout a lot in the workshop thus far, but it's not from a lack of creativity. The stack layout can hold it's own: it's concise and simple to use. But, sometimes, you need soemthing a little more flexible. After all, the stack layout can only organize UI elements in a stack-like formation: one on top of (or below) another.
+I've been using the stack layout a lot in the workshop thus far, but it's not from a lack of creativity. The stack layout can hold it's own: it's concise and simple to use. But, sometimes, you need something a little more flexible. After all, the stack layout can only organize UI elements in a stack-like formation: one on top of (or below) another.
 
 In this chapter, we're going to be learning about the grid layout, another layout that allows you to organize your UI using a grid. You'll be learn about the grid layout by bulding out the final page of the Tekmo app: the Products page. 
 
