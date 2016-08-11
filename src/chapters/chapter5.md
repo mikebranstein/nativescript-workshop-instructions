@@ -55,7 +55,7 @@ Go ahead try and scroll in your emulator by simiulating a tap and drag to scroll
 
 You can't.
 
-This bring me to a fine point. In order to make your page's content scrollable, you need to use the `<ScrollView> ... </ScrollView>` element.
+This brings me to a fine point. In order to make your page's content scrollable, you need to use the `<ScrollView> ... </ScrollView>` element.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Making page content scrollable
