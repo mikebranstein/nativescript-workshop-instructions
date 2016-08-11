@@ -14,7 +14,7 @@ We'll start by building a basic grid, then slowly modifying it to highlight some
     <b>Exercise</b>: Starting fresh
 </h4>
 
-Let's start by clearing out the Products page, adding a scroll view, stack layout, label indicating wiht the text of "Our Products". I'll let you try this by yourself. If you get stuck, you can follow along below or reference the previous exercises. 
+Let's start by clearing out the Products page, adding a scroll view, stack layout, label indicating with the text of "Our Products". I'll let you try this by yourself. If you get stuck, you can follow along below or reference the previous exercises. 
 
 Add the `<Page>`, `<ScrollView>`, `<StackLayout>`, and `<Label>` elements to the `products-page.xml` file. 
 
