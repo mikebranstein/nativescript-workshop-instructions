@@ -18,7 +18,7 @@ Let's get started with some styling basics. Because we're using the Android plat
     <b>Exercise</b>: Removing the Android action bar
 </h4>
 
-To remove the action bar, add the `actionBarHidden="true"` attribute of the `<Page>` element. Add thsi to each page declaration in your XML files. 
+To remove the action bar, add the `actionBarHidden="true"` attribute of the `<Page>` element. Add this to each page declaration in your XML files. 
 
 Starting with `home-page.xml`, add the attribute to the `<Page>` element.
 
@@ -34,7 +34,7 @@ As you can see, the action bar has been removed from the top of the app.
 
 Do the same thing for the remainder of the pages within the Tekmo app:
 * About
-* Contact use
+* Contact us
 * Products
 
 <div class="exercise-end"></div>
@@ -71,7 +71,7 @@ With this basic knowledge, let's get started styling our app with CSS.
 
 Another piece of low-hanging fruit is styling the titles on pages and the general purpose text we have on each page. Let's start with the titles.
 
-I'd like to make the page titles larger and centerd on pages, when they're present. Because titles appear on multiple pages, it makes sense to place a single CSS style rule in the `app.css` file for titles. 
+I'd like to make the page titles larger and centered on pages, when they're present. Because titles appear on multiple pages, it makes sense to place a single CSS style rule in the `app.css` file for titles. 
 
 Let's look in the `app.css` file to get started. You'll notice that the default app template for NativeScript apps already includes some CSS for elements with the *title* class. 
 
@@ -107,7 +107,7 @@ Fix the home page text wrapping. (I chose to enable text wrapping and shorten th
 <Label textWrap="true" text="Welcome to Tekmo!" />
 ```
 
-Add a left, right, and bottom margin to all text by styling all labels to have a margin of 10 pixels. (I added this to the `app.css` file to make the change globally.) While
+Add a left, right, and bottom margin to all text by styling all labels to have a margin of 10 pixels. (I added this to the `app.css` file to make the change globally.)
 
 ```css
 Label {
@@ -133,7 +133,7 @@ Add the `.sub-title` class name to the sub titles on the About page.
 <Label text="History" class="sub-title" />
 ```
 
-Change the `button` selector definition in the global `app.css` file to make the buttons appear more reasonably-sized.mI couldn't decide what the *right* font size for buttons was, so I just removed the button `font-size` property.
+Change the `button` selector definition in the global `app.css` file to make the buttons appear more reasonably-sized. I couldn't decide what the *right* font size for buttons was, so I just removed the button `font-size` property.
 
 ```css
 button {
@@ -313,7 +313,7 @@ Add the style to the page-specific CSS file:
 
 ![image](images/chapter8/styling-5.PNG)
 
-Change the tile titles a little to increase the font size, set the color to black, and increase top margin by a few pixels. This shoudl also be added to the `products-page.css` file.
+Change the tile titles a little to increase the font size, set the color to black, and increase top margin by a few pixels. This should also be added to the `products-page.css` file.
 
 ```
 .tile-title Label {
@@ -464,7 +464,7 @@ Enough explaination, let's start adding some images to the app.
 
 The first thing we need is images for each game. My friend [David Bjarnson](https://twitter.com/outerfield), was kind enough to draw up some quick images for each game. 
 
-[Download](images/chapter8/tekmo-images.zip) the app images and unzip the contents. Inside, you'll find 2 folders: Android and iOS. Copy the contents of these folders into the `app/Resoures/Android` and `app/Resources/iOS` folder of the Tekmo mobile app. 
+[Download](images/chapter8/tekmo-images.zip) the app images and unzip the contents. Inside, you'll find 2 folders: Android and iOS. Copy the contents of these folders into the `app/App_Resources/Android` and `app/App_Resources/iOS` folder of the Tekmo mobile app. 
 
 You can checkout each of the images by clicking on them in VS Code:
 
@@ -536,7 +536,7 @@ Image {
 
 This looks OK, but now the Super Marshmallow Man text and price has fallen out of the tile. Ideally, I'd like the image to be left-aligned, then the description and price right-aligned. 
 
-There are a variety of ways to do this. Two ways at the top of my head are to add another grid layout for this tile, or use a series of nested stack layouts. Let's use the stack layout method because it will introduce you to another property of the stack layout: orientation. The orientation property of the stak layout tells NativeScript whether to render the layout's contents vertically or horizontally. By default it is rendered veritcally. Change the Super Marshmallow Man tile's code to add a series of nested stck layouts.
+There are a variety of ways to do this. Two ways at the top of my head are to add another grid layout for this tile, or use a series of nested stack layouts. Let's use the stack layout method because it will introduce you to another property of the stack layout: orientation. The orientation property of the stack layout tells NativeScript whether to render the layout's contents vertically or horizontally. By default it is rendered veritcally. Change the Super Marshmallow Man tile's code to add a series of nested stck layouts.
 
 ```xml
 <StackLayout row="0" col="0" colSpan="2" class="tile">

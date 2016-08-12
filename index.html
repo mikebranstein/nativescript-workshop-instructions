@@ -275,7 +275,7 @@
 <p>RULE: Don&#39;t modify files in the <code>platforms</code> folder! </p>
 </blockquote>
 <p>I&#39;m not going to go in-depth into the <code>node_modules</code> folder or the two <code>package.json</code> files. If you&#39;re curious, I cover the details of these files and folders in <a href="http://bit.ly/nsinaction">NativeScript in Action</a>.</p>
-<p>Finally, we&#39;re getting to the real meaty stuff: app.<em> files and main-page.</em> files. When your app is runs, the first piece of app code that runs is the app.js file. In a sense, you can think of the app.js file as a bootstrapper for your application. Let&#39;s open it up an see what&#39;s inside:</p>
+<p>Finally, we&#39;re getting to the real meaty stuff: <em>app.</em> files and <em>main-page.</em> files. When your app runs, the first piece of app code that runs is the app.js file. In a sense, you can think of the app.js file as a bootstrapper for your application. Let&#39;s open it up and see what&#39;s inside:</p>
 <pre><code class="lang-javascript">var application = require(&quot;application&quot;);
 application.start({ moduleName: &quot;main-page&quot; });
 </code></pre>
@@ -287,16 +287,16 @@ application.start({ moduleName: &quot;main-page&quot; });
 <p>So, back to pages. Now that we know about the NativeScript page-naming convention, you understand what the <code>main-page</code> page is: it&#39;s a collection of 3 files: <code>main-page.xml</code> (the UI), <code>main-page.css</code> (styling for the UI), and <code>main-page.js</code> (any business logic code that interacts with the UI).</p>
 <p>Let&#39;s take a look at the <code>main-page</code> page and find the 3 files:</p>
 <p><img src="images/chapter2/code-app-layout.PNG" alt="image"></p>
-<p>Hmmm, <code>main-page.css</code> is missing. That&#39;s strange...but it&#39;s OK. It turns out pages don&#39;t <em>really</em> need all of the files. You only relaly need the UI definition (.xml) file. The .css and .js files are optional. If they&#39;re present, NativeScript will use them, but if they&#39;re missing, it doesn&#39;t care.</p>
+<p>Hmmm, <code>main-page.css</code> is missing. That&#39;s strange...but it&#39;s OK. It turns out pages don&#39;t <em>really</em> need all of the files. You only really need the UI definition (.xml) file. The .css and .js files are optional. If they&#39;re present, NativeScript will use them, but if they&#39;re missing, it doesn&#39;t care.</p>
 <div class="exercise-end"></div>
 
-<p>We&#39;ve spent a lot of time on the introductory pieces of NativeScript, but we haven&#39;t gotten to relaly dive in an create our own app, so it&#39;s time to pick up the page. I&#39;ll be going a little faster from here on, so when you have questions or need clarifications, stop me and we&#39;ll talk about it.</p>
+<p>We&#39;ve spent a lot of time on the introductory pieces of NativeScript, but we haven&#39;t gotten to really dive in an create our own app, so it&#39;s time to pick up the pace. I&#39;ll be going a little faster from here on, so when you have questions or need clarifications, stop me and we&#39;ll talk about it.</p>
 
 			</div>
 			<hr>
 			<div class="chapter">
 				<h2 id="basic-ui-elements">Basic UI elements</h2>
-<p>In this section, you&#39;ll be learning aobut some of the basic UI elements that go into NativeScript apps. </p>
+<p>In this section, you&#39;ll be learning about some of the basic UI elements that go into NativeScript apps. </p>
 <h3 id="what-you-re-building">What you&#39;re building</h3>
 <p>Over the course of the next several sections, you&#39;ll be building a mobile app for Tekmo, an imaginary company that sells retro video games and video game accessories. The app will have 4 pages:</p>
 <ol>
@@ -337,7 +337,7 @@ application.start({ moduleName: &quot;main-page&quot; });
 <blockquote>
 <p>In this exercise, you&#39;ll be deleting the current start page, creating a new start page, and changing the <code>app.js</code> start page to point to your new home page. We haven&#39;t learned about all of these items yet. Get as far as you can before looking ahead. If you need help, you can follow the steps below.</p>
 </blockquote>
-<p>Using VS Code, open the tekmo app by using the <code>Open Folder...</code> command. You shoudl see the following in VS Code:</p>
+<p>Using VS Code, open the tekmo app by using the <code>Open Folder...</code> command. You should see the following in VS Code:</p>
 <p><img src="images/chapter3/code-tekmo-1.PNG" alt="image"></p>
 <p>Expand the app folder and delete the existing <code>main-page</code> files (<code>main-page.xml</code> and <code>main-page.js</code>). You should also delete the <code>main-view-model.js</code> file: you won&#39;t need it.</p>
 <p><img src="images/chapter3/code-tekmo-2.PNG" alt="image"></p>
@@ -358,7 +358,7 @@ application.start({ moduleName: &quot;home-page&quot; });
 <p><img src="images/chapter3/code-tekmo-4.PNG" alt="image"></p>
 <div class="exercise-end"></div>
 
-<p>Great work! You&#39;ve replaced the default template pages wiht your own home page. Now, let&#39;s learn a little bit more about pages and UI elements.</p>
+<p>Great work! You&#39;ve replaced the default template pages with your own home page. Now, let&#39;s learn a little bit more about pages and UI elements.</p>
 <h3 id="pages">Pages</h3>
 <p>You&#39;ve already learned that pages are a collection of similarly-named .xml, .css., and .js files. We&#39;ll dig into the .css and .js pages soon enough. Let&#39;s focus on the .xml file first.</p>
 <p>Pages always begin with a .xml file. In this file, you define the UI by adding adding various XML elements. In many ways, you can think of this file like an HTML file. It has structure, driven by the elements added to it, and then is augmented by external CSS and JavaScript files. </p>
@@ -391,7 +391,7 @@ application.start({ moduleName: &quot;home-page&quot; });
 <li>You review the changes in your app using your emulator (i.e., GenyMotion)</li>
 </ol>
 <blockquote>
-<p>Hold on...this take a long time. Ideally I&#39;d like to make changes, then quickly look at them in GenyMotion (without manually running <code>tns run...</code> every single time.)</p>
+<p>Hold on...this takes a long time. Ideally I&#39;d like to make changes, then quickly look at them in GenyMotion (without manually running <code>tns run...</code> every single time.)</p>
 </blockquote>
 <p>Luckily, there is a better way. Let me introduce you to LiveSync.</p>
 <h3 id="livesync-makes-changes-easy">LiveSync makes changes easy</h3>
@@ -420,7 +420,7 @@ application.start({ moduleName: &quot;home-page&quot; });
 <p>From this point forward, use <code>tns livesync</code>, as it will same you some time.</p>
 </blockquote>
 <h3 id="adding-more-pages">Adding more pages</h3>
-<p>Let&#39;s continue adding the remainder of our app pages: About, Contact Us, and Products. For now, each page should have a label on it with the page&#39;s name. I&#39;ll let you try it on your own, but if you get stuck or can&#39;t remember the exact syn tax, you can follow along below.</p>
+<p>Let&#39;s continue adding the remainder of our app pages: About, Contact Us, and Products. For now, each page should have a label on it with the page&#39;s name. I&#39;ll let you try it on your own, but if you get stuck or can&#39;t remember the exact syntax, you can follow along below.</p>
 <p>We haven&#39;t learned how to navigate between pages yet, so to test each page, replace the startup page in the <code>app.js</code> file. </p>
 <h4 class="exercise-start">
     <b>Exercise</b>: Adding the About page
@@ -495,7 +495,7 @@ application.start({ moduleName: &quot;products-page&quot; });
     <b>Exercise</b>: Using the StackLayout to organize UI elements in a &quot;stack&quot;
 </h4>
 
-<p>Go to the <code>home-page</code>, and add a <code>&lt;StackLayout&gt; element to the page, directly within the</code><Page><code>element. Move the exisitng</code><Label /><code>element inside of the</code><StackLayout>`.</p>
+<p>Go to the <code>home-page</code>, and add a <code>&lt;StackLayout&gt;</code> element to the page, directly within the <code>&lt;Page&gt;</code> element. Move the exisitng <code>&lt;Label /&gt;</code> element inside of the <code>&lt;StackLayout&gt;</code>.</p>
 <pre><code class="lang-xml">&lt;Page&gt;
     &lt;StackLayout&gt;
         &lt;Label text=&quot;Welcome to the Tekmo app!&quot; /&gt;
@@ -508,7 +508,7 @@ application.start({ moduleName: &quot;home-page&quot; });
 </code></pre>
 <p>As you can see, the home page doesn&#39;t look very different. </p>
 <p><img src="images/chapter4/tekmo-1.PNG" alt="image"></p>
-<p>Add another <code>&lt;Label /&gt;</code> element and observer the changes.</p>
+<p>Add another <code>&lt;Label /&gt;</code> element and observe the changes.</p>
 <pre><code class="lang-xml">&lt;Page&gt;
     &lt;StackLayout&gt;
         &lt;Label text=&quot;Welcome to the Tekmo app!&quot; /&gt;
@@ -522,7 +522,7 @@ application.start({ moduleName: &quot;home-page&quot; });
 <p>As you can see, the <code>&lt;StackLayout&gt;</code> stacks UI elements on top of each other on a page. </p>
 <p><img src="images/chapter4/tekmo-2.PNG" alt="image"></p>
 <h3 id="wrapping-text">Wrapping text</h3>
-<p>But wait! Do you see the text you just added. It&#39;s running off the side of the page. </p>
+<p>But wait! Do you see the text you just added? It&#39;s running off the side of the page. </p>
 <blockquote>
 <p>NOTE: By default, text within a <code>&lt;Label /&gt;</code> element does not wrap to new lines.</p>
 </blockquote>
@@ -557,7 +557,7 @@ application.start({ moduleName: &quot;home-page&quot; });
 <p>Add a <code>&lt;Button /&gt;</code> element to the page, after the last <code>&lt;Label /&gt;</code>. Buttons have a similar property named <code>text</code> that allows you to change the text of the button. </p>
 <pre><code class="lang-xml">&lt;Button text=&quot;About&quot; /&gt;
 </code></pre>
-<p>Next, add a <code>tap</code> event atribute to the <code>&lt;Button /&gt;</code> element. Most UI elements have a variety of <em>events</em> that can execute JavaScript code when triggered. When an event it triggered, it will automatically run the funciton name specified in the event attribute. </p>
+<p>Next, add a <code>tap</code> event atribute to the <code>&lt;Button /&gt;</code> element. Most UI elements have a variety of <em>events</em> that can execute JavaScript code when triggered. When an event is triggered, it will automatically run the funciton name specified in the event attribute. </p>
 <pre><code class="lang-xml">&lt;Button text=&quot;About&quot; tap=&quot;onTap&quot; /&gt;
 </code></pre>
 <p>The complete code listing for the <code>home-page</code> page is below.</p>
@@ -650,7 +650,7 @@ exports.onTap = onTap;
 <blockquote>
 <p>NOTE: You don&#39;t need to give NativeScript the full path to the frame module. This is because NativeScript has special conventions built into the framework that know exactly how to find and load modules by specifying a folder. </p>
 </blockquote>
-<p>To navigate from one page ot another, you use the <code>navigate()</code> function of the <code>topmost()</code> property on the frame module. Add the following code to the <code>onTap()</code> function.</p>
+<p>To navigate from one page to another, you use the <code>navigate()</code> function of the <code>topmost()</code> property on the frame module. Add the following code to the <code>onTap()</code> function.</p>
 <pre><code class="lang-javascript">frameModule.topmost().navigate(&quot;about-page&quot;);
 </code></pre>
 <p>So, you may be thinking, &quot;What&#39;s this <code>topmost()</code> thing?&quot; Every page in a NativeScript app has something called the <em>topmost</em> frame. To get the topmost frame, we use the <code>topmost()</code> property of the frame module. Once you have that topmost frame, you can call the <code>navigate()</code> function to navigate to another page. </p>
@@ -659,7 +659,7 @@ exports.onTap = onTap;
 </blockquote>
 <p>Let&#39;s check the results of the navigation in your emulator. Tap the About button and you should navigate to the about page.</p>
 <p><img src="images/chapter4/nav.gif" alt="image"></p>
-<p>If you&#39;re running on Android, you cna hit the back button to return to the Home page. On iOS, you&#39;ll notice a <code>&lt; Back</code> button at the top of the page, automatically added. </p>
+<p>If you&#39;re running on Android, you can hit the back button to return to the Home page. On iOS, you&#39;ll notice a <code>&lt; Back</code> button at the top of the page, automatically added. </p>
 <p>NativeScript keeps track of your navigation history, so this is built into the framework. There are ways to remove the back button and to tell NativeScript to not track your history; however, I&#39;m not going to cover that here. Check out the <a href="http://docs.nativescript.org/core-concepts/navigation#navigate-without-history">docs</a> for details. </p>
 <p>For reference, here&#39;s the complete code for the <code>home-page.js</code> file, including the navigation to the About page.</p>
 <pre><code class="lang-javascript">var frameModule = require(&#39;ui/frame&#39;);
@@ -673,7 +673,7 @@ exports.onTap = onTap;
 </code></pre>
 <div class="exercise-end"></div>
 
-<p>Go ahead an add buttons to the home page for navigation to the Contact Us and Products pages, then adding the necesary code to navigate to each page. Try it all by yourself first. If you get stuck, look back through the exercises. The code is also included below for reference.</p>
+<p>Go ahead and add buttons to the home page for navigation to the Contact Us and Products pages, then adding the necesary code to navigate to each page. Try it all by yourself first. If you get stuck, look back through the exercises. The code is also included below for reference.</p>
 <h4 class="exercise-start">
     <b>Exercise</b>: Navigating to the Contact Us page
 </h4>
@@ -725,7 +725,7 @@ exports.onTapProducts = onTapProducts;
     &lt;/StackLayout&gt;
 &lt;/Page&gt;
 </code></pre>
-<p>Now, add several labels describing Tekmo. You may want to use the <em>Copy</em> feature ot the right for this one, it&#39;s a lot of text to type in manually.</p>
+<p>Now, add several labels describing Tekmo. You may want to use the <em>Copy</em> feature to the right for this one, it&#39;s a lot of text to type in manually.</p>
 <pre><code class="lang-xml">&lt;Label text=&quot;About Tekmo&quot; /&gt;
 &lt;Label textWrap=&quot;true&quot; text=&quot;Tekmo is a small online retailer specializing in retro video games sales and services. We&#39;re based in Lousiville, KY.&quot; /&gt;
 &lt;Label text=&quot;Our Mission&quot; /&gt;
@@ -747,7 +747,7 @@ exports.onTapProducts = onTapProducts;
 <p>Your app is really starting to come together. Looks good. But wait! The text on the About page scrolls off the bottom of the page. </p>
 <p>Go ahead try and scroll in your emulator by simiulating a tap and drag to scroll the page&#39;s content. </p>
 <p>You can&#39;t.</p>
-<p>This bring me to a fine point. In order to make your page&#39;s content scrollable, you need to use the <code>&lt;ScrollView&gt; ... &lt;/ScrollView&gt;</code> element.</p>
+<p>This brings me to a fine point. In order to make your page&#39;s content scrollable, you need to use the <code>&lt;ScrollView&gt; ... &lt;/ScrollView&gt;</code> element.</p>
 <h4 class="exercise-start">
     <b>Exercise</b>: Making page content scrollable
 </h4>
@@ -775,8 +775,8 @@ exports.onTapProducts = onTapProducts;
 			<div class="chapter">
 				<h2 id="collecting-data-from-users">Collecting data from users</h2>
 <p>Up until now, we&#39;ve been focused on displaying data to your app users, but most mobile apps aren&#39;t just sources of information, they also count on your interacting with them by collecting and submitting data.</p>
-<p>In this section section, you&#39;ll be building out the Contact Us page. As with most Contact Us pages within HTML applications, ours will allow the mobile app user to submit a question to Tekmo through a form. </p>
-<p>But, that&#39;s where the similarities stop. Althought users will be submitting data through a <em>form-like</em> UI, they won&#39;t actually be interacting with an HTML form. </p>
+<p>In this section, you&#39;ll be building out the Contact Us page. As with most Contact Us pages within HTML applications, ours will allow the mobile app user to submit a question to Tekmo through a form. </p>
+<p>But, that&#39;s where the similarities stop. Although users will be submitting data through a <em>form-like</em> UI, they won&#39;t actually be interacting with an HTML form. </p>
 <p>NativeScript apps are native mobile apps. That means they&#39;re stateful and don&#39;t need to mess with HTML forms: thank goodness! </p>
 <blockquote>
 <p>NOTE: Throughout these exercises, you&#39;ll be structuring your code very similar to the previous chapter where we added UI elements, added events to the UI elements to detect user interaction points, attached event handlers, and wrote business logic inside the event handlers. This is a common NativeScript development workflow that you will repeat throughout the lifecycle of your app&#39;s developement. I like to point this out, because it&#39;s relatively straight-forward and helps you to understand what to expect when developing apps with NativeScript.</p>
@@ -912,7 +912,7 @@ exports.onTap = onTap;
 </code></pre>
 <p>Now that we have a reference to our page, we&#39;ll be using the <code>getViewById()</code> function of the page to get a reference to the text field and text view. </p>
 <p>Before we do this, we&#39;ll first need to add an <code>id</code> property to the text field and text view.</p>
-<pre><code class="lang-xml">&lt;TexField id=&quot;subject&quot; hint=&quot;Enter a subject...&quot; /&gt;
+<pre><code class="lang-xml">&lt;TextField id=&quot;subject&quot; hint=&quot;Enter a subject...&quot; /&gt;
 
 &lt;TextView id=&quot;message&quot; hint=&quot;Enter a message...&quot; /&gt;
 </code></pre>
@@ -968,7 +968,7 @@ exports.onTap = onTap;
 <div class="exercise-end"></div>
 
 <p>Now that you&#39;ve gotten the data out of the text field and view, it&#39;s time to send the data over to Tekmo. In this next exercise, we&#39;ll be encoding our message in JSON and sending data to Tekmo via REST API endpoint. </p>
-<p>This is more of an advanced topic for discussion, and isn&#39;t necessarily NativeScript-specific; however, almsot every mobile app you create <em>will</em> interact with some remote web service or REST API, so I feel it&#39;s important to highlight and show you how this is done in a NativeScript app.</p>
+<p>This is more of an advanced topic for discussion, and isn&#39;t necessarily NativeScript-specific; however, almost every mobile app you create <em>will</em> interact with some remote web service or REST API, so I feel it&#39;s important to highlight and show you how this is done in a NativeScript app.</p>
 <blockquote>
 <p>NOTE: I just dropped a lot of new terms on your plate that you might not be familiar with, like JSON and REST API. Don&#39;t worry if you don&#39;t understand everything. You can just copy and paste the code in the next section, or skip it all together. This is the last part of this section, so just ahead to the next chapter if you don&#39;t want to follow along.</p>
 </blockquote>
@@ -976,11 +976,11 @@ exports.onTap = onTap;
     <b>Exercise</b>: Sending our message to Tekmo as JSON via their REST API
 </h4>
 
-<p>Start by adding a reference to the <em>http module</em> at the top of the <code>contact-us-page.js</code> file. The http mobile allows you to send HTTP requests to an endpoint, which is exactly what we want to do. The module is part of the core modules, which means the framework is doign all the heavy lifting for you (i.e., working with the Android and iOS speicfic funciton calls to make HTTP calls simple).</p>
+<p>Start by adding a reference to the <em>http module</em> at the top of the <code>contact-us-page.js</code> file. The http module allows you to send HTTP requests to an endpoint, which is exactly what we want to do. The module is part of the core modules, which means the framework is doing all the heavy lifting for you (i.e., working with the Android and iOS specific function calls to make HTTP calls simple).</p>
 <p>Read the NativeScript documentation on the <a href="https://docs.nativescript.org/cookbook/http">http module</a> for more information.</p>
 <pre><code class="lang-javascript">var httpModule = require(&quot;http&quot;);
 </code></pre>
-<p>Building a stringified JSON object containing the subject and message. This (and all subsequent code) should go directly beneath the <code>// step 2</code> commend of the <code>onTap()</code> function.</p>
+<p>Build a stringified JSON object containing the subject and message. This (and all subsequent code) should go directly beneath the <code>// step 2</code> commend of the <code>onTap()</code> function.</p>
 <pre><code class="lang-javascript">var data = JSON.stringify({
   &quot;subject&quot;: subject,
   &quot;message&quot;: message
@@ -988,7 +988,7 @@ exports.onTap = onTap;
 </code></pre>
 <p>Finally, make the request, passing in the URL (<a href="https://nstweet.brosteins.com/api/message">https://nstweet.brosteins.com/api/message</a>), the HTTP method (POST), the HTTP header telling the REST API the data is being sent over in JSON format, and the stringified JSON data.</p>
 <blockquote>
-<p>The function call to <code>request()</code> returns a <a href="http://www.html5rocks.com/en/tutorials/es6/promises/">promise</a>, which may not be something you&#39;re familiar with. That&#39;s ok. Check out the linki provided, and you should be able to decipher what&#39;s happening below (which is essentially, making an HTTP request, and the <code>.then()</code> call holds the success and failure code paths of that original request).</p>
+<p>The function call to <code>request()</code> returns a <a href="http://www.html5rocks.com/en/tutorials/es6/promises/">promise</a>, which may not be something you&#39;re familiar with. That&#39;s ok. Check out the link I provided, and you should be able to decipher what&#39;s happening below (which is essentially, making an HTTP request, and the <code>.then()</code> call holds the success and failure code paths of that original request).</p>
 </blockquote>
 <p>Note this is an endpoint I setup for the lab. It may not be very long-lived, so, if you&#39;re receiving 404 NOT FOUND messages, I would assume it&#39;s no longer available.</p>
 <pre><code class="lang-javascript">httpModule
@@ -1017,8 +1017,8 @@ exports.onTap = onTap;
     <b>Exercise</b>: Using the dialog module to provide visual feedback
 </h4>
 
-<p>The dialog module provides you with a variety of &quot;pop-up&quot; windows (or dialog windows) for providing feedback to users. Because it is also part of the NativeScript core modules, there&#39;s nothing special you need to do to start using it aside from importing the moduel into your JavaScript code.</p>
-<p>Start by importing the dialog module using the <code>require()</code> syntax at2 the very top of the <code>contact-us-page.js</code> file.</p>
+<p>The dialog module provides you with a variety of &quot;pop-up&quot; windows (or dialog windows) for providing feedback to users. Because it is also part of the NativeScript core modules, there&#39;s nothing special you need to do to start using it aside from importing the module into your JavaScript code.</p>
+<p>Start by importing the dialog module using the <code>require()</code> syntax at the very top of the <code>contact-us-page.js</code> file.</p>
 <pre><code class="lang-javascript">var dialogModule = require(&quot;ui/dialogs&quot;);
 </code></pre>
 <p>NativeScript has 5 different types of dialogs:</p>
@@ -1119,7 +1119,7 @@ exports.onTap = onTap;
 			<hr>
 			<div class="chapter">
 				<h2 id="building-a-complex-ui">Building a complex UI</h2>
-<p>I&#39;ve been using the stack layout a lot in the workshop thus far, but it&#39;s not from a lack of creativity. The stack layout can hold it&#39;s own: it&#39;s concise and simple to use. But, sometimes, you need soemthing a little more flexible. After all, the stack layout can only organize UI elements in a stack-like formation: one on top of (or below) another.</p>
+<p>I&#39;ve been using the stack layout a lot in the workshop thus far, but it&#39;s not from a lack of creativity. The stack layout can hold it&#39;s own: it&#39;s concise and simple to use. But, sometimes, you need something a little more flexible. After all, the stack layout can only organize UI elements in a stack-like formation: one on top of (or below) another.</p>
 <p>In this chapter, we&#39;re going to be learning about the grid layout, another layout that allows you to organize your UI using a grid. You&#39;ll be learn about the grid layout by bulding out the final page of the Tekmo app: the Products page. </p>
 <p>The Products page will have a grid of products listed down the page, with a heading at the top. Each game displayed will show it&#39;s name and price. In later chapters, we&#39;ll be adding an image for each game.</p>
 <h3 id="building-a-grid-of-products">Building a grid of products</h3>
@@ -1128,7 +1128,7 @@ exports.onTap = onTap;
     <b>Exercise</b>: Starting fresh
 </h4>
 
-<p>Let&#39;s start by clearing out the Products page, adding a scroll view, stack layout, label indicating wiht the text of &quot;Our Products&quot;. I&#39;ll let you try this by yourself. If you get stuck, you can follow along below or reference the previous exercises. </p>
+<p>Let&#39;s start by clearing out the Products page, adding a scroll view, stack layout, label indicating with the text of &quot;Our Products&quot;. I&#39;ll let you try this by yourself. If you get stuck, you can follow along below or reference the previous exercises. </p>
 <p>Add the <code>&lt;Page&gt;</code>, <code>&lt;ScrollView&gt;</code>, <code>&lt;StackLayout&gt;</code>, and <code>&lt;Label&gt;</code> elements to the <code>products-page.xml</code> file. </p>
 <pre><code class="lang-xml">&lt;Page&gt;
     &lt;ScrollView&gt;
@@ -1138,13 +1138,13 @@ exports.onTap = onTap;
     &lt;/ScrollView&gt;
 &lt;/Page&gt;
 </code></pre>
-<p>Almost automatically, I start most of my NativeScript pages with a scroll view and stack layout. it&#39;s always a good starting point, because I&#39;m likely to have scrolling content and the need to stack UI elements on top of each other.</p>
+<p>Almost automatically, I start most of my NativeScript pages with a scroll view and stack layout. It&#39;s always a good starting point, because I&#39;m likely to have scrolling content and the need to stack UI elements on top of each other.</p>
 <p>After adding these elements, your page should like like so:</p>
 <p><img src="images/chapter7/products-1.PNG" alt="image"></p>
 <div class="exercise-end"></div>
 
-<p>Right now, you may be a bit confused and wondering where the grid layout is going to go. We&#39;ve already added a stack layout, so how can I add a grid layout. Here&#39;s the secret (although it&#39;s not such a big secret): you can nest layouts. So, we&#39;ll be adding the grid layout right below the label. THinking through the page&#39;s overall layout, it will begin with UI elemnts being organized in a vertical stack, then after the top label, we&#39;ll be organizing elements with a grid.</p>
-<p>It might be hard to visualize right now, but once you get the code in and running in your emulator, it&#39;ll be come clearer.</p>
+<p>Right now, you may be a bit confused and wondering where the grid layout is going to go. We&#39;ve already added a stack layout, so how can I add a grid layout. Here&#39;s the secret (although it&#39;s not such a big secret): you can nest layouts. So, we&#39;ll be adding the grid layout right below the label. Thinking through the page&#39;s overall layout, it will begin with UI elemnts being organized in a vertical stack, then after the top label, we&#39;ll be organizing elements with a grid.</p>
+<p>It might be hard to visualize right now, but once you get the code up and running in your emulator, it&#39;ll become clearer.</p>
 <h4 class="exercise-start">
     <b>Exercise</b>: Adding a grid layout
 </h4>
@@ -1176,7 +1176,7 @@ exports.onTap = onTap;
 </h4>
 
 <p>As I said before, I want a game title and price listed for each game. Thinking aloud, this sounds a lot like two separate UI elements, perhaps even two labels for each game. Do you know of any ways to organize multiple UI elements? Oh that&#39;s right: a stack layout. </p>
-<p>I&#39;m goign to let you try this next step on your own. Add 6 stack layouts to the grid layout. Each stack layout will have 2 labels inside: a label for the game&#39;s name, and a label for the game&#39;s price. Here&#39;s the game names and prices to use. If you get stuck, follow along below, but try to do this from memory (or look back at a previous exercise).</p>
+<p>I&#39;m going to let you try this next step on your own. Add 6 stack layouts to the grid layout. Each stack layout will have 2 labels inside: a label for the game&#39;s name, and a label for the game&#39;s price. Here&#39;s the game names and prices to use. If you get stuck, follow along below, but try to do this from memory (or look back at a previous exercise).</p>
 <p>Tekmo has 6 vintage games that it sells:</p>
 <ul>
 <li>Super Marshmallow Man, $34.99</li>
@@ -1256,10 +1256,10 @@ exports.onTap = onTap;
 <p>Let&#39;s check if that fixed the issue in our emulator.</p>
 <p><img src="images/chapter7/products-3.PNG" alt="image"></p>
 <p>Yep, it did. But it&#39;s really hard to tell where each grid cell begins and ends. I can <em>kind of</em> tell that it&#39;s in a grid, but it&#39;s not really clear. </p>
-<p>Let&#39;s fix that by cheating a little bit. You won&#39;t learn aobut this for a few more chapters, but it&#39;s worth doing now to make it easier to see.</p>
+<p>Let&#39;s fix that by cheating a little bit. You won&#39;t learn about this for a few more chapters, but it&#39;s worth doing now to make it easier to see.</p>
 <p>Add an alternating CSS style to each stack layout, so we can see the grid cells better. </p>
 <blockquote>
-<p>WARNING: Yeha, I said add a CSS style. NativeScript isn&#39;t HTML, but a subset of CSS can be used to style your apps. You&#39;ll learn more later, so just follow along for now.</p>
+<p>WARNING: Yeah, I said add a CSS style. NativeScript isn&#39;t HTML, but a subset of CSS can be used to style your apps. You&#39;ll learn more later, so just follow along for now.</p>
 </blockquote>
 <pre><code class="lang-xml">&lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; style=&quot;background-color: #EEEEEE;&quot;&gt;
     &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
@@ -1328,7 +1328,7 @@ exports.onTap = onTap;
 
 <h3 id="refactoring-for-a-special-promotion">Refactoring for a special promotion</h3>
 <p>I could stop here with the grid layout, but that wouldn&#39;t be much fun. Let&#39;s do one more thing. </p>
-<p>After talking with Tekmo, I&#39;ve jsut realized that want to highlight Super Marshmallow Man, by placing it front and center on the Products page. Right now it&#39;s lost a little bit. Tekmo woudl like a larger tile at the top of the page, highlighting Super Marshmallow Man. The tile should have a brief description of the game while also advertizing a sale price of $14.99: $20 off!</p>
+<p>After talking with Tekmo, I&#39;ve just realized that want to highlight Super Marshmallow Man, by placing it front and center on the Products page. Right now it&#39;s lost a little bit. Tekmo woudl like a larger tile at the top of the page, highlighting Super Marshmallow Man. The tile should have a brief description of the game while also advertizing a sale price of $14.99: $20 off!</p>
 <h4 class="exercise-start">
     <b>Exercise</b>: Spanning grid cells 
 </h4>
@@ -1388,7 +1388,7 @@ exports.onTap = onTap;
 <p>Finally, let&#39;s add a brief description of the game to the Super Marshmallow Man tile.</p>
 <pre><code class="lang-xml">&lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; style=&quot;background-color: #DDDDDD;&quot;&gt;
     &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
-    &lt;Label textWrap=&quot;true&quot; text=&quot;Escape from certain death int his wild adventure!&quot; /&gt;
+    &lt;Label textWrap=&quot;true&quot; text=&quot;Escape from certain death in this wild adventure!&quot; /&gt;
     &lt;Label text=&quot;$34.99&quot; /&gt;
 &lt;/StackLayout&gt;
 </code></pre>
@@ -1452,7 +1452,7 @@ exports.onTap = onTap;
     <b>Exercise</b>: Removing the Android action bar
 </h4>
 
-<p>To remove the action bar, add the <code>actionBarHidden=&quot;true&quot;</code> attribute of the <code>&lt;Page&gt;</code> element. Add thsi to each page declaration in your XML files. </p>
+<p>To remove the action bar, add the <code>actionBarHidden=&quot;true&quot;</code> attribute of the <code>&lt;Page&gt;</code> element. Add this to each page declaration in your XML files. </p>
 <p>Starting with <code>home-page.xml</code>, add the attribute to the <code>&lt;Page&gt;</code> element.</p>
 <pre><code class="lang-xml">&lt;Page actionBarHidden=&quot;true&quot;&gt;
 ...
@@ -1463,7 +1463,7 @@ exports.onTap = onTap;
 <p>Do the same thing for the remainder of the pages within the Tekmo app:</p>
 <ul>
 <li>About</li>
-<li>Contact use</li>
+<li>Contact us</li>
 <li>Products</li>
 </ul>
 <div class="exercise-end"></div>
@@ -1491,7 +1491,7 @@ exports.onTap = onTap;
 </h4>
 
 <p>Another piece of low-hanging fruit is styling the titles on pages and the general purpose text we have on each page. Let&#39;s start with the titles.</p>
-<p>I&#39;d like to make the page titles larger and centerd on pages, when they&#39;re present. Because titles appear on multiple pages, it makes sense to place a single CSS style rule in the <code>app.css</code> file for titles. </p>
+<p>I&#39;d like to make the page titles larger and centered on pages, when they&#39;re present. Because titles appear on multiple pages, it makes sense to place a single CSS style rule in the <code>app.css</code> file for titles. </p>
 <p>Let&#39;s look in the <code>app.css</code> file to get started. You&#39;ll notice that the default app template for NativeScript apps already includes some CSS for elements with the <em>title</em> class. </p>
 <pre><code class="lang-css">.title {
     font-size: 30;
@@ -1519,7 +1519,7 @@ exports.onTap = onTap;
 <p>Fix the home page text wrapping. (I chose to enable text wrapping and shorten the text.)</p>
 <pre><code class="lang-xml">&lt;Label textWrap=&quot;true&quot; text=&quot;Welcome to Tekmo!&quot; /&gt;
 </code></pre>
-<p>Add a left, right, and bottom margin to all text by styling all labels to have a margin of 10 pixels. (I added this to the <code>app.css</code> file to make the change globally.) While</p>
+<p>Add a left, right, and bottom margin to all text by styling all labels to have a margin of 10 pixels. (I added this to the <code>app.css</code> file to make the change globally.)</p>
 <pre><code class="lang-css">Label {
     margin-left: 10;
     margin-right: 10;
@@ -1536,7 +1536,7 @@ exports.onTap = onTap;
 
 &lt;Label text=&quot;History&quot; class=&quot;sub-title&quot; /&gt;
 </code></pre>
-<p>Change the <code>button</code> selector definition in the global <code>app.css</code> file to make the buttons appear more reasonably-sized.mI couldn&#39;t decide what the <em>right</em> font size for buttons was, so I just removed the button <code>font-size</code> property.</p>
+<p>Change the <code>button</code> selector definition in the global <code>app.css</code> file to make the buttons appear more reasonably-sized. I couldn&#39;t decide what the <em>right</em> font size for buttons was, so I just removed the button <code>font-size</code> property.</p>
 <pre><code class="lang-css">button {
     horizontal-align: center;
 }
@@ -1683,7 +1683,7 @@ exports.onTap = onTap;
 <p>NOTE: There are likely other ways of adding a band of color around a label, but this was a quick way to get what I wanted accomplished.</p>
 </blockquote>
 <p><img src="images/chapter8/styling-5.PNG" alt="image"></p>
-<p>Change the tile titles a little to increase the font size, set the color to black, and increase top margin by a few pixels. This shoudl also be added to the <code>products-page.css</code> file.</p>
+<p>Change the tile titles a little to increase the font size, set the color to black, and increase top margin by a few pixels. This should also be added to the <code>products-page.css</code> file.</p>
 <pre><code>.tile-title Label {
     font-size: 14;
     color: black;
@@ -1805,7 +1805,7 @@ exports.onTap = onTap;
 </h4>
 
 <p>The first thing we need is images for each game. My friend <a href="https://twitter.com/outerfield">David Bjarnson</a>, was kind enough to draw up some quick images for each game. </p>
-<p><a href="images/chapter8/tekmo-images.zip">Download</a> the app images and unzip the contents. Inside, you&#39;ll find 2 folders: Android and iOS. Copy the contents of these folders into the <code>app/Resoures/Android</code> and <code>app/Resources/iOS</code> folder of the Tekmo mobile app. </p>
+<p><a href="images/chapter8/tekmo-images.zip">Download</a> the app images and unzip the contents. Inside, you&#39;ll find 2 folders: Android and iOS. Copy the contents of these folders into the <code>app/App_Resources/Android</code> and <code>app/App_Resources/iOS</code> folder of the Tekmo mobile app. </p>
 <p>You can checkout each of the images by clicking on them in VS Code:</p>
 <p><img src="images/chapter8/smm.png" alt="">
 <img src="images/chapter8/cc.png" alt="">
@@ -1865,7 +1865,7 @@ exports.onTap = onTap;
 }
 </code></pre><p><img src="images/chapter8/styling-9.PNG" alt="image"> </p>
 <p>This looks OK, but now the Super Marshmallow Man text and price has fallen out of the tile. Ideally, I&#39;d like the image to be left-aligned, then the description and price right-aligned. </p>
-<p>There are a variety of ways to do this. Two ways at the top of my head are to add another grid layout for this tile, or use a series of nested stack layouts. Let&#39;s use the stack layout method because it will introduce you to another property of the stack layout: orientation. The orientation property of the stak layout tells NativeScript whether to render the layout&#39;s contents vertically or horizontally. By default it is rendered veritcally. Change the Super Marshmallow Man tile&#39;s code to add a series of nested stck layouts.</p>
+<p>There are a variety of ways to do this. Two ways at the top of my head are to add another grid layout for this tile, or use a series of nested stack layouts. Let&#39;s use the stack layout method because it will introduce you to another property of the stack layout: orientation. The orientation property of the stack layout tells NativeScript whether to render the layout&#39;s contents vertically or horizontally. By default it is rendered veritcally. Change the Super Marshmallow Man tile&#39;s code to add a series of nested stck layouts.</p>
 <pre><code class="lang-xml">&lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; class=&quot;tile&quot;&gt;
     &lt;StackLayout class=&quot;tile-title&quot;&gt;
         &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;

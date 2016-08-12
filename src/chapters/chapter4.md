@@ -20,7 +20,7 @@ Let's learn about the simplest (and most common) first layout.
     <b>Exercise</b>: Using the StackLayout to organize UI elements in a "stack"
 </h4>
 
-Go to the `home-page`, and add a `<StackLayout> element to the page, directly within the `<Page>` element. Move the exisitng `<Label />` element inside of the `<StackLayout>`.
+Go to the `home-page`, and add a `<StackLayout>` element to the page, directly within the `<Page>` element. Move the exisitng `<Label />` element inside of the `<StackLayout>`.
 
 ```xml
 <Page>
@@ -41,7 +41,7 @@ As you can see, the home page doesn't look very different.
 
 ![image](images/chapter4/tekmo-1.PNG)
 
-Add another `<Label />` element and observer the changes.
+Add another `<Label />` element and observe the changes.
 
 ```xml
 <Page>
@@ -62,7 +62,7 @@ As you can see, the `<StackLayout>` stacks UI elements on top of each other on a
 
 ### Wrapping text
 
-But wait! Do you see the text you just added. It's running off the side of the page. 
+But wait! Do you see the text you just added? It's running off the side of the page. 
 
 > NOTE: By default, text within a `<Label />` element does not wrap to new lines.
 
@@ -106,7 +106,7 @@ Add a `<Button />` element to the page, after the last `<Label />`. Buttons have
 <Button text="About" />
 ```
 
-Next, add a `tap` event atribute to the `<Button />` element. Most UI elements have a variety of *events* that can execute JavaScript code when triggered. When an event it triggered, it will automatically run the funciton name specified in the event attribute. 
+Next, add a `tap` event atribute to the `<Button />` element. Most UI elements have a variety of *events* that can execute JavaScript code when triggered. When an event is triggered, it will automatically run the funciton name specified in the event attribute. 
 
 ```xml
 <Button text="About" tap="onTap" />
@@ -242,7 +242,7 @@ var frameModule = require('ui/frame');
 
 > NOTE: You don't need to give NativeScript the full path to the frame module. This is because NativeScript has special conventions built into the framework that know exactly how to find and load modules by specifying a folder. 
 
-To navigate from one page ot another, you use the `navigate()` function of the `topmost()` property on the frame module. Add the following code to the `onTap()` function.
+To navigate from one page to another, you use the `navigate()` function of the `topmost()` property on the frame module. Add the following code to the `onTap()` function.
 
 ```javascript
 frameModule.topmost().navigate("about-page");
@@ -256,7 +256,7 @@ Let's check the results of the navigation in your emulator. Tap the About button
 
 ![image](images/chapter4/nav.gif)
 
-If you're running on Android, you cna hit the back button to return to the Home page. On iOS, you'll notice a `< Back` button at the top of the page, automatically added. 
+If you're running on Android, you can hit the back button to return to the Home page. On iOS, you'll notice a `< Back` button at the top of the page, automatically added. 
 
 NativeScript keeps track of your navigation history, so this is built into the framework. There are ways to remove the back button and to tell NativeScript to not track your history; however, I'm not going to cover that here. Check out the [docs](http://docs.nativescript.org/core-concepts/navigation#navigate-without-history) for details. 
 
@@ -275,7 +275,7 @@ exports.onTap = onTap;
 
 <div class="exercise-end"></div>
 
-Go ahead an add buttons to the home page for navigation to the Contact Us and Products pages, then adding the necesary code to navigate to each page. Try it all by yourself first. If you get stuck, look back through the exercises. The code is also included below for reference.
+Go ahead and add buttons to the home page for navigation to the Contact Us and Products pages, then adding the necesary code to navigate to each page. Try it all by yourself first. If you get stuck, look back through the exercises. The code is also included below for reference.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Navigating to the Contact Us page

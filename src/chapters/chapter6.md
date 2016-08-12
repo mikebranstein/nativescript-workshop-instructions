@@ -2,9 +2,9 @@
 
 Up until now, we've been focused on displaying data to your app users, but most mobile apps aren't just sources of information, they also count on your interacting with them by collecting and submitting data.
 
-In this section section, you'll be building out the Contact Us page. As with most Contact Us pages within HTML applications, ours will allow the mobile app user to submit a question to Tekmo through a form. 
+In this section, you'll be building out the Contact Us page. As with most Contact Us pages within HTML applications, ours will allow the mobile app user to submit a question to Tekmo through a form. 
 
-But, that's where the similarities stop. Althought users will be submitting data through a *form-like* UI, they won't actually be interacting with an HTML form. 
+But, that's where the similarities stop. Although users will be submitting data through a *form-like* UI, they won't actually be interacting with an HTML form. 
 
 NativeScript apps are native mobile apps. That means they're stateful and don't need to mess with HTML forms: thank goodness! 
 
@@ -205,7 +205,7 @@ Now that we have a reference to our page, we'll be using the `getViewById()` fun
 Before we do this, we'll first need to add an `id` property to the text field and text view.
 
 ```xml
-<TexField id="subject" hint="Enter a subject..." />
+<TextField id="subject" hint="Enter a subject..." />
 
 <TextView id="message" hint="Enter a message..." />
 ```
@@ -278,7 +278,7 @@ exports.onTap = onTap;
 
 Now that you've gotten the data out of the text field and view, it's time to send the data over to Tekmo. In this next exercise, we'll be encoding our message in JSON and sending data to Tekmo via REST API endpoint. 
 
-This is more of an advanced topic for discussion, and isn't necessarily NativeScript-specific; however, almsot every mobile app you create *will* interact with some remote web service or REST API, so I feel it's important to highlight and show you how this is done in a NativeScript app.
+This is more of an advanced topic for discussion, and isn't necessarily NativeScript-specific; however, almost every mobile app you create *will* interact with some remote web service or REST API, so I feel it's important to highlight and show you how this is done in a NativeScript app.
 
 > NOTE: I just dropped a lot of new terms on your plate that you might not be familiar with, like JSON and REST API. Don't worry if you don't understand everything. You can just copy and paste the code in the next section, or skip it all together. This is the last part of this section, so just ahead to the next chapter if you don't want to follow along.
 
@@ -286,7 +286,7 @@ This is more of an advanced topic for discussion, and isn't necessarily NativeSc
     <b>Exercise</b>: Sending our message to Tekmo as JSON via their REST API
 </h4>
 
-Start by adding a reference to the *http module* at the top of the `contact-us-page.js` file. The http mobile allows you to send HTTP requests to an endpoint, which is exactly what we want to do. The module is part of the core modules, which means the framework is doign all the heavy lifting for you (i.e., working with the Android and iOS speicfic funciton calls to make HTTP calls simple).
+Start by adding a reference to the *http module* at the top of the `contact-us-page.js` file. The http module allows you to send HTTP requests to an endpoint, which is exactly what we want to do. The module is part of the core modules, which means the framework is doing all the heavy lifting for you (i.e., working with the Android and iOS specific function calls to make HTTP calls simple).
 
 Read the NativeScript documentation on the [http module](https://docs.nativescript.org/cookbook/http) for more information.
 
@@ -294,7 +294,7 @@ Read the NativeScript documentation on the [http module](https://docs.nativescri
 var httpModule = require("http");
 ```
 
-Building a stringified JSON object containing the subject and message. This (and all subsequent code) should go directly beneath the `// step 2` commend of the `onTap()` function.
+Build a stringified JSON object containing the subject and message. This (and all subsequent code) should go directly beneath the `// step 2` commend of the `onTap()` function.
 
 ```javascript
 var data = JSON.stringify({
@@ -305,7 +305,7 @@ var data = JSON.stringify({
 
 Finally, make the request, passing in the URL (https://nstweet.brosteins.com/api/message), the HTTP method (POST), the HTTP header telling the REST API the data is being sent over in JSON format, and the stringified JSON data.
 
-> The function call to `request()` returns a [promise](http://www.html5rocks.com/en/tutorials/es6/promises/), which may not be something you're familiar with. That's ok. Check out the linki provided, and you should be able to decipher what's happening below (which is essentially, making an HTTP request, and the `.then()` call holds the success and failure code paths of that original request).
+> The function call to `request()` returns a [promise](http://www.html5rocks.com/en/tutorials/es6/promises/), which may not be something you're familiar with. That's ok. Check out the link I provided, and you should be able to decipher what's happening below (which is essentially, making an HTTP request, and the `.then()` call holds the success and failure code paths of that original request).
 
 Note this is an endpoint I setup for the lab. It may not be very long-lived, so, if you're receiving 404 NOT FOUND messages, I would assume it's no longer available.
 
@@ -343,9 +343,9 @@ Let's change that by providing the user with a visual indicator their message wa
     <b>Exercise</b>: Using the dialog module to provide visual feedback
 </h4>
 
-The dialog module provides you with a variety of "pop-up" windows (or dialog windows) for providing feedback to users. Because it is also part of the NativeScript core modules, there's nothing special you need to do to start using it aside from importing the moduel into your JavaScript code.
+The dialog module provides you with a variety of "pop-up" windows (or dialog windows) for providing feedback to users. Because it is also part of the NativeScript core modules, there's nothing special you need to do to start using it aside from importing the module into your JavaScript code.
 
-Start by importing the dialog module using the `require()` syntax at2 the very top of the `contact-us-page.js` file.
+Start by importing the dialog module using the `require()` syntax at the very top of the `contact-us-page.js` file.
 
 ```javascript
 var dialogModule = require("ui/dialogs");

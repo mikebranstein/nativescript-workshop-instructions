@@ -283,7 +283,7 @@ The `platforms` directory also contains platform-specific files, and is used as 
 
 I'm not going to go in-depth into the `node_modules` folder or the two `package.json` files. If you're curious, I cover the details of these files and folders in [NativeScript in Action](http://bit.ly/nsinaction).
 
-Finally, we're getting to the real meaty stuff: app.* files and main-page.* files. When your app is runs, the first piece of app code that runs is the app.js file. In a sense, you can think of the app.js file as a bootstrapper for your application. Let's open it up an see what's inside:
+Finally, we're getting to the real meaty stuff: *app.* files and *main-page.* files. When your app runs, the first piece of app code that runs is the app.js file. In a sense, you can think of the app.js file as a bootstrapper for your application. Let's open it up and see what's inside:
 
 ```javascript
 var application = require("application");
@@ -302,8 +302,8 @@ Let's take a look at the `main-page` page and find the 3 files:
 
 ![image](images/chapter2/code-app-layout.PNG)
 
-Hmmm, `main-page.css` is missing. That's strange...but it's OK. It turns out pages don't *really* need all of the files. You only relaly need the UI definition (.xml) file. The .css and .js files are optional. If they're present, NativeScript will use them, but if they're missing, it doesn't care.
+Hmmm, `main-page.css` is missing. That's strange...but it's OK. It turns out pages don't *really* need all of the files. You only really need the UI definition (.xml) file. The .css and .js files are optional. If they're present, NativeScript will use them, but if they're missing, it doesn't care.
 
 <div class="exercise-end"></div>
 
-We've spent a lot of time on the introductory pieces of NativeScript, but we haven't gotten to relaly dive in an create our own app, so it's time to pick up the page. I'll be going a little faster from here on, so when you have questions or need clarifications, stop me and we'll talk about it.
+We've spent a lot of time on the introductory pieces of NativeScript, but we haven't gotten to really dive in an create our own app, so it's time to pick up the pace. I'll be going a little faster from here on, so when you have questions or need clarifications, stop me and we'll talk about it.

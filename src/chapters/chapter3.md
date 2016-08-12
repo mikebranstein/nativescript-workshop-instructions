@@ -1,6 +1,6 @@
 ## Basic UI elements
 
-In this section, you'll be learning aobut some of the basic UI elements that go into NativeScript apps. 
+In this section, you'll be learning about some of the basic UI elements that go into NativeScript apps. 
 
 ### What you're building
 
@@ -66,7 +66,7 @@ As you've seen, the `tns create` command scaffolds a nifty "hello world" app. Bu
 
 > In this exercise, you'll be deleting the current start page, creating a new start page, and changing the `app.js` start page to point to your new home page. We haven't learned about all of these items yet. Get as far as you can before looking ahead. If you need help, you can follow the steps below.
 
-Using VS Code, open the tekmo app by using the `Open Folder...` command. You shoudl see the following in VS Code:
+Using VS Code, open the tekmo app by using the `Open Folder...` command. You should see the following in VS Code:
 
 ![image](images/chapter3/code-tekmo-1.PNG)
 
@@ -105,7 +105,7 @@ When the app runs, it should have a blank page:
 
 <div class="exercise-end"></div>
 
-Great work! You've replaced the default template pages wiht your own home page. Now, let's learn a little bit more about pages and UI elements.
+Great work! You've replaced the default template pages with your own home page. Now, let's learn a little bit more about pages and UI elements.
 
 ### Pages
 
@@ -157,7 +157,7 @@ Now, let's go ahead an create the About, Contact Us, and Products pages. But bef
 2. You compile/build the changes (using `tns run android --emulator`)
 3. You review the changes in your app using your emulator (i.e., GenyMotion)
 
-> Hold on...this take a long time. Ideally I'd like to make changes, then quickly look at them in GenyMotion (without manually running `tns run...` every single time.)
+> Hold on...this takes a long time. Ideally I'd like to make changes, then quickly look at them in GenyMotion (without manually running `tns run...` every single time.)
 
 Luckily, there is a better way. Let me introduce you to LiveSync.
 
@@ -204,7 +204,7 @@ As you can see LiveSync is a powerufl CLI tool that can dramatically reduce your
 
 ### Adding more pages
 
-Let's continue adding the remainder of our app pages: About, Contact Us, and Products. For now, each page should have a label on it with the page's name. I'll let you try it on your own, but if you get stuck or can't remember the exact syn tax, you can follow along below.
+Let's continue adding the remainder of our app pages: About, Contact Us, and Products. For now, each page should have a label on it with the page's name. I'll let you try it on your own, but if you get stuck or can't remember the exact syntax, you can follow along below.
 
 We haven't learned how to navigate between pages yet, so to test each page, replace the startup page in the `app.js` file. 
 

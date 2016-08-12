@@ -1,6 +1,6 @@
 ## Building a complex UI
 
-I've been using the stack layout a lot in the workshop thus far, but it's not from a lack of creativity. The stack layout can hold it's own: it's concise and simple to use. But, sometimes, you need soemthing a little more flexible. After all, the stack layout can only organize UI elements in a stack-like formation: one on top of (or below) another.
+I've been using the stack layout a lot in the workshop thus far, but it's not from a lack of creativity. The stack layout can hold it's own: it's concise and simple to use. But, sometimes, you need something a little more flexible. After all, the stack layout can only organize UI elements in a stack-like formation: one on top of (or below) another.
 
 In this chapter, we're going to be learning about the grid layout, another layout that allows you to organize your UI using a grid. You'll be learn about the grid layout by bulding out the final page of the Tekmo app: the Products page. 
 
@@ -14,7 +14,7 @@ We'll start by building a basic grid, then slowly modifying it to highlight some
     <b>Exercise</b>: Starting fresh
 </h4>
 
-Let's start by clearing out the Products page, adding a scroll view, stack layout, label indicating wiht the text of "Our Products". I'll let you try this by yourself. If you get stuck, you can follow along below or reference the previous exercises. 
+Let's start by clearing out the Products page, adding a scroll view, stack layout, label indicating with the text of "Our Products". I'll let you try this by yourself. If you get stuck, you can follow along below or reference the previous exercises. 
 
 Add the `<Page>`, `<ScrollView>`, `<StackLayout>`, and `<Label>` elements to the `products-page.xml` file. 
 
@@ -28,7 +28,7 @@ Add the `<Page>`, `<ScrollView>`, `<StackLayout>`, and `<Label>` elements to the
 </Page>
 ```
 
-Almost automatically, I start most of my NativeScript pages with a scroll view and stack layout. it's always a good starting point, because I'm likely to have scrolling content and the need to stack UI elements on top of each other.
+Almost automatically, I start most of my NativeScript pages with a scroll view and stack layout. It's always a good starting point, because I'm likely to have scrolling content and the need to stack UI elements on top of each other.
 
 After adding these elements, your page should like like so:
 
@@ -36,9 +36,9 @@ After adding these elements, your page should like like so:
 
 <div class="exercise-end"></div>
 
-Right now, you may be a bit confused and wondering where the grid layout is going to go. We've already added a stack layout, so how can I add a grid layout. Here's the secret (although it's not such a big secret): you can nest layouts. So, we'll be adding the grid layout right below the label. THinking through the page's overall layout, it will begin with UI elemnts being organized in a vertical stack, then after the top label, we'll be organizing elements with a grid.
+Right now, you may be a bit confused and wondering where the grid layout is going to go. We've already added a stack layout, so how can I add a grid layout. Here's the secret (although it's not such a big secret): you can nest layouts. So, we'll be adding the grid layout right below the label. Thinking through the page's overall layout, it will begin with UI elemnts being organized in a vertical stack, then after the top label, we'll be organizing elements with a grid.
 
-It might be hard to visualize right now, but once you get the code in and running in your emulator, it'll be come clearer.
+It might be hard to visualize right now, but once you get the code up and running in your emulator, it'll become clearer.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Adding a grid layout
@@ -80,7 +80,7 @@ You won't be able to see this layout until we add content to the grid layout, so
 
 As I said before, I want a game title and price listed for each game. Thinking aloud, this sounds a lot like two separate UI elements, perhaps even two labels for each game. Do you know of any ways to organize multiple UI elements? Oh that's right: a stack layout. 
 
-I'm goign to let you try this next step on your own. Add 6 stack layouts to the grid layout. Each stack layout will have 2 labels inside: a label for the game's name, and a label for the game's price. Here's the game names and prices to use. If you get stuck, follow along below, but try to do this from memory (or look back at a previous exercise).
+I'm going to let you try this next step on your own. Add 6 stack layouts to the grid layout. Each stack layout will have 2 labels inside: a label for the game's name, and a label for the game's price. Here's the game names and prices to use. If you get stuck, follow along below, but try to do this from memory (or look back at a previous exercise).
 
 Tekmo has 6 vintage games that it sells:
 * Super Marshmallow Man, $34.99
@@ -175,11 +175,11 @@ Let's check if that fixed the issue in our emulator.
 
 Yep, it did. But it's really hard to tell where each grid cell begins and ends. I can *kind of* tell that it's in a grid, but it's not really clear. 
 
-Let's fix that by cheating a little bit. You won't learn aobut this for a few more chapters, but it's worth doing now to make it easier to see.
+Let's fix that by cheating a little bit. You won't learn about this for a few more chapters, but it's worth doing now to make it easier to see.
 
 Add an alternating CSS style to each stack layout, so we can see the grid cells better. 
 
-> WARNING: Yeha, I said add a CSS style. NativeScript isn't HTML, but a subset of CSS can be used to style your apps. You'll learn more later, so just follow along for now.
+> WARNING: Yeah, I said add a CSS style. NativeScript isn't HTML, but a subset of CSS can be used to style your apps. You'll learn more later, so just follow along for now.
 
 ```xml
 <StackLayout row="0" col="0" style="background-color: #EEEEEE;">
@@ -258,7 +258,7 @@ For reference, here's the complete code listing for the Products page.
 
 I could stop here with the grid layout, but that wouldn't be much fun. Let's do one more thing. 
 
-After talking with Tekmo, I've jsut realized that want to highlight Super Marshmallow Man, by placing it front and center on the Products page. Right now it's lost a little bit. Tekmo woudl like a larger tile at the top of the page, highlighting Super Marshmallow Man. The tile should have a brief description of the game while also advertizing a sale price of $14.99: $20 off!
+After talking with Tekmo, I've just realized that want to highlight Super Marshmallow Man, by placing it front and center on the Products page. Right now it's lost a little bit. Tekmo woudl like a larger tile at the top of the page, highlighting Super Marshmallow Man. The tile should have a brief description of the game while also advertizing a sale price of $14.99: $20 off!
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Spanning grid cells 
@@ -336,7 +336,7 @@ Finally, let's add a brief description of the game to the Super Marshmallow Man 
 ```xml
 <StackLayout row="0" col="0" colSpan="2" style="background-color: #DDDDDD;">
     <Label text="Super Marshmallow Man" textWrap="true" />
-    <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
+    <Label textWrap="true" text="Escape from certain death in this wild adventure!" />
     <Label text="$34.99" />
 </StackLayout>
 ```
