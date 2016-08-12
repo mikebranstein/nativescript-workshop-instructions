@@ -9,6 +9,7 @@ There's nothing else you need to do, (except power on your laptop). Turn it on a
 ### Laptop login 
 
 If you're using a laptop I've provided to you, you can login with these credentials:
+
 * Username: `dev`
 * Password: `p@ssw0rd`
 
