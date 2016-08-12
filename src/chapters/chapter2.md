@@ -4,12 +4,12 @@ In this exercise, you're going to create your first app. Before we get there, I'
 
 ### NativeScript CLI
 
-The NativeScript CLI is a set of command line tools that make your job as a mobile developer easy. The CLI provides tools for creating and scaffolding the files needed to develop an app, add in platform-specific files (for Android and iOS), building the app into the platform-specific mobile app containers, running your app in an emulator (Android) and simulator (iOS), and deploying your app to a physical device for testing. 
+The NativeScript CLI is a set of command line tools that make your job as a mobile developer easy. The CLI provides tools for creating and scaffolding the files needed to develop an app, add in platform-specific files (for Android and iOS), building the app into the platform-specific mobile app containers, running your app in an emulator (Android) and simulator (iOS), and deploying your app to a physical device for testing.
 
 The first thing we'll do is verify the CLI installation and verison of NativeScript installed.
 
 <h4 class="exercise-start">
-    <b>Exercise</b>: Verifying your CLI installation   
+    <b>Exercise</b>: Verifying your CLI installation
 </h4>
 
 Open a Node.js Command Prompt in Windows by clicking your Start Menu, typing 'node', and launching the "Node.js command prompt" desktop app from the Start Menu.
@@ -36,7 +36,7 @@ You should see version 2.1.1 is installed.
 Let's get started creating your first app with NativeScript. It's pretty easy, especially with the CLI scaffolding tools.
 
 <h4 class="exercise-start">
-    <b>Exercise</b>: Creating your first app 
+    <b>Exercise</b>: Creating your first app
 </h4>
 
 Change into your Documents directory:
@@ -88,22 +88,22 @@ Which should display the following:
 
 <div class="exercise-end"></div>
 
-You did it! That's it: your first NativeScript app. Easy, right? 
+You did it! That's it: your first NativeScript app. Easy, right?
 
 But not so impressive...yet. Let's see the app in action.
 
 ### Using the GenyMotion emulator
 
-Now that you've created your first app, wouldn't you like to run it and see what it looks like? 
+Now that you've created your first app, wouldn't you like to run it and see what it looks like?
 
-Before we run the app, let's talk about NativeScript a bit more. NativeScript is a cross-platform mobile app development tool. That means write it once, run it on Android or iOS. Unfortunately, you need a Mac in order to development and run iOS apps, so unless you're using a Mac, you're out of luck. 
+Before we run the app, let's talk about NativeScript a bit more. NativeScript is a cross-platform mobile app development tool. That means write it once, run it on Android or iOS. Unfortunately, you need a Mac in order to development and run iOS apps, so unless you're using a Mac, you're out of luck.
 
 If you're using a provided laptop, it's running Windows, so you're going to be running your app in an Android emulator named GenyMotion. Don't worry: it's already pre-installed for you. GenyMotion is free for personal use, so when you get home, you'll be able to follow along.
 
 The first thing we'll need to do is to start up the GenyMotion emulator. Let's do it. 
 
 <h4 class="exercise-start">
-    <b>Exercise</b>: Starting up GenyMotion  
+    <b>Exercise</b>: Starting up GenyMotion
 </h4>
 
 Click on your Start Menu and type `geny`, click on GenyMotion to launch the GenyMotion emulator:
@@ -128,7 +128,7 @@ Once the emulator has fully loaded, you should see an Android device running on 
 
 ### Running your app
 
-Congrats! You're now running an Android emulator and are ready to get your NativeScript app running on the emulator. Let's come back to our app. 
+Congrats! You're now running an Android emulator and are ready to get your NativeScript app running on the emulator. Let's come back to our app.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Adding the Android platform
@@ -142,7 +142,7 @@ We'll use the `tns platform add android` CLI command to tell our app that it can
   tns platform add android
 ```
 
-This *will* take a few minutes, so be patient. 
+This *will* take a few minutes, so be patient.
 
 Let's verify that the Android platform has been added to the NativeScript app. Look in the current directory again:
 
@@ -183,6 +183,7 @@ You'll see a folder named `android`. This folder contains the necessary files to
                0 File(s)              0 bytes
                3 Dir(s)  53,639,196,672 bytes free
 ```
+
 <div class="exercise-end"></div>
 
 Now that you've added the Android platform, let's *finally* run your app!
@@ -197,7 +198,7 @@ Before you actually run your app, let's make sure you're in your app's root dire
   cd C:\Users\dev\Documents\my-first-app
 ```
 
-Run the app using the `tns run android --emulator` command. 
+Run the app using the `tns run android --emulator` command.
 
 ```
   tns run android --emulator
@@ -221,7 +222,7 @@ There's a lot going on under the scenes of your first app, so let's explore it t
     <b>Exercise</b>: Running Visual Studio Code
 </h4>
 
-Let's start by opening a code editor. My favorite, lightweight, (and free) editor is Visual Studio Code (VS Code). VS Code is already installed on your laptop if you're using one I've provided. If you need to download VS Code, go to [VisualStudio.com](https://code.visualstudio.com/download) and download VS Code for free. 
+Let's start by opening a code editor. My favorite, lightweight, (and free) editor is Visual Studio Code (VS Code). VS Code is already installed on your laptop if you're using one I've provided. If you need to download VS Code, go to [VisualStudio.com](https://code.visualstudio.com/download) and download VS Code for free.
 
 To launch VS Code, click your Start Menu and type in `code`. Click on `Visual Studio Code` to run.
 
@@ -292,9 +293,9 @@ application.start({ moduleName: "main-page" });
 
 This code tells NativeScript to load the `application` module (more on these later), then it directs the app to `start` by giving it the name of the first (or home) page of your app. In this case, the first page is named `main-page`, so when you app runs, it will automatically start by displaying `main-page`.
 
-> NOTE: Just like HTML applications, you can think of NativeScript apps as a collection of pages. You move between page by navigating, and you can also pass data (or app state) between pages during navigation. 
+> NOTE: Just like HTML applications, you can think of NativeScript apps as a collection of pages. You move between page by navigating, and you can also pass data (or app state) between pages during navigation.
 
-> DEFINITION: A page is a collection of similarly-named files (.xml, .css, and .js). The .xml file contains your UI code, the .css file styles your UI, and the .js file contains yoru business logic code. NativeScript uses conventions to tell which files constitute a page, so all you need to do is name your .xml, .css, and .js files with the same prefix. 
+> DEFINITION: A page is a collection of similarly-named files (.xml, .css, and .js). The .xml file contains your UI code, the .css file styles your UI, and the .js file contains yoru business logic code. NativeScript uses conventions to tell which files constitute a page, so all you need to do is name your .xml, .css, and .js files with the same prefix.
 
 So, back to pages. Now that we know about the NativeScript page-naming convention, you understand what the `main-page` page is: it's a collection of 3 files: `main-page.xml` (the UI), `main-page.css` (styling for the UI), and `main-page.js` (any business logic code that interacts with the UI).
 
