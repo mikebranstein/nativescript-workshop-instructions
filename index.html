@@ -28,18 +28,18 @@
 		<div id="book">
 			<div class="chapter">
 				<h2 id="introduction">Introduction</h2>
-<p>Welcome to the NativeScript Workshop! </p>
-<p>To get started you&#39;ll need the followin pre-requisites:</p>
+<p>Welcome to the NativeScript Workshop!</p>
+<p>To get started you&#39;ll need the following pre-requisites:</p>
 <ul>
 <li>Windows, Mac, or Linux computer</li>
-<li><a href="https://www.genymotion.com/">Genymotion emulator</a></li>
+<li><a href="https://www.genymotion.com/">GenyMotion emulator</a></li>
 <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> open-source full-hardware virtualizer</li>
 <li>Visual Studio Code (or other text editor or IDE)</li>
 <li><a href="http://docs.nativescript.org/angular/start/quick-setup">NativeScript</a> v2.1 installed and configured</li>
 </ul>
 <h3 id="about-nativescript">About NativeScript</h3>
 <p><a href="https://nativescript.org">NativeScript</a> is a framework for building native iOS and Android apps using JavaScript and CSS. NativeScript renders UIs with the native platform’s rendering engine, no WebViews, resulting in native-like performance and UX.</p>
-<p>NativeScript provides a best-of-both-worlds development experience. Our cross-platform JavaScript modules give you the convenience of writing iOS and Android apps from a single JavaScript codebase, while our runtimes give you the power of accessing native APIs, SDKs, and frameworks when you need them—all without needing to open Xcode or Android Studio. NativeScript was created and is supported by Telerik.</p>
+<p>NativeScript provides a best-of-both-worlds development experience. Our cross-platform JavaScript modules give you the convenience of writing iOS and Android apps from a single JavaScript code base, while our runtimes give you the power of accessing native APIs, SDKs, and frameworks when you need them—all without needing to open Xcode or Android Studio. NativeScript was created and is supported by Telerik.</p>
 <h3 id="what-you-re-building">What you&#39;re building</h3>
 <p>In this workshop you&#39;ll learn how to build iOS and Android mobile apps using NativeScript. Throughout the workshop, you&#39;ll be building 2 apps: the mobile app version of an online vintage video game reseller (Tekmo) and a text-to-speech soundboard app. </p>
 <p>Key concepts and take aways:</p>
@@ -53,7 +53,7 @@
 </li>
 <li>Pages</li>
 <li>Navigation</li>
-<li>Basic UI elements (labels, buttons, textboxes, etc.)</li>
+<li>Basic UI elements (labels, buttons, text boxes, etc.)</li>
 <li>Organizing your UI with layouts</li>
 <li>Styling your app with CSS</li>
 <li>Data binding</li>
@@ -105,10 +105,11 @@
 				<h2 id="your-first-app">Your first app</h2>
 <p>In this exercise, you&#39;re going to create your first app. Before we get there, I&#39;m going to introduce you to the NativeScript CLI (command line interface).</p>
 <h3 id="nativescript-cli">NativeScript CLI</h3>
-<p>The NativeScript CLI is a set of command line tools that make your job as a mobile developer easy. The CLI provides tools for creating and scaffolding the files needed to develop an app, add in platform-specific files (for Android and iOS), building the app into the platform-specific mobile app containers, running your app in an emulator (Android) and simulator (iOS), and deploying your app to a physical device for testing. </p>
-<p>The first thing we&#39;ll do is verify the CLI installation and verison of NativeScript installed.</p>
+<p>The NativeScript CLI is a set of command line tools that make your job as a mobile developer easy. The CLI provides tools for creating and scaffolding the files needed to develop an app, add in platform-specific files (for Android and iOS), building the app into the platform-specific mobile app containers, running your app in an emulator (Android) and simulator (iOS), and deploying your app to a physical device for testing.</p>
+<p>The first thing we&#39;ll do is verify the CLI installation and version of NativeScript installed.</p>
 <h4 class="exercise-start">
-    <b>Exercise</b>: Verifying your CLI installation<br></h4>
+    <b>Exercise</b>: Verifying your CLI installation
+</h4>
 
 <p>Open a Node.js Command Prompt in Windows by clicking your Start Menu, typing &#39;node&#39;, and launching the &quot;Node.js command prompt&quot; desktop app from the Start Menu.</p>
 <p><img src="images/chapter2/node-js-command-prompt.PNG" alt="image"></p>
@@ -119,11 +120,11 @@
 <div class="exercise-end"></div>
 
 <h4 id="using-the-tns-cli-command">Using the tns CLI command</h4>
-<p>&quot;TNS&quot; stands for Telerik NativeScript. Throughout the workshop, you&#39;ll be using the the <code>tns</code> command from the Node.js command prompt. Remember the <code>tns</code> command, and be sure to always run it from your Node.js command prompt, as shown above.</p>
+<p>&quot;tns&quot; stands for Telerik NativeScript. Throughout the workshop, you&#39;ll be using the <code>tns</code> command from the Node.js command prompt. Remember the <code>tns</code> command, and be sure to always run it from your Node.js command prompt, as shown above.</p>
 <h3 id="creating-an-app">Creating an app</h3>
 <p>Let&#39;s get started creating your first app with NativeScript. It&#39;s pretty easy, especially with the CLI scaffolding tools.</p>
 <h4 class="exercise-start">
-    <b>Exercise</b>: Creating your first app 
+    <b>Exercise</b>: Creating your first app
 </h4>
 
 <p>Change into your Documents directory:</p>
@@ -151,15 +152,16 @@
   C:\Users\dev\Documents\my-first-app&gt;
 </code></pre><div class="exercise-end"></div>
 
-<p>You did it! That&#39;s it: your first NativeScript app. Easy, right? </p>
+<p>You did it! That&#39;s it: your first NativeScript app. Easy, right?</p>
 <p>But not so impressive...yet. Let&#39;s see the app in action.</p>
 <h3 id="using-the-genymotion-emulator">Using the GenyMotion emulator</h3>
-<p>Now that you&#39;ve created your first app, wouldn&#39;t you like to run it and see what it looks like? </p>
-<p>Before we run the app, let&#39;s talk about NativeScript a bit more. NativeScript is a cross-platform mobile app development tool. That means write it once, run it on Android or iOS. Unfortunately, you need a Mac in order to development and run iOS apps, so unless you&#39;re using a Mac, you&#39;re out of luck. </p>
+<p>Now that you&#39;ve created your first app, wouldn&#39;t you like to run it and see what it looks like?</p>
+<p>Before we run the app, let&#39;s talk about NativeScript a bit more. NativeScript is a cross-platform mobile app development tool. That means write it once, run it on Android or iOS. Unfortunately, you need a Mac in order to development and run iOS apps, so unless you&#39;re using a Mac, you&#39;re out of luck.</p>
 <p>If you&#39;re using a provided laptop, it&#39;s running Windows, so you&#39;re going to be running your app in an Android emulator named GenyMotion. Don&#39;t worry: it&#39;s already pre-installed for you. GenyMotion is free for personal use, so when you get home, you&#39;ll be able to follow along.</p>
 <p>The first thing we&#39;ll need to do is to start up the GenyMotion emulator. Let&#39;s do it. </p>
 <h4 class="exercise-start">
-    <b>Exercise</b>: Starting up GenyMotion<br></h4>
+    <b>Exercise</b>: Starting up GenyMotion
+</h4>
 
 <p>Click on your Start Menu and type <code>geny</code>, click on GenyMotion to launch the GenyMotion emulator:</p>
 <p><img src="images/chapter2/geny-motion.PNG" alt="image"></p>
@@ -173,7 +175,7 @@
 <div class="exercise-end"></div>
 
 <h3 id="running-your-app">Running your app</h3>
-<p>Congrats! You&#39;re now running an Android emulator and are ready to get your NativeScript app running on the emulator. Let&#39;s come back to our app. </p>
+<p>Congrats! You&#39;re now running an Android emulator and are ready to get your NativeScript app running on the emulator. Let&#39;s come back to our app.</p>
 <h4 class="exercise-start">
     <b>Exercise</b>: Adding the Android platform
 </h4>
@@ -181,7 +183,7 @@
 <p>Before we run your app, we need to tell the app which platform we want to run it on. By default NativeScript apps don&#39;t assume you&#39;ll be running on any particular platform, so it&#39;s up to you to tell the app how to do this.</p>
 <p>We&#39;ll use the <code>tns platform add android</code> CLI command to tell our app that it can run on Android. Run the command from the <code>my-first-app</code> directory:</p>
 <pre><code>  tns platform add android
-</code></pre><p>This <em>will</em> take a few minutes, so be patient. </p>
+</code></pre><p>This <em>will</em> take a few minutes, so be patient.</p>
 <p>Let&#39;s verify that the Android platform has been added to the NativeScript app. Look in the current directory again:</p>
 <pre><code>  dir
 </code></pre><p>Notice the <code>platforms</code> folder has been added. </p>
@@ -215,7 +217,7 @@
 
 <p>Before you actually run your app, let&#39;s make sure you&#39;re in your app&#39;s root directory <code>C:\Users\dev\Documents\my-first-app</code>:</p>
 <pre><code>  cd C:\Users\dev\Documents\my-first-app
-</code></pre><p>Run the app using the <code>tns run android --emulator</code> command. </p>
+</code></pre><p>Run the app using the <code>tns run android --emulator</code> command.</p>
 <pre><code>  tns run android --emulator
 </code></pre><p>While you&#39;re waiting for your app to run in the emulator, let&#39;s take a moment to understand what&#39;s happening. When you run the <code>tns run android --emulator</code> command, you&#39;re telling the CLI to build your app, package it up, embed it within an Android .apk app, install it on to the running GenyMotion emulator, and run it. </p>
 <p>After a few minutes, you should see your app running within the emulator:</p>
@@ -229,7 +231,7 @@
     <b>Exercise</b>: Running Visual Studio Code
 </h4>
 
-<p>Let&#39;s start by opening a code editor. My favorite, lightweight, (and free) editor is Visual Studio Code (VS Code). VS Code is already installed on your laptop if you&#39;re using one I&#39;ve provided. If you need to download VS Code, go to <a href="https://code.visualstudio.com/download">VisualStudio.com</a> and download VS Code for free. </p>
+<p>Let&#39;s start by opening a code editor. My favorite, lightweight, (and free) editor is Visual Studio Code (VS Code). VS Code is already installed on your laptop if you&#39;re using one I&#39;ve provided. If you need to download VS Code, go to <a href="https://code.visualstudio.com/download">VisualStudio.com</a> and download VS Code for free.</p>
 <p>To launch VS Code, click your Start Menu and type in <code>code</code>. Click on <code>Visual Studio Code</code> to run.</p>
 <p><img src="images/chapter2/code.PNG" alt="image"></p>
 <p>Once you&#39;re in VS Code, open your app&#39;s root directory, <code>C:\Users\dev\Documents\my-first-app</code>. You will see the app&#39;s file and folder layout on the left, and an editor window on the right. Be sure to use the <code>Open Folder...</code> option of VS Code.</p>
@@ -281,8 +283,8 @@ application.start({ moduleName: &quot;main-page&quot; });
 </code></pre>
 <p>This code tells NativeScript to load the <code>application</code> module (more on these later), then it directs the app to <code>start</code> by giving it the name of the first (or home) page of your app. In this case, the first page is named <code>main-page</code>, so when you app runs, it will automatically start by displaying <code>main-page</code>.</p>
 <blockquote>
-<p>NOTE: Just like HTML applications, you can think of NativeScript apps as a collection of pages. You move between page by navigating, and you can also pass data (or app state) between pages during navigation. </p>
-<p>DEFINITION: A page is a collection of similarly-named files (.xml, .css, and .js). The .xml file contains your UI code, the .css file styles your UI, and the .js file contains yoru business logic code. NativeScript uses conventions to tell which files constitute a page, so all you need to do is name your .xml, .css, and .js files with the same prefix. </p>
+<p>NOTE: Just like HTML applications, you can think of NativeScript apps as a collection of pages. You move between page by navigating, and you can also pass data (or app state) between pages during navigation.</p>
+<p>DEFINITION: A page is a collection of similarly-named files (.xml, .css, and .js). The .xml file contains your UI code, the .css file styles your UI, and the .js file contains your business logic code. NativeScript uses conventions to tell which files constitute a page, so all you need to do is name your .xml, .css, and .js files with the same prefix.</p>
 </blockquote>
 <p>So, back to pages. Now that we know about the NativeScript page-naming convention, you understand what the <code>main-page</code> page is: it&#39;s a collection of 3 files: <code>main-page.xml</code> (the UI), <code>main-page.css</code> (styling for the UI), and <code>main-page.js</code> (any business logic code that interacts with the UI).</p>
 <p>Let&#39;s take a look at the <code>main-page</code> page and find the 3 files:</p>
@@ -348,7 +350,7 @@ application.start({ moduleName: &quot;main-page&quot; });
 
 &lt;/Page&gt;
 </code></pre>
-<p>Modify the <code>app.js</code> file to point to the new home page by chaning the starting page from <code>main-page</code> to <code>home-page</code>:</p>
+<p>Modify the <code>app.js</code> file to point to the new home page by changing the starting page from <code>main-page</code> to <code>home-page</code>:</p>
 <pre><code class="lang-javascript">var application = require(&quot;application&quot;);
 application.start({ moduleName: &quot;home-page&quot; });
 </code></pre>
@@ -415,7 +417,7 @@ application.start({ moduleName: &quot;home-page&quot; });
 <p><img src="images/chapter3/tekmo-livesync.gif" alt="image"></p>
 <div class="exercise-end"></div>
 
-<p>As you can see LiveSync is a powerufl CLI tool that can dramatically reduce your dev-build-test workflow.</p>
+<p>As you can see LiveSync is a powerful CLI tool that can dramatically reduce your dev-build-test workflow.</p>
 <blockquote>
 <p>From this point forward, use <code>tns livesync</code>, as it will same you some time.</p>
 </blockquote>
@@ -495,7 +497,7 @@ application.start({ moduleName: &quot;products-page&quot; });
     <b>Exercise</b>: Using the StackLayout to organize UI elements in a &quot;stack&quot;
 </h4>
 
-<p>Go to the <code>home-page</code>, and add a <code>&lt;StackLayout&gt;</code> element to the page, directly within the <code>&lt;Page&gt;</code> element. Move the exisitng <code>&lt;Label /&gt;</code> element inside of the <code>&lt;StackLayout&gt;</code>.</p>
+<p>Go to the <code>home-page</code>, and add a <code>&lt;StackLayout&gt;</code> element to the page, directly within the <code>&lt;Page&gt;</code> element. Move the existing <code>&lt;Label /&gt;</code> element inside of the <code>&lt;StackLayout&gt;</code>.</p>
 <pre><code class="lang-xml">&lt;Page&gt;
     &lt;StackLayout&gt;
         &lt;Label text=&quot;Welcome to the Tekmo app!&quot; /&gt;
@@ -557,7 +559,7 @@ application.start({ moduleName: &quot;home-page&quot; });
 <p>Add a <code>&lt;Button /&gt;</code> element to the page, after the last <code>&lt;Label /&gt;</code>. Buttons have a similar property named <code>text</code> that allows you to change the text of the button. </p>
 <pre><code class="lang-xml">&lt;Button text=&quot;About&quot; /&gt;
 </code></pre>
-<p>Next, add a <code>tap</code> event atribute to the <code>&lt;Button /&gt;</code> element. Most UI elements have a variety of <em>events</em> that can execute JavaScript code when triggered. When an event is triggered, it will automatically run the funciton name specified in the event attribute. </p>
+<p>Next, add a <code>tap</code> event attribute to the <code>&lt;Button /&gt;</code> element. Most UI elements have a variety of <em>events</em> that can execute JavaScript code when triggered. When an event is triggered, it will automatically run the function name specified in the event attribute. </p>
 <pre><code class="lang-xml">&lt;Button text=&quot;About&quot; tap=&quot;onTap&quot; /&gt;
 </code></pre>
 <p>The complete code listing for the <code>home-page</code> page is below.</p>
@@ -573,7 +575,7 @@ application.start({ moduleName: &quot;home-page&quot; });
 <div class="exercise-end"></div>
 
 <p>In the above code, when the button&#39;s <code>tap</code> event is triggered (i.e., when the button is tapped), the JavaScript function named <code>onTap</code> will be called. But, where does the <code>onTap</code> function reside?</p>
-<p>If you recall from an earlier section, you learned that NativeScript pages are a colleciton of XML, CSS, and JavaScript files, linked together by their naming convention. </p>
+<p>If you recall from an earlier section, you learned that NativeScript pages are a collection of XML, CSS, and JavaScript files, linked together by their naming convention. </p>
 <p>With this in mind, to associate JavaScript code with the <code>home-page</code> page, create a file named <code>home-page.js</code>. </p>
 <h4 class="exercise-start">
     <b>Exercise</b>: Link the button&#39;s onTap event with the onTap() JavaScript function
@@ -604,7 +606,7 @@ exports.onTap = onTap;
 }
 exports.onTap = onTap;
 </code></pre>
-<p>Wait for your app to relead in GenyMotion, then click the <code>About</code> button. You should see the text <em>onTap called...</em> output to your command line.</p>
+<p>Wait for your app to reload in GenyMotion, then click the <code>About</code> button. You should see the text <em>onTap called...</em> output to your command line.</p>
 <p><img src="images/chapter4/tekmo-on-tap.gif" alt="image"></p>
 <div class="exercise-end"></div>
 
@@ -626,7 +628,7 @@ exports.onTap = onTap;
 </blockquote>
 <p><img src="images/chapter4/frame-module.PNG" alt="image"></p>
 <p>Inside, you&#39;ll find a variety of files. </p>
-<p>The frame module is used to navigate between pages, so we&#39;ll be using it later. I don&#39;t want to go into the weeds too far here, becuase it&#39;s not really important for you to know how and what the frame module does, but as we beign to use modules, just know that if you&#39;re curious to know how and what module functions do, you can always come and look at their source code directly in the <code>tns-core-modules</code> folder.</p>
+<p>The frame module is used to navigate between pages, so we&#39;ll be using it later. I don&#39;t want to go into the weeds too far here, because it&#39;s not really important for you to know how and what the frame module does, but as we begin to use modules, just know that if you&#39;re curious to know how and what module functions do, you can always come and look at their source code directly in the <code>tns-core-modules</code> folder.</p>
 <p>Take a few minutes to explore the module code (if you&#39;d like). Close the modules folders and files if you have them open before you continue. </p>
 <div class="exercise-end"></div>
 
@@ -655,7 +657,7 @@ exports.onTap = onTap;
 </code></pre>
 <p>So, you may be thinking, &quot;What&#39;s this <code>topmost()</code> thing?&quot; Every page in a NativeScript app has something called the <em>topmost</em> frame. To get the topmost frame, we use the <code>topmost()</code> property of the frame module. Once you have that topmost frame, you can call the <code>navigate()</code> function to navigate to another page. </p>
 <blockquote>
-<p>NOTE: <code>navigate()</code> can take additional arguments to perform different types of animated naivgations, and to pass data between pages when navigation occurs. You&#39;ll learn how to do that later.</p>
+<p>NOTE: <code>navigate()</code> can take additional arguments to perform different types of animated navigations, and to pass data between pages when navigation occurs. You&#39;ll learn how to do that later.</p>
 </blockquote>
 <p>Let&#39;s check the results of the navigation in your emulator. Tap the About button and you should navigate to the about page.</p>
 <p><img src="images/chapter4/nav.gif" alt="image"></p>
@@ -673,7 +675,7 @@ exports.onTap = onTap;
 </code></pre>
 <div class="exercise-end"></div>
 
-<p>Go ahead and add buttons to the home page for navigation to the Contact Us and Products pages, then adding the necesary code to navigate to each page. Try it all by yourself first. If you get stuck, look back through the exercises. The code is also included below for reference.</p>
+<p>Go ahead and add buttons to the home page for navigation to the Contact Us and Products pages, then adding the necessary code to navigate to each page. Try it all by yourself first. If you get stuck, look back through the exercises. The code is also included below for reference.</p>
 <h4 class="exercise-start">
     <b>Exercise</b>: Navigating to the Contact Us page
 </h4>
@@ -727,12 +729,12 @@ exports.onTapProducts = onTapProducts;
 </code></pre>
 <p>Now, add several labels describing Tekmo. You may want to use the <em>Copy</em> feature to the right for this one, it&#39;s a lot of text to type in manually.</p>
 <pre><code class="lang-xml">&lt;Label text=&quot;About Tekmo&quot; /&gt;
-&lt;Label textWrap=&quot;true&quot; text=&quot;Tekmo is a small online retailer specializing in retro video games sales and services. We&#39;re based in Lousiville, KY.&quot; /&gt;
+&lt;Label textWrap=&quot;true&quot; text=&quot;Tekmo is a small online retailer specializing in retro video games sales and services. We&#39;re based in Louisville, KY.&quot; /&gt;
 &lt;Label text=&quot;Our Mission&quot; /&gt;
 &lt;Label textWrap=&quot;true&quot; text=&quot;We exist to bring our customers the best in retro gaming at an affordable price. We love to revisit and replay the games that shaped our childhoods, and believe that through sharing our love, we can help shape another generation of retro gaming geeks.&quot; /&gt;
 &lt;Label text=&quot;History&quot; /&gt;
 &lt;Label textWrap=&quot;true&quot; text=&quot;In the early 90&#39;s, it all started with Rescue Pups. This multi-player vintage platformer brought the Rambo-style side-scrolling gun fights to life in our living room. True, it was impossible to beat with the 3 lives you got by default, but that&#39;s why everyone knew the 50 lives code by heart: up, up, down, down, left, right, left, right, B, A, Start. And if you wanted a friend to play along, you could throw in the Select, Start at the end.&quot; /&gt;
-&lt;Label textWrap=&quot;true&quot; text=&quot;After Rescue Pups, it was the classics like Super Marshmallow Man and Vampire Valkyrie. Do you remember them? We do. And we loved it! We hosted sleep overs every weekend throughout the summer, stayed up too late, got in trouble, pretended to fall alseep, then crept downstairs in the middle of the night to continue the fun.&quot; /&gt;
+&lt;Label textWrap=&quot;true&quot; text=&quot;After Rescue Pups, it was the classics like Super Marshmallow Man and Vampire Valkyrie. Do you remember them? We do. And we loved it! We hosted sleep overs every weekend throughout the summer, stayed up too late, got in trouble, pretended to fall asleep, then crept downstairs in the middle of the night to continue the fun.&quot; /&gt;
 &lt;Label textWrap=&quot;true&quot; text=&quot;As we grew older, the games we played did too, but our love for the originals never stopped, and our passion for sharing these games with our friends and family grew.&quot; /&gt;
 &lt;Label textWrap=&quot;true&quot; text=&quot;After many year, we all started having kids of our own, and we found ourselves wanting to raise our kids in our footsteps (without the midnight gaming marathons, of course). We wanted our kids to relive the adventure. Relive the thrills. Relive the classics. Tekmo was born.&quot; /&gt;
 &lt;Label textWrap=&quot;true&quot; text=&quot;We remembered how cool it was to get 50 lives, so now our kids could enjoy playing through Rescue Pups for hours.&quot; /&gt;
@@ -745,7 +747,7 @@ exports.onTapProducts = onTapProducts;
 
 <h3 id="scrolling">Scrolling</h3>
 <p>Your app is really starting to come together. Looks good. But wait! The text on the About page scrolls off the bottom of the page. </p>
-<p>Go ahead try and scroll in your emulator by simiulating a tap and drag to scroll the page&#39;s content. </p>
+<p>Go ahead try and scroll in your emulator by simulating a tap and drag to scroll the page&#39;s content. </p>
 <p>You can&#39;t.</p>
 <p>This brings me to a fine point. In order to make your page&#39;s content scrollable, you need to use the <code>&lt;ScrollView&gt; ... &lt;/ScrollView&gt;</code> element.</p>
 <h4 class="exercise-start">
@@ -843,8 +845,8 @@ exports.onTapProducts = onTapProducts;
 </code></pre>
 <p>Look at your emulator and see the results. Play with it, by clicking in each of the fields and entering text. Note that as you type, the temporary text you specified in the hint attribute disappears. Also note that when you delete any text you entered, the hint attribute text comes back. Pretty cool!</p>
 <p><img src="images/chapter6/text-hint.gif" alt="image"></p>
-<p>But wait, there&#39;s more! By adding the hint attribute, we&#39;ve elminated the need for the descriptive labels.</p>
-<p>Remove the labels from the page. The entire page should look like the code and screenshow below.</p>
+<p>But wait, there&#39;s more! By adding the hint attribute, we&#39;ve eliminated the need for the descriptive labels.</p>
+<p>Remove the labels from the page. The entire page should look like the code and screen shot below.</p>
 <pre><code class="lang-xml"> &lt;Page&gt;
     &lt;ScrollView&gt;
         &lt;StackLayout&gt;
@@ -890,7 +892,7 @@ exports.onTap = onTap;
     <b>Exercise</b>: Get data out of a text field and text view
 </h4>
 
-<p>To get data out of a text field or text view, we&#39;ll need access to the currently running NativeScritp page. The easiest way yot get access to the page is to save a reference to it when the page first loads. </p>
+<p>To get data out of a text field or text view, we&#39;ll need access to the currently running NativeScript page. The easiest way to get access to the page is to save a reference to it when the page first loads. </p>
 <p>Create a variable to save the reference to the current page at the top of your <code>contact-us-page.js</code> file.</p>
 <pre><code class="lang-javascript">var page;
 </code></pre>
@@ -1120,7 +1122,7 @@ exports.onTap = onTap;
 			<div class="chapter">
 				<h2 id="building-a-complex-ui">Building a complex UI</h2>
 <p>I&#39;ve been using the stack layout a lot in the workshop thus far, but it&#39;s not from a lack of creativity. The stack layout can hold it&#39;s own: it&#39;s concise and simple to use. But, sometimes, you need something a little more flexible. After all, the stack layout can only organize UI elements in a stack-like formation: one on top of (or below) another.</p>
-<p>In this chapter, we&#39;re going to be learning about the grid layout, another layout that allows you to organize your UI using a grid. You&#39;ll be learn about the grid layout by bulding out the final page of the Tekmo app: the Products page. </p>
+<p>In this chapter, we&#39;re going to be learning about the grid layout, another layout that allows you to organize your UI using a grid. You&#39;ll be learn about the grid layout by building out the final page of the Tekmo app: the Products page. </p>
 <p>The Products page will have a grid of products listed down the page, with a heading at the top. Each game displayed will show it&#39;s name and price. In later chapters, we&#39;ll be adding an image for each game.</p>
 <h3 id="building-a-grid-of-products">Building a grid of products</h3>
 <p>We&#39;ll start by building a basic grid, then slowly modifying it to highlight some of the features of the grid layout. </p>
@@ -1143,7 +1145,7 @@ exports.onTap = onTap;
 <p><img src="images/chapter7/products-1.PNG" alt="image"></p>
 <div class="exercise-end"></div>
 
-<p>Right now, you may be a bit confused and wondering where the grid layout is going to go. We&#39;ve already added a stack layout, so how can I add a grid layout. Here&#39;s the secret (although it&#39;s not such a big secret): you can nest layouts. So, we&#39;ll be adding the grid layout right below the label. Thinking through the page&#39;s overall layout, it will begin with UI elemnts being organized in a vertical stack, then after the top label, we&#39;ll be organizing elements with a grid.</p>
+<p>Right now, you may be a bit confused and wondering where the grid layout is going to go. We&#39;ve already added a stack layout, so how can I add a grid layout. Here&#39;s the secret (although it&#39;s not such a big secret): you can nest layouts. So, we&#39;ll be adding the grid layout right below the label. Thinking through the page&#39;s overall layout, it will begin with UI elements being organized in a vertical stack, then after the top label, we&#39;ll be organizing elements with a grid.</p>
 <p>It might be hard to visualize right now, but once you get the code up and running in your emulator, it&#39;ll become clearer.</p>
 <h4 class="exercise-start">
     <b>Exercise</b>: Adding a grid layout
@@ -1224,7 +1226,7 @@ exports.onTap = onTap;
 <p>NOTE: UI elements in a grid layout need to specify which row and column they belong to. </p>
 </blockquote>
 <h4 class="exercise-start">
-    <b>Exercise</b>: Positioning elmenets in a grid layout 
+    <b>Exercise</b>: Positioning elements in a grid layout 
 </h4>
 
 <p>Let&#39;s fix this problem by assigning a <code>row</code> and <code>col</code> property to each stack layout. The updated stack layouts should look like this:</p>
@@ -1328,7 +1330,7 @@ exports.onTap = onTap;
 
 <h3 id="refactoring-for-a-special-promotion">Refactoring for a special promotion</h3>
 <p>I could stop here with the grid layout, but that wouldn&#39;t be much fun. Let&#39;s do one more thing. </p>
-<p>After talking with Tekmo, I&#39;ve just realized that want to highlight Super Marshmallow Man, by placing it front and center on the Products page. Right now it&#39;s lost a little bit. Tekmo woudl like a larger tile at the top of the page, highlighting Super Marshmallow Man. The tile should have a brief description of the game while also advertizing a sale price of $14.99: $20 off!</p>
+<p>After talking with Tekmo, I&#39;ve just realized that want to highlight Super Marshmallow Man, by placing it front and center on the Products page. Right now it&#39;s lost a little bit. Tekmo would like a larger tile at the top of the page, highlighting Super Marshmallow Man. The tile should have a brief description of the game while also advertizing a sale price of $14.99: $20 off!</p>
 <h4 class="exercise-start">
     <b>Exercise</b>: Spanning grid cells 
 </h4>
@@ -1432,21 +1434,20 @@ exports.onTap = onTap;
 &lt;/Page&gt;
 </code></pre>
 <div class="exercise-end"></div>
-
 			</div>
 			<hr>
 			<div class="chapter">
 				<h2 id="styling-your-app">Styling your app</h2>
 <p>We&#39;ve spent a lot of time working through the declarative UI elements of a NativeScript app so far. But now it&#39;s time to turn back to the styling of the UI. I&#39;ll be frank. This app looks pretty bad right now. But, with a few tweaks, we can make it better. I can&#39;t promise it&#39;ll be the next Mona Lisa, but it will be better.</p>
-<p>Styling NativeScript apps is similar to how you may style an HTML application: CSS. That&#39;s right, you can use CSS to style your NativeScript app pages. </p>
+<p>Styling NativeScript apps is similar to how you may style an HTML application: CSS. That&#39;s right, you can use CSS to style your NativeScript app pages.</p>
 <p>If you recall from earlier chapters, a NativeScript page has three parts: an XML file, a JavaScript file, and a CSS file. The XML file contains declarative XML code used to structure your app; the JavaScript file contains your business logic code that can interact with your UI; and the CSS file augments the XML file, providing style.</p>
 <blockquote>
-<p>NOTE: There is no right or wrong way to style this app we&#39;re working with (well, maybe there are some wrong ways...). I&#39;m not a great UI designer, I&#39;m much more of a backend architect and automation developer, so don&#39;t take any of my UI styling guidelines here as gospel. If you think something looks better by styling it differently, by all means, do it. If you&#39;re esepcially proud of something, share it with the community.</p>
+<p>NOTE: There is no right or wrong way to style this app we&#39;re working with (well, maybe there are some wrong ways...). I&#39;m not a great UI designer, I&#39;m much more of a backend architect and automation developer, so don&#39;t take any of my UI styling guidelines here as gospel. If you think something looks better by styling it differently, by all means, do it. If you&#39;re specially proud of something, share it with the community.</p>
 </blockquote>
 <h3 id="styling-basics">Styling basics</h3>
 <p>Let&#39;s get started with some styling basics. Because we&#39;re using the Android platform in our workshop, there&#39;s something fairly obvious that we need to fix right away. At the top of every page, there&#39;s a large area with the app&#39;s name <em>tekmo</em> displayed. This area is called the <em>Action Bar</em>. We need to remove the action bar and we need to do it fast! </p>
 <blockquote>
-<p>NOTE: If you&#39;re running the workshop in iOS, this excercise doesn&#39;t apply to you, so feel free to skip it.</p>
+<p>NOTE: If you&#39;re running the workshop in iOS, this exercise doesn&#39;t apply to you, so feel free to skip it.</p>
 </blockquote>
 <h4 class="exercise-start">
     <b>Exercise</b>: Removing the Android action bar
@@ -1468,13 +1469,13 @@ exports.onTap = onTap;
 </ul>
 <div class="exercise-end"></div>
 
-<p>Let&#39;s take a breif detour and talk about the various CSS files in your project. There are two types of CSS files in a NativeScript app:</p>
+<p>Let&#39;s take a brief detour and talk about the various CSS files in your project. There are two types of CSS files in a NativeScript app:</p>
 <ol>
 <li>global (app.css)</li>
 <li>page-specific (page-name.css)</li>
 </ol>
 <p>The app.css file is global to your entire app, so changes you make in the app.css file will apply to every page in your app. </p>
-<p>If you need finer-grained control over your style, then you can ceate page-specific CSS files. These files are named similarly to the XML and JavaScript files, just with a different extension. </p>
+<p>If you need finer-grained control over your style, then you can create page-specific CSS files. These files are named similarly to the XML and JavaScript files, just with a different extension. </p>
 <p>The beauty of NativeScript CSS styles is that you don&#39;t have to remember to include references to your style files on your pages. NativeScript will automatically load the files for you (as long as they&#39;re named per the page-naming conventions we&#39;ve discussed above.)</p>
 <h4 id="inline-style-application">Inline style application</h4>
 <p>In addition to applying styles by using CSS files, you can apply styles directly to UI elements. You&#39;ve seen this before when we applied the various background colors to grid cells on the Products page of the Tekmo app. See the <a href="https://docs.nativescript.org/ui/styling#inline-css">NativeScript inline styling documentation</a> for more information.</p>
@@ -1499,7 +1500,7 @@ exports.onTap = onTap;
     margin: 20;
 }
 </code></pre>
-<p>We don&#39;t need to tweek the settings, so let&#39;s go through and apply the <em>title</em> class to the following pages. You can do this by adding a <code>class=&quot;title&quot;</code> property to the <code>&lt;Label&gt;</code> elements that should be considered titles:</p>
+<p>We don&#39;t need to tweak the settings, so let&#39;s go through and apply the <em>title</em> class to the following pages. You can do this by adding a <code>class=&quot;title&quot;</code> property to the <code>&lt;Label&gt;</code> elements that should be considered titles:</p>
 <ul>
 <li>Home</li>
 <li>About </li>
@@ -1511,7 +1512,7 @@ exports.onTap = onTap;
 <p>I see a few things that should also be changed:</p>
 <ul>
 <li>fix home page title text wrapping</li>
-<li>adjust normal text to give a bit of a left/right/botton margin (app-wide) </li>
+<li>adjust normal text to give a bit of a left/right/bottom margin (app-wide) </li>
 <li>add sub-title class for sub titles on the About page</li>
 <li>shrink the buttons - they&#39;re <strong>HUGE</strong></li>
 </ul>
@@ -1563,10 +1564,10 @@ exports.onTap = onTap;
 <li>right-align the price and give it color to stand out</li>
 <li>style the highlighted product a little different from the other tiles to make it stand out</li>
 </ul>
-<p>That&#39;s a lot of changes. Feel free to try the changes on your own, or follow along with me. If your end product doesn&#39;t look exactly liek mine, that&#39;s OK.</p>
+<p>That&#39;s a lot of changes. Feel free to try the changes on your own, or follow along with me. If your end product doesn&#39;t look exactly like mine, that&#39;s OK.</p>
 <p>Let&#39;s start by giving all app pages a default background color instead of white. Add a <code>background-color</code> property to the <code>app.css</code> file.</p>
 <pre><code>Page {
-    background-color: EFEFEF;
+    background-color: #EFEFEF;
 }
 </code></pre><p>Remove the alternating tile backgrounds from the Products page by deleting the inline style attributes from each stack layout in the grid layout. The grid layout should look like this:</p>
 <pre><code class="lang-xml">&lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;600&quot;&gt;
@@ -1634,7 +1635,7 @@ exports.onTap = onTap;
 &lt;/GridLayout&gt;
 </code></pre>
 <p><img src="images/chapter8/styling-4.PNG" alt="image"></p>
-<p>Add a band of color across the top of each tile, and place the tile title inside of the band. To do this, I wrapped the title with anoter stack layout, added the <code>title</code> class to the stack layout, and set the background color of the stack layout.</p>
+<p>Add a band of color across the top of each tile, and place the tile title inside of the band. To do this, I wrapped the title with another stack layout, added the <code>title</code> class to the stack layout, and set the background color of the stack layout.</p>
 <pre><code class="lang-xml">&lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;600&quot;&gt;
     &lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; class=&quot;tile&quot;&gt;
         &lt;StackLayout class=&quot;tile-title&quot;&gt;
@@ -1737,7 +1738,7 @@ exports.onTap = onTap;
 &lt;/GridLayout&gt;
 </code></pre>
 <p><img src="images/chapter8/styling-7.PNG" alt="image"> </p>
-<p>Lastly, let&#39;s slightly change the hightlighted tile a bit to make it stand apart from the other tiles. Add the following CSS selectors to the <code>product-page.css</code> file.</p>
+<p>Lastly, let&#39;s slightly change the highlighted tile a bit to make it stand apart from the other tiles. Add the following CSS selectors to the <code>product-page.css</code> file.</p>
 <pre><code>.highlight .tile-title {
     font-weight: bold;
     background-color: #6699ff;
@@ -1758,13 +1759,13 @@ exports.onTap = onTap;
 <h3 id="adding-images">Adding images</h3>
 <p>In the final part of this chapter, you&#39;ll learn how to include images in your NativeScript app. Images and graphics can help turn a &quot;blah&quot; UI into something beautiful. Again, I don&#39;t have the talent to do &quot;beautiful&quot;, but I&#39;ll teach you the basic tools of including images in your app. From there, you can run wild.</p>
 <h4 id="challenges-in-displaying-images-on-mobile-devices">Challenges in displaying images on mobile devices</h4>
-<p>Before we start, I want to share some of the challenges ther are with displaying images on mobile devices. First, consider the job of a cross-platform mobile framework (like NativeScript). </p>
+<p>Before we start, I want to share some of the challenges there are with displaying images on mobile devices. First, consider the job of a cross-platform mobile framework (like NativeScript). </p>
 <blockquote>
 <p>WARNING: This section may scare you initially, and that&#39;s because cross-platform device DPIs are confusing. But don&#39;t worry: NativeScript does a good job of abstracting away the complexities of cross-platform images. Stick with me!</p>
 </blockquote>
-<p>There are hundreds of various devices, and each device has a different screen resolution and DPI. Let&#39;s take iOS devices as an example. Apple&#39;s devices (iPhone, iPad, etc.) are considered to be a highly-controlled hardware ecosystem, resulting in fewer variances across the models of their devices; however, consider just the iPhone line of hardware. iPhone 3, 3G, 4, 4s, 5, 5s, 5c, 6, 6s, 6 plus, etc. Some of these devies share common characteristics (like screen size), but it seems with every new year, the screens change in size, or in DPI. Between all of these devices, there are 3-4 differetn screen sizes, and 2-3 different screen DPIs to consider. </p>
+<p>There are hundreds of various devices, and each device has a different screen resolution and DPI. Let&#39;s take iOS devices as an example. Apple&#39;s devices (iPhone, iPad, etc.) are considered to be a highly-controlled hardware ecosystem, resulting in fewer variances across the models of their devices; however, consider just the iPhone line of hardware. iPhone 3, 3G, 4, 4s, 5, 5s, 5c, 6, 6s, 6 plus, etc. Some of these devices share common characteristics (like screen size), but it seems with every new year, the screens change in size, or in DPI. Between all of these devices, there are 3-4 different screen sizes, and 2-3 different screen DPIs to consider. </p>
 <p>That&#39;s only iOS, the most &quot;controlled&quot; device ecosystem. Android has similar differences, but it&#39;s across a much larger variable hardware space. </p>
-<p>I don&#39;t want to paint a doom-and-gloom picture for you. There are very well-defined guidelines for displaying images on both iOS and Android platforms, but the true chalenge is that the platforms are different. </p>
+<p>I don&#39;t want to paint a doom-and-gloom picture for you. There are very well-defined guidelines for displaying images on both iOS and Android platforms, but the true challenge is that the platforms are different. </p>
 <p>So, what does this mean for you? Unfortunately, a lot. As a cross-platform mobile developer, you should become familiar with the differences in screen DPI and how to create images for the various screen. I&#39;m not going into those differences here, but you can find out more in these places:</p>
 <ul>
 <li>Android screen resolution <a href="http://developer.android.com/guide/practices/screens_support.html#DesigningResources">documentation</a></li>
@@ -1775,9 +1776,9 @@ exports.onTap = onTap;
 <h4 id="displaying-images-in-a-nativescript-app">Displaying images in a NativeScript app</h4>
 <p>There are several ways to display images in a NativeScript app:</p>
 <ul>
-<li>from a url</li>
+<li>from a URL</li>
 <li>from the device&#39;s file system</li>
-<li>embdedded in the app as a resource</li>
+<li>embedded in the app as a resource</li>
 </ul>
 <p>In this workshop, you&#39;ll be learning how to display images embedded in the app as a resource. The other methods are similar, so I&#39;ll let you explore them on your own by reading the NativeScript docs.</p>
 <h4 id="why-nativescript-makes-images-easy">Why NativeScript makes images easy</h4>
@@ -1865,7 +1866,7 @@ exports.onTap = onTap;
 }
 </code></pre><p><img src="images/chapter8/styling-9.PNG" alt="image"> </p>
 <p>This looks OK, but now the Super Marshmallow Man text and price has fallen out of the tile. Ideally, I&#39;d like the image to be left-aligned, then the description and price right-aligned. </p>
-<p>There are a variety of ways to do this. Two ways at the top of my head are to add another grid layout for this tile, or use a series of nested stack layouts. Let&#39;s use the stack layout method because it will introduce you to another property of the stack layout: orientation. The orientation property of the stack layout tells NativeScript whether to render the layout&#39;s contents vertically or horizontally. By default it is rendered veritcally. Change the Super Marshmallow Man tile&#39;s code to add a series of nested stck layouts.</p>
+<p>There are a variety of ways to do this. Two ways at the top of my head are to add another grid layout for this tile, or use a series of nested stack layouts. Let&#39;s use the stack layout method because it will introduce you to another property of the stack layout: orientation. The orientation property of the stack layout tells NativeScript whether to render the layout&#39;s contents vertically or horizontally. By default it is rendered vertically. Change the Super Marshmallow Man tile&#39;s code to add a series of nested stack layouts.</p>
 <pre><code class="lang-xml">&lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; class=&quot;tile&quot;&gt;
     &lt;StackLayout class=&quot;tile-title&quot;&gt;
         &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
