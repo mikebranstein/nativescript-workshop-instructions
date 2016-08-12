@@ -2,17 +2,17 @@
 
 We've spent a lot of time working through the declarative UI elements of a NativeScript app so far. But now it's time to turn back to the styling of the UI. I'll be frank. This app looks pretty bad right now. But, with a few tweaks, we can make it better. I can't promise it'll be the next Mona Lisa, but it will be better.
 
-Styling NativeScript apps is similar to how you may style an HTML application: CSS. That's right, you can use CSS to style your NativeScript app pages. 
+Styling NativeScript apps is similar to how you may style an HTML application: CSS. That's right, you can use CSS to style your NativeScript app pages.
 
 If you recall from earlier chapters, a NativeScript page has three parts: an XML file, a JavaScript file, and a CSS file. The XML file contains declarative XML code used to structure your app; the JavaScript file contains your business logic code that can interact with your UI; and the CSS file augments the XML file, providing style.
 
-> NOTE: There is no right or wrong way to style this app we're working with (well, maybe there are some wrong ways...). I'm not a great UI designer, I'm much more of a backend architect and automation developer, so don't take any of my UI styling guidelines here as gospel. If you think something looks better by styling it differently, by all means, do it. If you're esepcially proud of something, share it with the community.
+> NOTE: There is no right or wrong way to style this app we're working with (well, maybe there are some wrong ways...). I'm not a great UI designer, I'm much more of a backend architect and automation developer, so don't take any of my UI styling guidelines here as gospel. If you think something looks better by styling it differently, by all means, do it. If you're specially proud of something, share it with the community.
 
 ### Styling basics
 
 Let's get started with some styling basics. Because we're using the Android platform in our workshop, there's something fairly obvious that we need to fix right away. At the top of every page, there's a large area with the app's name *tekmo* displayed. This area is called the *Action Bar*. We need to remove the action bar and we need to do it fast! 
 
-> NOTE: If you're running the workshop in iOS, this excercise doesn't apply to you, so feel free to skip it.
+> NOTE: If you're running the workshop in iOS, this exercise doesn't apply to you, so feel free to skip it.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Removing the Android action bar
@@ -39,13 +39,13 @@ Do the same thing for the remainder of the pages within the Tekmo app:
 
 <div class="exercise-end"></div>
 
-Let's take a breif detour and talk about the various CSS files in your project. There are two types of CSS files in a NativeScript app:
+Let's take a brief detour and talk about the various CSS files in your project. There are two types of CSS files in a NativeScript app:
 1. global (app.css)
 2. page-specific (page-name.css)
 
 The app.css file is global to your entire app, so changes you make in the app.css file will apply to every page in your app. 
 
-If you need finer-grained control over your style, then you can ceate page-specific CSS files. These files are named similarly to the XML and JavaScript files, just with a different extension. 
+If you need finer-grained control over your style, then you can create page-specific CSS files. These files are named similarly to the XML and JavaScript files, just with a different extension. 
 
 The beauty of NativeScript CSS styles is that you don't have to remember to include references to your style files on your pages. NativeScript will automatically load the files for you (as long as they're named per the page-naming conventions we've discussed above.)
 
@@ -83,7 +83,7 @@ Let's look in the `app.css` file to get started. You'll notice that the default 
 }
 ```
 
-We don't need to tweek the settings, so let's go through and apply the *title* class to the following pages. You can do this by adding a `class="title"` property to the `<Label>` elements that should be considered titles:
+We don't need to tweak the settings, so let's go through and apply the *title* class to the following pages. You can do this by adding a `class="title"` property to the `<Label>` elements that should be considered titles:
 * Home
 * About 
 * Contact Us
@@ -95,7 +95,7 @@ After changing the various pages now have a prominent title with ample rooms bet
 
 I see a few things that should also be changed:
 * fix home page title text wrapping
-* adjust normal text to give a bit of a left/right/botton margin (app-wide) 
+* adjust normal text to give a bit of a left/right/bottom margin (app-wide) 
 * add sub-title class for sub titles on the About page
 * shrink the buttons - they're **HUGE**
 
@@ -168,13 +168,13 @@ I'd like to do a few things to clean up the Products page and the rest of the ap
 * right-align the price and give it color to stand out
 * style the highlighted product a little different from the other tiles to make it stand out
 
-That's a lot of changes. Feel free to try the changes on your own, or follow along with me. If your end product doesn't look exactly liek mine, that's OK.
+That's a lot of changes. Feel free to try the changes on your own, or follow along with me. If your end product doesn't look exactly like mine, that's OK.
 
 Let's start by giving all app pages a default background color instead of white. Add a `background-color` property to the `app.css` file.
 
 ```
 Page {
-    background-color: EFEFEF;
+    background-color: #EFEFEF;
 }
 ```  
 
@@ -257,7 +257,7 @@ Apply the `tile` class to each of the stack layouts.
 
 ![image](images/chapter8/styling-4.PNG)
 
-Add a band of color across the top of each tile, and place the tile title inside of the band. To do this, I wrapped the title with anoter stack layout, added the `title` class to the stack layout, and set the background color of the stack layout.
+Add a band of color across the top of each tile, and place the tile title inside of the band. To do this, I wrapped the title with another stack layout, added the `title` class to the stack layout, and set the background color of the stack layout.
 
 ```xml
 <GridLayout rows="*,*,*,*" columns="*,*" width="300" height="600">
@@ -380,7 +380,7 @@ Target the prices by adding a `price` class to each pricing label on the Product
 
 ![image](images/chapter8/styling-7.PNG) 
 
-Lastly, let's slightly change the hightlighted tile a bit to make it stand apart from the other tiles. Add the following CSS selectors to the `product-page.css` file.
+Lastly, let's slightly change the highlighted tile a bit to make it stand apart from the other tiles. Add the following CSS selectors to the `product-page.css` file.
 
 ```
 .highlight .tile-title {
@@ -410,15 +410,15 @@ In the final part of this chapter, you'll learn how to include images in your Na
 
 #### Challenges in displaying images on mobile devices
 
-Before we start, I want to share some of the challenges ther are with displaying images on mobile devices. First, consider the job of a cross-platform mobile framework (like NativeScript). 
+Before we start, I want to share some of the challenges there are with displaying images on mobile devices. First, consider the job of a cross-platform mobile framework (like NativeScript). 
 
 > WARNING: This section may scare you initially, and that's because cross-platform device DPIs are confusing. But don't worry: NativeScript does a good job of abstracting away the complexities of cross-platform images. Stick with me!
 
-There are hundreds of various devices, and each device has a different screen resolution and DPI. Let's take iOS devices as an example. Apple's devices (iPhone, iPad, etc.) are considered to be a highly-controlled hardware ecosystem, resulting in fewer variances across the models of their devices; however, consider just the iPhone line of hardware. iPhone 3, 3G, 4, 4s, 5, 5s, 5c, 6, 6s, 6 plus, etc. Some of these devies share common characteristics (like screen size), but it seems with every new year, the screens change in size, or in DPI. Between all of these devices, there are 3-4 differetn screen sizes, and 2-3 different screen DPIs to consider. 
+There are hundreds of various devices, and each device has a different screen resolution and DPI. Let's take iOS devices as an example. Apple's devices (iPhone, iPad, etc.) are considered to be a highly-controlled hardware ecosystem, resulting in fewer variances across the models of their devices; however, consider just the iPhone line of hardware. iPhone 3, 3G, 4, 4s, 5, 5s, 5c, 6, 6s, 6 plus, etc. Some of these devices share common characteristics (like screen size), but it seems with every new year, the screens change in size, or in DPI. Between all of these devices, there are 3-4 different screen sizes, and 2-3 different screen DPIs to consider. 
 
 That's only iOS, the most "controlled" device ecosystem. Android has similar differences, but it's across a much larger variable hardware space. 
 
-I don't want to paint a doom-and-gloom picture for you. There are very well-defined guidelines for displaying images on both iOS and Android platforms, but the true chalenge is that the platforms are different. 
+I don't want to paint a doom-and-gloom picture for you. There are very well-defined guidelines for displaying images on both iOS and Android platforms, but the true challenge is that the platforms are different. 
 
 So, what does this mean for you? Unfortunately, a lot. As a cross-platform mobile developer, you should become familiar with the differences in screen DPI and how to create images for the various screen. I'm not going into those differences here, but you can find out more in these places:
 * Android screen resolution [documentation](http://developer.android.com/guide/practices/screens_support.html#DesigningResources)
@@ -429,9 +429,9 @@ So, what does this mean for you? Unfortunately, a lot. As a cross-platform mobil
 #### Displaying images in a NativeScript app
 
 There are several ways to display images in a NativeScript app:
-* from a url
+* from a URL
 * from the device's file system
-* embdedded in the app as a resource
+* embedded in the app as a resource
 
 In this workshop, you'll be learning how to display images embedded in the app as a resource. The other methods are similar, so I'll let you explore them on your own by reading the NativeScript docs.
 
@@ -536,7 +536,7 @@ Image {
 
 This looks OK, but now the Super Marshmallow Man text and price has fallen out of the tile. Ideally, I'd like the image to be left-aligned, then the description and price right-aligned. 
 
-There are a variety of ways to do this. Two ways at the top of my head are to add another grid layout for this tile, or use a series of nested stack layouts. Let's use the stack layout method because it will introduce you to another property of the stack layout: orientation. The orientation property of the stack layout tells NativeScript whether to render the layout's contents vertically or horizontally. By default it is rendered veritcally. Change the Super Marshmallow Man tile's code to add a series of nested stck layouts.
+There are a variety of ways to do this. Two ways at the top of my head are to add another grid layout for this tile, or use a series of nested stack layouts. Let's use the stack layout method because it will introduce you to another property of the stack layout: orientation. The orientation property of the stack layout tells NativeScript whether to render the layout's contents vertically or horizontally. By default it is rendered vertically. Change the Super Marshmallow Man tile's code to add a series of nested stack layouts.
 
 ```xml
 <StackLayout row="0" col="0" colSpan="2" class="tile">

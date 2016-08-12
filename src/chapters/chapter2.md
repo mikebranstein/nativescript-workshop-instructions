@@ -6,7 +6,7 @@ In this exercise, you're going to create your first app. Before we get there, I'
 
 The NativeScript CLI is a set of command line tools that make your job as a mobile developer easy. The CLI provides tools for creating and scaffolding the files needed to develop an app, add in platform-specific files (for Android and iOS), building the app into the platform-specific mobile app containers, running your app in an emulator (Android) and simulator (iOS), and deploying your app to a physical device for testing.
 
-The first thing we'll do is verify the CLI installation and verison of NativeScript installed.
+The first thing we'll do is verify the CLI installation and version of NativeScript installed.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Verifying your CLI installation
@@ -29,7 +29,7 @@ You should see version 2.1.1 is installed.
 
 #### Using the tns CLI command
 
-"TNS" stands for Telerik NativeScript. Throughout the workshop, you'll be using the the `tns` command from the Node.js command prompt. Remember the `tns` command, and be sure to always run it from your Node.js command prompt, as shown above.
+"tns" stands for Telerik NativeScript. Throughout the workshop, you'll be using the `tns` command from the Node.js command prompt. Remember the `tns` command, and be sure to always run it from your Node.js command prompt, as shown above.
 
 ### Creating an app
 
@@ -295,7 +295,7 @@ This code tells NativeScript to load the `application` module (more on these lat
 
 > NOTE: Just like HTML applications, you can think of NativeScript apps as a collection of pages. You move between page by navigating, and you can also pass data (or app state) between pages during navigation.
 
-> DEFINITION: A page is a collection of similarly-named files (.xml, .css, and .js). The .xml file contains your UI code, the .css file styles your UI, and the .js file contains yoru business logic code. NativeScript uses conventions to tell which files constitute a page, so all you need to do is name your .xml, .css, and .js files with the same prefix.
+> DEFINITION: A page is a collection of similarly-named files (.xml, .css, and .js). The .xml file contains your UI code, the .css file styles your UI, and the .js file contains your business logic code. NativeScript uses conventions to tell which files constitute a page, so all you need to do is name your .xml, .css, and .js files with the same prefix.
 
 So, back to pages. Now that we know about the NativeScript page-naming convention, you understand what the `main-page` page is: it's a collection of 3 files: `main-page.xml` (the UI), `main-page.css` (styling for the UI), and `main-page.js` (any business logic code that interacts with the UI).
 

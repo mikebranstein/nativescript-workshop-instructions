@@ -86,7 +86,7 @@ Inside of the `home-page.xml` file, add the following XML:
 </Page>
 ``` 
 
-Modify the `app.js` file to point to the new home page by chaning the starting page from `main-page` to `home-page`:
+Modify the `app.js` file to point to the new home page by changing the starting page from `main-page` to `home-page`:
 
 ```javascript
 var application = require("application");
@@ -136,7 +136,7 @@ To see the changes in your app, go back to the command line, press `Ctrl-C` to a
   ^CTerminate batch job (Y/N)? Y
 
   C:\Users\dev\tekmo>
-``` 
+```
 
 Then, run the `tns run` command again to build and run your app within GenyMotion.
 
@@ -198,7 +198,7 @@ As soon as you save the `home-page.xml` file, flip back to GenyMotion to see the
 
 <div class="exercise-end"></div>
 
-As you can see LiveSync is a powerufl CLI tool that can dramatically reduce your dev-build-test workflow.
+As you can see LiveSync is a powerful CLI tool that can dramatically reduce your dev-build-test workflow.
 
 >From this point forward, use `tns livesync`, as it will same you some time.
 

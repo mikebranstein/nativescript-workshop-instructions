@@ -103,9 +103,9 @@ Look at your emulator and see the results. Play with it, by clicking in each of 
 
 ![image](images/chapter6/text-hint.gif)
 
-But wait, there's more! By adding the hint attribute, we've elminated the need for the descriptive labels.
+But wait, there's more! By adding the hint attribute, we've eliminated the need for the descriptive labels.
 
-Remove the labels from the page. The entire page should look like the code and screenshow below.
+Remove the labels from the page. The entire page should look like the code and screen shot below.
 
 ```xml
  <Page>
@@ -165,7 +165,7 @@ Let's start by adding some code to grab the data out of the text field and text 
     <b>Exercise</b>: Get data out of a text field and text view
 </h4>
 
-To get data out of a text field or text view, we'll need access to the currently running NativeScritp page. The easiest way yot get access to the page is to save a reference to it when the page first loads. 
+To get data out of a text field or text view, we'll need access to the currently running NativeScript page. The easiest way to get access to the page is to save a reference to it when the page first loads. 
 
 Create a variable to save the reference to the current page at the top of your `contact-us-page.js` file.
 

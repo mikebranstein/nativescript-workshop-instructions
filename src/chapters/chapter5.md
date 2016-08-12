@@ -28,12 +28,12 @@ Now, add several labels describing Tekmo. You may want to use the *Copy* feature
 
 ```xml
 <Label text="About Tekmo" />
-<Label textWrap="true" text="Tekmo is a small online retailer specializing in retro video games sales and services. We're based in Lousiville, KY." />
+<Label textWrap="true" text="Tekmo is a small online retailer specializing in retro video games sales and services. We're based in Louisville, KY." />
 <Label text="Our Mission" />
 <Label textWrap="true" text="We exist to bring our customers the best in retro gaming at an affordable price. We love to revisit and replay the games that shaped our childhoods, and believe that through sharing our love, we can help shape another generation of retro gaming geeks." />
 <Label text="History" />
 <Label textWrap="true" text="In the early 90's, it all started with Rescue Pups. This multi-player vintage platformer brought the Rambo-style side-scrolling gun fights to life in our living room. True, it was impossible to beat with the 3 lives you got by default, but that's why everyone knew the 50 lives code by heart: up, up, down, down, left, right, left, right, B, A, Start. And if you wanted a friend to play along, you could throw in the Select, Start at the end." />
-<Label textWrap="true" text="After Rescue Pups, it was the classics like Super Marshmallow Man and Vampire Valkyrie. Do you remember them? We do. And we loved it! We hosted sleep overs every weekend throughout the summer, stayed up too late, got in trouble, pretended to fall alseep, then crept downstairs in the middle of the night to continue the fun." />
+<Label textWrap="true" text="After Rescue Pups, it was the classics like Super Marshmallow Man and Vampire Valkyrie. Do you remember them? We do. And we loved it! We hosted sleep overs every weekend throughout the summer, stayed up too late, got in trouble, pretended to fall asleep, then crept downstairs in the middle of the night to continue the fun." />
 <Label textWrap="true" text="As we grew older, the games we played did too, but our love for the originals never stopped, and our passion for sharing these games with our friends and family grew." />
 <Label textWrap="true" text="After many year, we all started having kids of our own, and we found ourselves wanting to raise our kids in our footsteps (without the midnight gaming marathons, of course). We wanted our kids to relive the adventure. Relive the thrills. Relive the classics. Tekmo was born." />
 <Label textWrap="true" text="We remembered how cool it was to get 50 lives, so now our kids could enjoy playing through Rescue Pups for hours." />
@@ -51,7 +51,7 @@ Here's what you should see in your emulator.
 
 Your app is really starting to come together. Looks good. But wait! The text on the About page scrolls off the bottom of the page. 
 
-Go ahead try and scroll in your emulator by simiulating a tap and drag to scroll the page's content. 
+Go ahead try and scroll in your emulator by simulating a tap and drag to scroll the page's content. 
 
 You can't.
 

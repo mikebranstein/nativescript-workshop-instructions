@@ -1,10 +1,10 @@
 ## Introduction
 
-Welcome to the NativeScript Workshop! 
+Welcome to the NativeScript Workshop!
 
-To get started you'll need the followin pre-requisites:
+To get started you'll need the following pre-requisites:
 * Windows, Mac, or Linux computer
-* [Genymotion emulator](https://www.genymotion.com/)
+* [GenyMotion emulator](https://www.genymotion.com/)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads) open-source full-hardware virtualizer
 * Visual Studio Code (or other text editor or IDE)
 * [NativeScript](http://docs.nativescript.org/angular/start/quick-setup) v2.1 installed and configured
@@ -13,7 +13,7 @@ To get started you'll need the followin pre-requisites:
 
 [NativeScript](https://nativescript.org) is a framework for building native iOS and Android apps using JavaScript and CSS. NativeScript renders UIs with the native platform’s rendering engine, no WebViews, resulting in native-like performance and UX.
 
-NativeScript provides a best-of-both-worlds development experience. Our cross-platform JavaScript modules give you the convenience of writing iOS and Android apps from a single JavaScript codebase, while our runtimes give you the power of accessing native APIs, SDKs, and frameworks when you need them—all without needing to open Xcode or Android Studio. NativeScript was created and is supported by Telerik.
+NativeScript provides a best-of-both-worlds development experience. Our cross-platform JavaScript modules give you the convenience of writing iOS and Android apps from a single JavaScript code base, while our runtimes give you the power of accessing native APIs, SDKs, and frameworks when you need them—all without needing to open Xcode or Android Studio. NativeScript was created and is supported by Telerik.
 
 ### What you're building
 
@@ -27,7 +27,7 @@ Key concepts and take aways:
   * Running apps in an emulator
 * Pages
 * Navigation
-* Basic UI elements (labels, buttons, textboxes, etc.)
+* Basic UI elements (labels, buttons, text boxes, etc.)
 * Organizing your UI with layouts
 * Styling your app with CSS
 * Data binding

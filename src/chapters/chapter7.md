@@ -2,7 +2,7 @@
 
 I've been using the stack layout a lot in the workshop thus far, but it's not from a lack of creativity. The stack layout can hold it's own: it's concise and simple to use. But, sometimes, you need something a little more flexible. After all, the stack layout can only organize UI elements in a stack-like formation: one on top of (or below) another.
 
-In this chapter, we're going to be learning about the grid layout, another layout that allows you to organize your UI using a grid. You'll be learn about the grid layout by bulding out the final page of the Tekmo app: the Products page. 
+In this chapter, we're going to be learning about the grid layout, another layout that allows you to organize your UI using a grid. You'll be learn about the grid layout by building out the final page of the Tekmo app: the Products page. 
 
 The Products page will have a grid of products listed down the page, with a heading at the top. Each game displayed will show it's name and price. In later chapters, we'll be adding an image for each game.
 
@@ -36,7 +36,7 @@ After adding these elements, your page should like like so:
 
 <div class="exercise-end"></div>
 
-Right now, you may be a bit confused and wondering where the grid layout is going to go. We've already added a stack layout, so how can I add a grid layout. Here's the secret (although it's not such a big secret): you can nest layouts. So, we'll be adding the grid layout right below the label. Thinking through the page's overall layout, it will begin with UI elemnts being organized in a vertical stack, then after the top label, we'll be organizing elements with a grid.
+Right now, you may be a bit confused and wondering where the grid layout is going to go. We've already added a stack layout, so how can I add a grid layout. Here's the secret (although it's not such a big secret): you can nest layouts. So, we'll be adding the grid layout right below the label. Thinking through the page's overall layout, it will begin with UI elements being organized in a vertical stack, then after the top label, we'll be organizing elements with a grid.
 
 It might be hard to visualize right now, but once you get the code up and running in your emulator, it'll become clearer.
 
@@ -137,7 +137,7 @@ It looks like each stack layout is positioned on top of each other. What did we 
 > NOTE: UI elements in a grid layout need to specify which row and column they belong to. 
 
 <h4 class="exercise-start">
-    <b>Exercise</b>: Positioning elmenets in a grid layout 
+    <b>Exercise</b>: Positioning elements in a grid layout 
 </h4>
 
 Let's fix this problem by assigning a `row` and `col` property to each stack layout. The updated stack layouts should look like this:
@@ -258,7 +258,7 @@ For reference, here's the complete code listing for the Products page.
 
 I could stop here with the grid layout, but that wouldn't be much fun. Let's do one more thing. 
 
-After talking with Tekmo, I've just realized that want to highlight Super Marshmallow Man, by placing it front and center on the Products page. Right now it's lost a little bit. Tekmo woudl like a larger tile at the top of the page, highlighting Super Marshmallow Man. The tile should have a brief description of the game while also advertizing a sale price of $14.99: $20 off!
+After talking with Tekmo, I've just realized that want to highlight Super Marshmallow Man, by placing it front and center on the Products page. Right now it's lost a little bit. Tekmo would like a larger tile at the top of the page, highlighting Super Marshmallow Man. The tile should have a brief description of the game while also advertizing a sale price of $14.99: $20 off!
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Spanning grid cells 

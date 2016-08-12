@@ -20,7 +20,7 @@ Let's learn about the simplest (and most common) first layout.
     <b>Exercise</b>: Using the StackLayout to organize UI elements in a "stack"
 </h4>
 
-Go to the `home-page`, and add a `<StackLayout>` element to the page, directly within the `<Page>` element. Move the exisitng `<Label />` element inside of the `<StackLayout>`.
+Go to the `home-page`, and add a `<StackLayout>` element to the page, directly within the `<Page>` element. Move the existing `<Label />` element inside of the `<StackLayout>`.
 
 ```xml
 <Page>
@@ -106,7 +106,7 @@ Add a `<Button />` element to the page, after the last `<Label />`. Buttons have
 <Button text="About" />
 ```
 
-Next, add a `tap` event atribute to the `<Button />` element. Most UI elements have a variety of *events* that can execute JavaScript code when triggered. When an event is triggered, it will automatically run the funciton name specified in the event attribute. 
+Next, add a `tap` event attribute to the `<Button />` element. Most UI elements have a variety of *events* that can execute JavaScript code when triggered. When an event is triggered, it will automatically run the function name specified in the event attribute. 
 
 ```xml
 <Button text="About" tap="onTap" />
@@ -130,7 +130,7 @@ The complete code listing for the `home-page` page is below.
 
 In the above code, when the button's `tap` event is triggered (i.e., when the button is tapped), the JavaScript function named `onTap` will be called. But, where does the `onTap` function reside?
 
-If you recall from an earlier section, you learned that NativeScript pages are a colleciton of XML, CSS, and JavaScript files, linked together by their naming convention. 
+If you recall from an earlier section, you learned that NativeScript pages are a collection of XML, CSS, and JavaScript files, linked together by their naming convention. 
 
 With this in mind, to associate JavaScript code with the `home-page` page, create a file named `home-page.js`. 
 
@@ -174,7 +174,7 @@ function onTap()
 exports.onTap = onTap;
 ```
 
-Wait for your app to relead in GenyMotion, then click the `About` button. You should see the text *onTap called...* output to your command line.
+Wait for your app to reload in GenyMotion, then click the `About` button. You should see the text *onTap called...* output to your command line.
 
 ![image](images/chapter4/tekmo-on-tap.gif)
 
@@ -208,7 +208,7 @@ Inside of the `tns-core-modules` folder, find the folder `ui` and then sub-folde
 
 Inside, you'll find a variety of files. 
 
-The frame module is used to navigate between pages, so we'll be using it later. I don't want to go into the weeds too far here, becuase it's not really important for you to know how and what the frame module does, but as we beign to use modules, just know that if you're curious to know how and what module functions do, you can always come and look at their source code directly in the `tns-core-modules` folder.
+The frame module is used to navigate between pages, so we'll be using it later. I don't want to go into the weeds too far here, because it's not really important for you to know how and what the frame module does, but as we begin to use modules, just know that if you're curious to know how and what module functions do, you can always come and look at their source code directly in the `tns-core-modules` folder.
 
 Take a few minutes to explore the module code (if you'd like). Close the modules folders and files if you have them open before you continue. 
 
@@ -250,7 +250,7 @@ frameModule.topmost().navigate("about-page");
 
 So, you may be thinking, "What's this `topmost()` thing?" Every page in a NativeScript app has something called the *topmost* frame. To get the topmost frame, we use the `topmost()` property of the frame module. Once you have that topmost frame, you can call the `navigate()` function to navigate to another page. 
 
-> NOTE: `navigate()` can take additional arguments to perform different types of animated naivgations, and to pass data between pages when navigation occurs. You'll learn how to do that later.
+> NOTE: `navigate()` can take additional arguments to perform different types of animated navigations, and to pass data between pages when navigation occurs. You'll learn how to do that later.
 
 Let's check the results of the navigation in your emulator. Tap the About button and you should navigate to the about page.
 
@@ -275,7 +275,7 @@ exports.onTap = onTap;
 
 <div class="exercise-end"></div>
 
-Go ahead and add buttons to the home page for navigation to the Contact Us and Products pages, then adding the necesary code to navigate to each page. Try it all by yourself first. If you get stuck, look back through the exercises. The code is also included below for reference.
+Go ahead and add buttons to the home page for navigation to the Contact Us and Products pages, then adding the necessary code to navigate to each page. Try it all by yourself first. If you get stuck, look back through the exercises. The code is also included below for reference.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Navigating to the Contact Us page
