@@ -276,6 +276,7 @@ Set the Super Marshmallow Man tile to span two columns by using the `colSpan="2"
 ```
 
 Because the Super Marshmallow Man tile is now spanning two columns, it will be consuming the second column of the first row. We need to make a number of changes to the rest of the grid to support this:
+
 * add a fourth row to the grid
 * increase the height from 450 pixels to 600 pixels to support the 4th row
 * shift the remaining stack layouts 

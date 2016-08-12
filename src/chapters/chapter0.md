@@ -3,6 +3,7 @@
 Welcome to the NativeScript Workshop!
 
 To get started you'll need the following pre-requisites:
+
 * Windows, Mac, or Linux computer
 * [GenyMotion emulator](https://www.genymotion.com/)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads) open-source full-hardware virtualizer
@@ -20,6 +21,7 @@ NativeScript provides a best-of-both-worlds development experience. Our cross-pl
 In this workshop you'll learn how to build iOS and Android mobile apps using NativeScript. Throughout the workshop, you'll be building 2 apps: the mobile app version of an online vintage video game reseller (Tekmo) and a text-to-speech soundboard app. 
 
 Key concepts and take aways:
+
 * NativeScript app architecture
 * Using the NativeScript CLI (command line interface) tools
   * Creating and scaffolding apps

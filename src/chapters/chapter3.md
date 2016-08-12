@@ -5,6 +5,7 @@ In this section, you'll be learning about some of the basic UI elements that go 
 ### What you're building
 
 Over the course of the next several sections, you'll be building a mobile app for Tekmo, an imaginary company that sells retro video games and video game accessories. The app will have 4 pages:
+
 1. Home
 2. About 
 3. Contact Us
@@ -153,6 +154,7 @@ Your app will reload and show you the home page with the updated text.
 As you just learned above, you can add text by using the `<Label text="..." />` element. 
 
 Now, let's go ahead an create the About, Contact Us, and Products pages. But before we do that, let's talk about your development process and workflow (which ends up being fairly important). Just like developing HTML applications, NativeScript apps follow a similar development process:
+
 1. You made code changes in an editor or IDE (i.e., VS Code)
 2. You compile/build the changes (using `tns run android --emulator`)
 3. You review the changes in your app using your emulator (i.e., GenyMotion)

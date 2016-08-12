@@ -92,6 +92,7 @@ Now, your text will wrap to multiple lines!
 ### Navigating with Buttons
 
 We've finally made it to navigation. If you recall, I said we'd be doing 3 things to navigate from one page to another:
+
 1. Add a `<Button />` element to the page
 2. Add the `tap` event to the button
 3. Write JavaScript code to respond to the `tap` event and navigate to a new page
