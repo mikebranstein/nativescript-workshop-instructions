@@ -229,7 +229,7 @@ Apply the `tile` class to each of the stack layouts.
 <GridLayout rows="*,*,*,*" columns="*,*" width="300" height="600">
     <StackLayout row="0" col="0" colSpan="2" class="tile">
         <Label text="Super Marshmallow Man" textWrap="true" />
-        <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
+        <Label textWrap="true" text="Escape from certain death in this wild adventure!" />
         <Label text="$34.99" />
     </StackLayout>
     <StackLayout row="1" col="0" class="tile">
@@ -265,7 +265,7 @@ Add a band of color across the top of each tile, and place the tile title inside
         <StackLayout class="tile-title">
             <Label text="Super Marshmallow Man" textWrap="true" />
         </StackLayout>
-        <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
+        <Label textWrap="true" text="Escape from certain death in this wild adventure!" />
         <Label text="$34.99" />
     </StackLayout>
     <StackLayout row="1" col="0" class="tile">
@@ -392,7 +392,7 @@ Lastly, let's slightly change the highlighted tile a bit to make it stand apart 
     font-size: 18;
 }
 
-.hightlight .price {
+.highlight .price {
     font-weight: bold;
     color: red;
 }
