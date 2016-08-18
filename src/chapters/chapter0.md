@@ -39,7 +39,6 @@ Key concepts and take aways:
 
 You can find additional lab materials and presentation content at the locations below:
 
-* Source code for all apps: 
 * Presentation: [https://github.com/mikebranstein/nativescript-workshop-mcc/blob/master/nativescript-workshop.pptx](https://github.com/mikebranstein/nativescript-workshop-mcc/blob/master/nativescript-workshop.pptx)
 * Source code for this app: [https://github.com/mikebranstein/nativescript-workshop-instructions](https://github.com/mikebranstein/nativescript-workshop-instructions)
 
