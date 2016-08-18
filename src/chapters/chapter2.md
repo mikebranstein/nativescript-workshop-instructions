@@ -286,7 +286,7 @@ The `platforms` directory also contains platform-specific files, and is used as 
 
 I'm not going to go in-depth into the `node_modules` folder or the two `package.json` files. If you're curious, I cover the details of these files and folders in [NativeScript in Action](http://bit.ly/nsinaction).
 
-Finally, we're getting to the real meaty stuff: *app.* files and *main-page.* files. When your app runs, the first piece of app code that runs is the app.js file. In a sense, you can think of the app.js file as a bootstrapper for your application. Let's open it up and see what's inside:
+Finally, we're getting to the real meaty stuff: *app.XXX* files and *main-page.XXX* files. When your app runs, the first piece of app code that runs is the app.js file. In a sense, you can think of the app.js file as a bootstrapper for your application. Let's open it up and see what's inside:
 
 ```javascript
 var application = require("application");
