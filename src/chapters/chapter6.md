@@ -8,7 +8,7 @@ But, that's where the similarities stop. Although users will be submitting data 
 
 NativeScript apps are native mobile apps. That means they're stateful and don't need to mess with HTML forms: thank goodness! 
 
-> NOTE: Throughout these exercises, you'll be structuring your code very similar to the previous chapter where we added UI elements, added events to the UI elements to detect user interaction points, attached event handlers, and wrote business logic inside the event handlers. This is a common NativeScript development workflow that you will repeat throughout the lifecycle of your app's developement. I like to point this out, because it's relatively straight-forward and helps you to understand what to expect when developing apps with NativeScript.
+> **NOTE** Throughout these exercises, you'll be structuring your code very similar to the previous chapter where we added UI elements, added events to the UI elements to detect user interaction points, attached event handlers, and wrote business logic inside the event handlers. This is a common NativeScript development workflow that you will repeat throughout the lifecycle of your app's developement. I like to point this out, because it's relatively straight-forward and helps you to understand what to expect when developing apps with NativeScript.
 
 ### Building a data collection UI
 
@@ -159,7 +159,7 @@ In the next two exercises, we'll be adding code to get the data out of the text 
 
 Let's start by adding some code to grab the data out of the text field and text view on the Contact Us page.
 
-> NOTE: There are several ways of getting data in and out of UI elements. You'll be learning several of them throughout this workshop. To start, you'll be learning a very manual way, then I'll introduce you to an easier way in a future exercise.
+> **NOTE** There are several ways of getting data in and out of UI elements. You'll be learning several of them throughout this workshop. To start, you'll be learning a very manual way, then I'll introduce you to an easier way in a future exercise.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Get data out of a text field and text view
@@ -280,7 +280,7 @@ Now that you've gotten the data out of the text field and view, it's time to sen
 
 This is more of an advanced topic for discussion, and isn't necessarily NativeScript-specific; however, almost every mobile app you create *will* interact with some remote web service or REST API, so I feel it's important to highlight and show you how this is done in a NativeScript app.
 
-> NOTE: I just dropped a lot of new terms on your plate that you might not be familiar with, like JSON and REST API. Don't worry if you don't understand everything. You can just copy and paste the code in the next section, or skip it all together. This is the last part of this section, so just ahead to the next chapter if you don't want to follow along.
+> **NOTE** I just dropped a lot of new terms on your plate that you might not be familiar with, like JSON and REST API. Don't worry if you don't understand everything. You can just copy and paste the code in the next section, or skip it all together. This is the last part of this section, so just ahead to the next chapter if you don't want to follow along.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Sending our message to Tekmo as JSON via their REST API
@@ -305,7 +305,7 @@ var data = JSON.stringify({
 
 Finally, make the request, passing in the URL (https://nstweet.brosteins.com/api/message), the HTTP method (POST), the HTTP header telling the REST API the data is being sent over in JSON format, and the stringified JSON data.
 
-> The function call to `request()` returns a [promise](http://www.html5rocks.com/en/tutorials/es6/promises/), which may not be something you're familiar with. That's ok. Check out the link I provided, and you should be able to decipher what's happening below (which is essentially, making an HTTP request, and the `.then()` call holds the success and failure code paths of that original request).
+> **NOTE** The function call to `request()` returns a [promise](http://www.html5rocks.com/en/tutorials/es6/promises/), which may not be something you're familiar with. That's ok. Check out the link I provided, and you should be able to decipher what's happening below (which is essentially, making an HTTP request, and the `.then()` call holds the success and failure code paths of that original request).
 
 Note this is an endpoint I setup for the lab. It may not be very long-lived, so, if you're receiving 404 NOT FOUND messages, I would assume it's no longer available.
 

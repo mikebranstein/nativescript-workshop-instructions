@@ -6,13 +6,13 @@ Styling NativeScript apps is similar to how you may style an HTML application: C
 
 If you recall from earlier chapters, a NativeScript page has three parts: an XML file, a JavaScript file, and a CSS file. The XML file contains declarative XML code used to structure your app; the JavaScript file contains your business logic code that can interact with your UI; and the CSS file augments the XML file, providing style.
 
-> NOTE: There is no right or wrong way to style this app we're working with (well, maybe there are some wrong ways...). I'm not a great UI designer, I'm much more of a backend architect and automation developer, so don't take any of my UI styling guidelines here as gospel. If you think something looks better by styling it differently, by all means, do it. If you're specially proud of something, share it with the community.
+> **NOTE** There is no right or wrong way to style this app we're working with (well, maybe there are some wrong ways...). I'm not a great UI designer, I'm much more of a backend architect and automation developer, so don't take any of my UI styling guidelines here as gospel. If you think something looks better by styling it differently, by all means, do it. If you're specially proud of something, share it with the community.
 
 ### Styling basics
 
 Let's get started with some styling basics. Because we're using the Android platform in our workshop, there's something fairly obvious that we need to fix right away. At the top of every page, there's a large area with the app's name *tekmo* displayed. This area is called the *Action Bar*. We need to remove the action bar and we need to do it fast! 
 
-> NOTE: If you're running the workshop in iOS, this exercise doesn't apply to you, so feel free to skip it.
+> **NOTE** If you're running the workshop in iOS, this exercise doesn't apply to you, so feel free to skip it.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Removing the Android action bar
@@ -63,7 +63,7 @@ Just as in HTML applications, NativeScript can use CSS selectors to select a sin
 
 With this basic knowledge, let's get started styling our app with CSS.
 
-> NOTE: This is where the power of LiveSync really shines. Constant tweaks to page styling is made easy if you're using LiveSync. 
+> **NOTE** This is where the power of LiveSync really shines. Constant tweaks to page styling is made easy if you're using LiveSync. 
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Styling titles and text
@@ -309,7 +309,7 @@ Add the style to the page-specific CSS file:
 }
 ```
 
-> NOTE: There are likely other ways of adding a band of color around a label, but this was a quick way to get what I wanted accomplished.
+> **NOTE** There are likely other ways of adding a band of color around a label, but this was a quick way to get what I wanted accomplished.
 
 ![image](images/chapter8/styling-5.PNG)
 
@@ -412,7 +412,7 @@ In the final part of this chapter, you'll learn how to include images in your Na
 
 Before we start, I want to share some of the challenges there are with displaying images on mobile devices. First, consider the job of a cross-platform mobile framework (like NativeScript). 
 
-> WARNING: This section may scare you initially, and that's because cross-platform device DPIs are confusing. But don't worry: NativeScript does a good job of abstracting away the complexities of cross-platform images. Stick with me!
+> **WARNING** This section may scare you initially, and that's because cross-platform device DPIs are confusing. But don't worry: NativeScript does a good job of abstracting away the complexities of cross-platform images. Stick with me!
 
 There are hundreds of various devices, and each device has a different screen resolution and DPI. Let's take iOS devices as an example. Apple's devices (iPhone, iPad, etc.) are considered to be a highly-controlled hardware ecosystem, resulting in fewer variances across the models of their devices; however, consider just the iPhone line of hardware. iPhone 3, 3G, 4, 4s, 5, 5s, 5c, 6, 6s, 6 plus, etc. Some of these devices share common characteristics (like screen size), but it seems with every new year, the screens change in size, or in DPI. Between all of these devices, there are 3-4 different screen sizes, and 2-3 different screen DPIs to consider. 
 

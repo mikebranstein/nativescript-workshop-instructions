@@ -64,7 +64,7 @@ As you can see, the `<StackLayout>` stacks UI elements on top of each other on a
 
 But wait! Do you see the text you just added? It's running off the side of the page. 
 
-> NOTE: By default, text within a `<Label />` element does not wrap to new lines.
+> **NOTE** By default, text within a `<Label />` element does not wrap to new lines.
 
 Let's learn how to fix that.
 
@@ -203,7 +203,7 @@ Inside of the `tns-core-modules` folder is a massive hierarchy of folders and fi
 
 Inside of the `tns-core-modules` folder, find the folder `ui` and then sub-folder `frame`. Go ahead and open the `frame` folder.
 
-> WARNING: Be careful when you're looking at modules. Don't change their code!
+> **WARNING** Be careful when you're looking at modules. Don't change their code!
 
 ![image](images/chapter4/frame-module.PNG)
 
@@ -241,7 +241,7 @@ Import the frame module by using the `require()` function. Place this at the top
 var frameModule = require('ui/frame');
 ```
 
-> NOTE: You don't need to give NativeScript the full path to the frame module. This is because NativeScript has special conventions built into the framework that know exactly how to find and load modules by specifying a folder. 
+> **NOTE** You don't need to give NativeScript the full path to the frame module. This is because NativeScript has special conventions built into the framework that know exactly how to find and load modules by specifying a folder. 
 
 To navigate from one page to another, you use the `navigate()` function of the `topmost()` property on the frame module. Add the following code to the `onTap()` function.
 
@@ -251,7 +251,7 @@ frameModule.topmost().navigate("about-page");
 
 So, you may be thinking, "What's this `topmost()` thing?" Every page in a NativeScript app has something called the *topmost* frame. To get the topmost frame, we use the `topmost()` property of the frame module. Once you have that topmost frame, you can call the `navigate()` function to navigate to another page. 
 
-> NOTE: `navigate()` can take additional arguments to perform different types of animated navigations, and to pass data between pages when navigation occurs. You'll learn how to do that later.
+> **NOTE** `navigate()` can take additional arguments to perform different types of animated navigations, and to pass data between pages when navigation occurs. You'll learn how to do that later.
 
 Let's check the results of the navigation in your emulator. Tap the About button and you should navigate to the about page.
 

@@ -134,7 +134,7 @@ Oh dear! What the heck happened?
 
 It looks like each stack layout is positioned on top of each other. What did we forget?
 
-> NOTE: UI elements in a grid layout need to specify which row and column they belong to. 
+> **NOTE** UI elements in a grid layout need to specify which row and column they belong to. 
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Positioning elements in a grid layout 
@@ -179,7 +179,7 @@ Let's fix that by cheating a little bit. You won't learn about this for a few mo
 
 Add an alternating CSS style to each stack layout, so we can see the grid cells better. 
 
-> WARNING: Yeah, I said add a CSS style. NativeScript isn't HTML, but a subset of CSS can be used to style your apps. You'll learn more later, so just follow along for now.
+> **NOTE** Yeah, I said add a CSS style. NativeScript isn't HTML, but a subset of CSS can be used to style your apps. You'll learn more later, so just follow along for now.
 
 ```xml
 <StackLayout row="0" col="0" style="background-color: #EEEEEE;">

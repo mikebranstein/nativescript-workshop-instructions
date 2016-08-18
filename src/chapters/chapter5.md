@@ -78,6 +78,6 @@ Go back to your emulator and try scrolling, it should now work!
 
 <div class="exercise-end"></div>
 
-> NOTE: All of the examples in the workshop place the scroll view element as the first element of a page: this makes all of the content of the page scrollable. Truth be told, you can place a scroll view anywhere on page, and your app's design may require only part of the page as having scrollable content. I won't go into details in the workshop on the various combinations, but I cover this in greater detail in my book,[NativeScript in Action](http://bit.ly/nsinaction). 
+> **NOTE** All of the examples in the workshop place the scroll view element as the first element of a page: this makes all of the content of the page scrollable. Truth be told, you can place a scroll view anywhere on page, and your app's design may require only part of the page as having scrollable content. I won't go into details in the workshop on the various combinations, but I cover this in greater detail in my book,[NativeScript in Action](http://bit.ly/nsinaction). 
 
 I'm going to declare the About page *finished* (for now). Let's move on to the Contact Us page.
