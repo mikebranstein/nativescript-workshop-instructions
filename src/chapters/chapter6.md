@@ -410,7 +410,7 @@ For reference, here is the complete JavaScript code for this chapter.
 
 ```javascript
 var httpModule = require("http");
-var dialogModule = require("ui/dialogModule");
+var dialogModule = require("ui/dialogs");
 var page;
 
 function onLoaded(args) {
