@@ -295,9 +295,9 @@ application.start({ moduleName: "main-page" });
 
 This code tells NativeScript to load the `application` module (more on these later), then it directs the app to `start` by giving it the name of the first (or home) page of your app. In this case, the first page is named `main-page`, so when you app runs, it will automatically start by displaying `main-page`.
 
-> NOTE: Just like HTML applications, you can think of NativeScript apps as a collection of pages. You move between page by navigating, and you can also pass data (or app state) between pages during navigation.
+> **NOTE** Just like HTML applications, you can think of NativeScript apps as a collection of pages. You move between page by navigating, and you can also pass data (or app state) between pages during navigation.
 
-> DEFINITION: A page is a collection of similarly-named files (.xml, .css, and .js). The .xml file contains your UI code, the .css file styles your UI, and the .js file contains your business logic code. NativeScript uses conventions to tell which files constitute a page, so all you need to do is name your .xml, .css, and .js files with the same prefix.
+> **DEFINITION** A page is a collection of similarly-named files (.xml, .css, and .js). The .xml file contains your UI code, the .css file styles your UI, and the .js file contains your business logic code. NativeScript uses conventions to tell which files constitute a page, so all you need to do is name your .xml, .css, and .js files with the same prefix.
 
 So, back to pages. Now that we know about the NativeScript page-naming convention, you understand what the `main-page` page is: it's a collection of 3 files: `main-page.xml` (the UI), `main-page.css` (styling for the UI), and `main-page.js` (any business logic code that interacts with the UI).
 
