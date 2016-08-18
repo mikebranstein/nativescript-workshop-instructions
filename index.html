@@ -1896,7 +1896,21 @@ exports.onTap = onTap;
     width: 100;
     height 100;
 }
-</code></pre><p>Looks good.</p>
+</code></pre><p>Finally, add the <code>highlight</code> class to the highlighted tile:</p>
+<pre><code class="lang-xml">&lt;StackLayout row=&quot;0&quot; col=&quot;0&quot; colSpan=&quot;2&quot; class=&quot;tile highlight&quot;&gt;
+    &lt;StackLayout class=&quot;tile-title&quot;&gt;
+        &lt;Label text=&quot;Super Marshmallow Man&quot; textWrap=&quot;true&quot; /&gt;
+    &lt;/StackLayout&gt;
+    &lt;StackLayout orientation=&quot;horizontal&quot;&gt;
+        &lt;Image src=&quot;res://smm&quot; /&gt;
+        &lt;StackLayout&gt;
+            &lt;Label textWrap=&quot;true&quot; text=&quot;Escape from certain death int his wild adventure!&quot; /&gt;
+            &lt;Label text=&quot;$34.99&quot; class=&quot;price&quot; /&gt;
+        &lt;/StackLayout&gt;
+    &lt;/StackLayout&gt;
+&lt;/StackLayout&gt;
+</code></pre>
+<p>Looks good.</p>
 <p><img src="images/chapter8/styling-10.PNG" alt="image"></p>
 <p>That&#39;s all I&#39;m going to tweak for now, but you can continue on your own if you&#39;d like. </p>
 <div class="exercise-end"></div>
