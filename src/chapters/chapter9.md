@@ -1,4 +1,4 @@
-## What to go next
+## What to do next
 
 We've looked at some pretty cool things together today, but didn't have time to cover a ton of other topics, including:
 
