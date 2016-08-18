@@ -387,7 +387,7 @@ application.start({ moduleName: &quot;home-page&quot; });
   ^CTerminate batch job (Y/N)? Y
 
   C:\Users\dev\tekmo&gt;
-</code></pre><p>Then, run the <code>tns run</code> command again to build and run your app within GenyMotion.</p>
+</code></pre><p>Then, run the <code>tns run</code> command again to build and run your app within GenyMotion. Don&#39;t worry if you didn&#39;t type in the <code>tns platform add</code> command, because the CLI will do it for you automatically. </p>
 <pre><code>  tns run android --emulator
 </code></pre><p>Your app will reload and show you the home page with the updated text.</p>
 <p><img src="images/chapter3/code-tekmo-5.PNG" alt="image"></p>
@@ -912,6 +912,7 @@ exports.onTap = onTap;
 <pre><code class="lang-javascript">function onLoaded(args) {
     // todo: save page reference
 }
+exports.onLoaded = onLoaded;
 </code></pre>
 <p>You&#39;ll notice the <code>onLoaded()</code> handler function has an <code>args</code> argument variable. Every event handler has an argument; however, up until now, we have ignore this optional parameter.  This argument contains useful information about the event that has just happened, and often contains a reference to the object (or element) that the event is attached to. In our case the element belonging to the <code>onLoaded()</code> event is the <code>&lt;Page&gt;</code> element, so let&#39;s use the argument to grab a reference to the page.</p>
 <p>Change the <code>onLoaded()</code> function definition to save the page reference.</p>
@@ -1362,7 +1363,7 @@ exports.onTap = onTap;
 ...
 &lt;/GridLayout&gt;
 </code></pre>
-<p>Increase the height of the grid from 450 pixels to 600 pixels.</p>
+<p>Increase the height of the grid from 300 pixels to 600 pixels.</p>
 <pre><code class="lang-xml">&lt;GridLayout rows=&quot;*,*,*,*&quot; columns=&quot;*,*&quot; width=&quot;300&quot; height=&quot;600&quot;&gt;
 ...
 &lt;/GridLayout&gt;
