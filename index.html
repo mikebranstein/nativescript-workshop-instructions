@@ -1527,7 +1527,7 @@ exports.onTap = onTap;
 </ul>
 <p>I&#39;m going to walk through these changes, but go ahead and try this on your own. </p>
 <p>Fix the home page text wrapping. (I chose to enable text wrapping and shorten the text.)</p>
-<pre><code class="lang-xml">&lt;Label textWrap=&quot;true&quot; text=&quot;Welcome to Tekmo!&quot; /&gt;
+<pre><code class="lang-xml">&lt;Label textWrap=&quot;true&quot; text=&quot;Welcome to Tekmo!&quot; class=&quot;title&quot; /&gt;
 </code></pre>
 <p>Add a left, right, and bottom margin to all text by styling all labels to have a margin of 10 pixels. (I added this to the <code>app.css</code> file to make the change globally.)</p>
 <pre><code class="lang-css">Label {

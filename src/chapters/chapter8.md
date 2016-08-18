@@ -104,7 +104,7 @@ I'm going to walk through these changes, but go ahead and try this on your own.
 Fix the home page text wrapping. (I chose to enable text wrapping and shorten the text.)
 
 ```xml
-<Label textWrap="true" text="Welcome to Tekmo!" />
+<Label textWrap="true" text="Welcome to Tekmo!" class="title" />
 ```
 
 Add a left, right, and bottom margin to all text by styling all labels to have a margin of 10 pixels. (I added this to the `app.css` file to make the change globally.)
