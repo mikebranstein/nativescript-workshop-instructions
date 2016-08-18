@@ -187,6 +187,7 @@ Add the corresponding handler function to the `contact-us-page.js` file.
 function onLoaded(args) {
     // todo: save page reference
 }
+exports.onLoaded = onLoaded;
 ```
 
 You'll notice the `onLoaded()` handler function has an `args` argument variable. Every event handler has an argument; however, up until now, we have ignore this optional parameter.  This argument contains useful information about the event that has just happened, and often contains a reference to the object (or element) that the event is attached to. In our case the element belonging to the `onLoaded()` event is the `<Page>` element, so let's use the argument to grab a reference to the page.

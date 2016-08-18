@@ -139,7 +139,7 @@ To see the changes in your app, go back to the command line, press `Ctrl-C` to a
   C:\Users\dev\tekmo>
 ```
 
-Then, run the `tns run` command again to build and run your app within GenyMotion.
+Then, run the `tns run` command again to build and run your app within GenyMotion. Don't worry if you didn't type in the `tns platform add` command, because the CLI will do it for you automatically. 
 
 ```
   tns run android --emulator

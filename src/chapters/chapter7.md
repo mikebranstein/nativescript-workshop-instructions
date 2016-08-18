@@ -290,7 +290,7 @@ Add the fourth row by changing the `rows` attribute of the grid layout to includ
 </GridLayout>
 ```
 
-Increase the height of the grid from 450 pixels to 600 pixels.
+Increase the height of the grid from 300 pixels to 600 pixels.
 
 ```xml
 <GridLayout rows="*,*,*,*" columns="*,*" width="300" height="600">
