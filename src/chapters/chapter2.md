@@ -100,6 +100,8 @@ Before we run the app, let's talk about NativeScript a bit more. NativeScript is
 
 If you're using a provided laptop, it's running Windows, so you're going to be running your app in an Android emulator named GenyMotion. Don't worry: it's already pre-installed for you. GenyMotion is free for personal use, so when you get home, you'll be able to follow along.
 
+> **What is an Emulator?** Uh...that's a great question with a lengthy answer. [Jen Looper](https://twitter.com/jenlooper) wrote a [great article](http://developer.telerik.com/content-types/tutorials/how-do-mobile-emulators-even/) on emulators, simulators, and how your mobile app code may (or may not) look like you'd expect when.
+
 The first thing we'll need to do is to start up the GenyMotion emulator. Let's do it. 
 
 <h4 class="exercise-start">
