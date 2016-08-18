@@ -564,6 +564,23 @@ Also increase the size of the highlight image.
 }
 ```
 
+Finally, add the `highlight` class to the highlighted tile:
+
+```xml
+<StackLayout row="0" col="0" colSpan="2" class="tile highlight">
+    <StackLayout class="tile-title">
+        <Label text="Super Marshmallow Man" textWrap="true" />
+    </StackLayout>
+    <StackLayout orientation="horizontal">
+        <Image src="res://smm" />
+        <StackLayout>
+            <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
+            <Label text="$34.99" class="price" />
+        </StackLayout>
+    </StackLayout>
+</StackLayout>
+```
+
 Looks good.
 
 ![image](images/chapter8/styling-10.PNG)
