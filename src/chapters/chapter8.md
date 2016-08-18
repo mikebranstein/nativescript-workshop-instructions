@@ -483,7 +483,7 @@ Add them to the products page by using the `<Image />` element.
         <StackLayout class="tile-title">
             <Label text="Super Marshmallow Man" textWrap="true" />
         </StackLayout>
-        <Image src="res://super-marshmallow-man" />
+        <Image src="res://supermarshmallowman" />
         <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
         <Label text="$34.99" class="price" />
     </StackLayout>
@@ -491,35 +491,35 @@ Add them to the products page by using the `<Image />` element.
         <StackLayout class="tile-title">
             <Label text="Couch Commander" textWrap="true" /> 
         </StackLayout>
-        <Image src="res://couch-commander" />
+        <Image src="res://couchcommander" />
         <Label text="$24.99" class="price" />
     </StackLayout>
     <StackLayout row="1" col="1" class="tile">
         <StackLayout class="tile-title">
             <Label text="Mummy Madness" textWrap="true" /> 
         </StackLayout>
-        <Image src="res://mummu-madness" />
+        <Image src="res://mummymadness" />
         <Label text="$32.99" class="price" />
     </StackLayout>
     <StackLayout row="2" col="0" class="tile">
         <StackLayout class="tile-title">
             <Label text="Pyro Robots" textWrap="true" /> 
         </StackLayout>
-        <Image src="res://pyro-robots" />
+        <Image src="res://pyrorobots" />
         <Label text="$19.99" class="price" />
     </StackLayout>
     <StackLayout row="2" col="1" class="tile">
         <StackLayout class="tile-title">
             <Label text="Rescue Pups" textWrap="true" /> 
         </StackLayout>
-        <Image src="res://rescue-pups" />
+        <Image src="res://rescuepups" />
         <Label text="$9.99" class="price" />
     </StackLayout>
     <StackLayout row="3" col="0" class="tile">
         <StackLayout class="tile-title">
             <Label text="Vampire Valkyrie" textWrap="true" /> 
         </StackLayout>
-        <Image src="res://vampire-valkyrie" />
+        <Image src="res://vampirevalkyrie" />
         <Label text="$21.99" class="price" />
     </StackLayout>            
 </GridLayout>
