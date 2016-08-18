@@ -464,7 +464,7 @@ Enough explaination, let's start adding some images to the app.
 
 The first thing we need is images for each game. My friend [David Bjarnson](https://twitter.com/outerfield), was kind enough to draw up some quick images for each game. 
 
-[Download](images/chapter8/tekmo-images.zip) the app images and unzip the contents. Inside, you'll find 2 folders: Android and iOS. Copy the contents of these folders into the `app/App_Resources/Android` and `app/App_Resources/iOS` folder of the Tekmo mobile app. 
+[Download](images/chapter8/tekmo-images.zip) the app images and unzip the contents. Inside, you'll find 2 folders: Android and iOS. Copy the contents of these folders into the `app/App_Resources/Android` and `app/App_Resources/iOS` folder of the Tekmo mobile app. Now, there are a lot of sub-directories under these folders if you copy and paste, merge the files in the sub-directories, don't jsut replace your existing Android and iOS folders. 
 
 You can checkout each of the images by clicking on them in VS Code:
 
@@ -473,6 +473,7 @@ You can checkout each of the images by clicking on them in VS Code:
 ![](images/chapter8/mm.png)
 ![](images/chapter8/pr.png)
 ![](images/chapter8/rp.png)
+![](images/chapter8/vv.png)
 
 Add them to the products page by using the `<Image />` element. 
 
@@ -482,7 +483,7 @@ Add them to the products page by using the `<Image />` element.
         <StackLayout class="tile-title">
             <Label text="Super Marshmallow Man" textWrap="true" />
         </StackLayout>
-        <Image src="res://smm" />
+        <Image src="res://super-marshmallow-man" />
         <Label textWrap="true" text="Escape from certain death int his wild adventure!" />
         <Label text="$34.99" class="price" />
     </StackLayout>
@@ -490,34 +491,35 @@ Add them to the products page by using the `<Image />` element.
         <StackLayout class="tile-title">
             <Label text="Couch Commander" textWrap="true" /> 
         </StackLayout>
-        <Image src="res://cc" />
+        <Image src="res://couch-commander" />
         <Label text="$24.99" class="price" />
     </StackLayout>
     <StackLayout row="1" col="1" class="tile">
         <StackLayout class="tile-title">
             <Label text="Mummy Madness" textWrap="true" /> 
         </StackLayout>
-        <Image src="res://mm" />
+        <Image src="res://mummu-madness" />
         <Label text="$32.99" class="price" />
     </StackLayout>
     <StackLayout row="2" col="0" class="tile">
         <StackLayout class="tile-title">
             <Label text="Pyro Robots" textWrap="true" /> 
         </StackLayout>
-        <Image src="res://pr" />
+        <Image src="res://pyro-robots" />
         <Label text="$19.99" class="price" />
     </StackLayout>
     <StackLayout row="2" col="1" class="tile">
         <StackLayout class="tile-title">
             <Label text="Rescue Pups" textWrap="true" /> 
         </StackLayout>
-        <Image src="res://rp" />
+        <Image src="res://rescue-pups" />
         <Label text="$9.99" class="price" />
     </StackLayout>
     <StackLayout row="3" col="0" class="tile">
         <StackLayout class="tile-title">
             <Label text="Vampire Valkyrie" textWrap="true" /> 
         </StackLayout>
+        <Image src="res://vampire-valkyrie" />
         <Label text="$21.99" class="price" />
     </StackLayout>            
 </GridLayout>
